@@ -1,6 +1,7 @@
 import React from 'react'
 import NavPortfolio from '../components/NavPortfolio'
 import FooterPortfolio from '../components/FooterPortfolio'
+import CarouselProjects from '../components/CarouselProjects'
 
 function Projects() {
   return (
@@ -9,7 +10,7 @@ function Projects() {
           <NavPortfolio/>
         </nav>
         <main>  
-          < CardHomeProfile/>
+          <CarouselProjects/>
         </main>
         <footer>
           <FooterPortfolio/>

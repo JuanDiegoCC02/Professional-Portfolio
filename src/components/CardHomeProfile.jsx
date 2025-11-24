@@ -1,6 +1,6 @@
 import React from 'react'
 import "../styles/CardHomeProfile.css";
-import ft_Profile from "../imagenes/Ft Profile.webp"
+import ft_Profile from "../images/Ft Profile.webp"
 import { Link } from 'react-router-dom';
 
 function CardHomeProfile() {

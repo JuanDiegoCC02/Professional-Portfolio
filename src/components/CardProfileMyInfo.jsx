@@ -33,7 +33,6 @@ function CardProfileMyInfo() {
                 <li>React</li>
                 <li>React Router</li>
                 <li>Next.js</li>
-                <li>Json Web Token</li>
                 <li>Bootstrap</li>
                 <li>Tailwin</li>
                 <li>ApexCharts</li>
@@ -44,6 +43,7 @@ function CardProfileMyInfo() {
             <h5>Back-End and DataBases</h5>
             <ul>
                 <li>DJango</li>
+                <li>Json Web Token</li>
                 <li>MySQL</li>
                 <li>Node.js</li>
                 <li>Cookies</li>
