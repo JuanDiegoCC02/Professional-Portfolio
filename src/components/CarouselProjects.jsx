@@ -1,21 +1,21 @@
 import React, { useState } from 'react'
 
-import homeBE from "../images/imgSharedReading/homeBE.PNG";
-import formBooksBE from "../images/imgSharedReading/formBooksBE.PNG";
-import newBooksBE from "../images/imgSharedReading/newBooksBE.PNG";
-import favBooksBE from "../images/imgSharedReading/favBooksBE.PNG";
-import contactUsBE from "../images/imgSharedReading/contactUsBE.PNG";
+  import homeBE from "../images/imgSharedReading/homeBE.PNG";
+  import formBooksBE from "../images/imgSharedReading/formBooksBE.PNG";
+  import newBooksBE from "../images/imgSharedReading/newBooksBE.PNG";
+  import favBooksBE from "../images/imgSharedReading/favBooksBE.PNG";
+  import contactUsBE from "../images/imgSharedReading/contactUsBE.PNG";
 
-import homeNA from "../images/imgNumbAstro/homeNA.PNG";
-import contactUsNA from "../images/imgNumbAstro/contactUsNA.PNG";
-import taskFormNA from "../images/imgNumbAstro/taskFormNA.PNG";
-import taskAgendaNA from "../images/imgNumbAstro/taskAgendaNA.PNG";
-import starMapNA from "../images/imgNumbAstro/starMapNA.PNG";
-import starLootNA from "../images/imgNumbAstro/starLootNA.PNG";
-import profileNA from "../images/imgNumbAstro/profileNA.PNG";
-import AdminUsersGet from "../images/imgNumbAstro/AdminUsersGet.PNG";
-import UsersChart from "../images/imgNumbAstro/UsersChart.PNG";
-import AdminTasks from "../images/imgNumbAstro/AdminTasks.PNG";
+  import homeNA from "../images/imgNumbAstro/homeNA.PNG";
+  import contactUsNA from "../images/imgNumbAstro/contactUsNA.PNG";
+  import taskFormNA from "../images/imgNumbAstro/taskFormNA.PNG";
+  import taskAgendaNA from "../images/imgNumbAstro/taskAgendaNA.PNG";
+  import starMapNA from "../images/imgNumbAstro/starMapNA.PNG";
+  import starLootNA from "../images/imgNumbAstro/starLootNA.PNG";
+  import profileNA from "../images/imgNumbAstro/profileNA.PNG";
+  import AdminUsersGet from "../images/imgNumbAstro/AdminUsersGet.PNG";
+  import UsersChart from "../images/imgNumbAstro/UsersChart.PNG";
+  import AdminTasks from "../images/imgNumbAstro/AdminTasks.PNG";
 
 import CardProjectInfo from './CardProjectInfo';
 
