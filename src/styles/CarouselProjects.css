@@ -1,0 +1,264 @@
+/* --- 1. Contenedor Principal del Carrusel --- */
+.AllCarouselProjects {
+    max-width: 1200px; 
+    margin: 60px auto; 
+    padding: 40px;
+    background-color: #000000; /* Fondo Negro */
+    color: #ecf0f1; 
+    border-radius: 12px;
+    
+    /* Sombra eléctrica y borde sutil, consistente con el Card de Perfil */
+    box-shadow: 
+        0 10px 25px rgb(0, 14, 141), 
+        0 0 0 4px rgba(71, 71, 71, 0.89); 
+    
+    text-align: center; 
+    position: relative; 
+
+    /* Animación de entrada */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlide 0.8s ease-out forwards;
+}
+
+@keyframes fadeInSlide {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- 2. Título y Descripción del Proyecto --- */
+.ContainerTitleCarousel {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #3498db; /* Separador Azul Vivo */
+}
+
+.TitleNameProject {
+    font-size: 2.8em;
+    color: #ecf0f1; /* Título principal claro */
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.DescriptionProject {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #bdc3c7; /* Texto secundario gris */
+    max-width: 800px;
+    margin: 0 auto; 
+    text-align: justify;
+}
+
+/* --- 3. Tecnologías del Proyecto (Languages, Frameworks, etc.) --- */
+.ContainerStudyOfProject {
+    background-color: #1a1a1a; /* Fondo gris oscuro para la sección de tecnologías */
+    padding: 20px 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 5px solid #3498db; /* Borde de acento Azul Vivo */
+}
+
+.UlCarouselProjects {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 15px; 
+}
+
+.LiCarouselProjects {
+    /* Fondo sutil con el acento azul */
+    background-color: rgba(52, 152, 219, 0.1); 
+    color: #3498db; /* Texto de tecnología en Azul Vivo */
+    padding: 8px 15px;
+    border-radius: 20px; 
+    font-size: 0.95em;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.LiCarouselProjects:hover {
+    background-color: #3498db; /* Fondo Azul Vivo al hacer hover */
+    color: #000000; /* Texto Negro para alto contraste */
+    border-color: #3498db;
+    cursor: default; 
+}
+
+/* --- 4. Contenedor Principal de Carrusel de Imágenes --- */
+.ContainerImagesProject {
+    position: relative;
+    max-width: 900px; 
+    margin: 0 auto 20px auto; 
+    overflow: hidden; 
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); 
+    border: 2px solid #3498db; /* Borde Azul Vivo */
+}
+
+.ImagesProjectCarousel {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer; 
+}
+
+.ImagesProjectCarousel:hover {
+    transform: scale(1.02);
+}
+
+/* Botones de navegación de imágenes (dentro del carrusel) */
+.btnImgLeft,
+.btnImgRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #3498db; /* Flechas en Azul Vivo */
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    z-index: 2;
+}
+
+.btnImgLeft:hover,
+.btnImgRight:hover {
+    background-color: #3498db; /* Fondo Azul Vivo al hover */
+    color: #000000; /* Texto negro al hover */
+}
+
+.btnImgLeft {
+    left: 10px;
+}
+
+.btnImgRight {
+    right: 10px;
+}
+
+/* --- 6. Separador de la Línea Horizontal --- */
+.ContainerHRCarouselrojects {
+    margin: 30px 0;
+}
+
+.HRCarouselProjects {
+    border: none;
+    height: 1px;
+    background-color: #3498db; /* Línea horizontal Azul Vivo */
+    width: 80%; 
+    margin: 0 auto; 
+}
+
+/* --- 7. Imagen Principal del Proyecto y Enlace GitHub --- */
+.ContainerIMGandLinkCarouselProjects {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.ImgCarouselProjects {
+    max-width: 250px; 
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #3498db; /* Borde Azul Vivo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.ImgCarouselProjects:hover {
+    transform: scale(1.03);
+}
+
+.LinkGithubCarouselProjects {
+    display: inline-block; 
+    margin-top: 15px;
+    padding: 10px 25px;
+    background-color: #3498db; /* Fondo Azul Vivo */
+    color: #000000; /* Texto negro para alto contraste */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    border: 1px solid #3498db;
+}
+
+.LinkGithubCarouselProjects:hover {
+    background-color: transparent; /* Fondo transparente al hover */
+    color: #3498db; /* Texto Azul Vivo */
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.5); /* Sombra de brillo azul */
+    border-color: #3498db;
+}
+
+/* --- 8. Botones de Navegación de Proyectos --- */
+.containerBtnCarouselProjects {
+    display: flex;
+    justify-content: center;
+    gap: 25px; 
+    margin-top: 30px;
+}
+
+.btnLeft,
+.btnRight {
+    padding: 12px 25px;
+    background-color: transparent; 
+    color: #3498db; /* Texto Azul Vivo */
+    border: 2px solid #3498db; /* Borde Azul Vivo */
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.btnLeft:hover,
+.btnRight:hover {
+    background-color: #3498db; /* Fondo Azul Vivo */
+    color: #000000; /* Texto Negro */
+    transform: translateY(-3px); 
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.5); /* Sombra de brillo azul */
+}
+
+
+/* --- 9. Responsividad --- */
+@media (max-width: 900px) {
+    .AllCarouselProjects {
+        max-width: 90%;
+        padding: 30px;
+        margin: 40px auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .AllCarouselProjects {
+        padding: 20px;
+    }
+
+    .UlCarouselProjects {
+        flex-direction: column; 
+        gap: 10px;
+    }
+
+    .LiCarouselProjects {
+        width: fit-content; 
+        margin: 0 auto; 
+    }
+
+    .containerBtnCarouselProjects {
+        flex-direction: column; 
+        gap: 15px;
+    }
+    .btnLeft,
+    .btnRight {
+        width: 80%; 
+        margin: 0 auto;
+    }
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "../styles/CarouselProjects.css"
 
   import homeBE from "../images/imgSharedReading/homeBE.PNG";
   import formBooksBE from "../images/imgSharedReading/formBooksBE.PNG";
@@ -108,38 +109,39 @@ function CarouselProjects() {
     ));
   }
   return (
-    <div>
 
-      <div>
-        <h1>{project.title}</h1>
-        <p>{project.description}</p>
+    <div className='AllCarouselProjects'>
+
+      <div className='ContainerTitleCarousel'>
+        <h1 className='TitleNameProject'>{project.title}</h1>
+        <p className='DescriptionProject'>{project.description}</p>
       </div>
 
-      <div>
-        <ul>
-          <li>{project.languages} </li>
-          <li>{project.framework} </li>
-          <li>{project.back_end} </li>
-          <li>{project.tools} </li>
+      <div className='ContainerStudyOfProject'>
+        <ul className='UlCarouselProjects'>
+          <li className='LiCarouselProjects'>{project.languages} </li>
+          <li className='LiCarouselProjects'>{project.framework} </li>
+          <li className='LiCarouselProjects'>{project.back_end} </li>
+          <li className='LiCarouselProjects'>{project.tools} </li>
         </ul>
       </div>
 
-      <div>
-        <div>
-          <img src={project.imagesProjects[secondaryIndex].src} onClick={openModal}  alt={project.imagesProjects[secondaryIndex].alt} />
+      <div className='ContainerAllCardsCarousel'>
+        <div className='ContainerImagesProject'>
+          <img className='ImagesProjectCarousel' src={project.imagesProjects[secondaryIndex].src} onClick={openModal}  alt={project.imagesProjects[secondaryIndex].alt} />
            <button className='btnImgLeft' onClick={prevSecondarySlide}> ⬅️ </button>
            <button className='btnImgRight' onClick={nextSecondarySlide}> ➡️ </button>
         </div>
 
-        <div><hr /></div>
+        <div className='ContainerHRCarouselrojects'><hr className='HRCarouselProjects'/></div>
 
-        <div>
-          <div>
-            <img src={project.src} alt={project.title} /> <br />
-            <a href={project.github} >GitHub</a>
+        <div className='ContainerIMGandLinkCarouselProjects'>
+          <div className='ContainerImgCarouselProjects'>
+            <img className='ImgCarouselProjects' src={project.src} alt={project.title} /> <br />
+            <a className='LinkGithubCarouselProjects' href={project.github} >GitHub</a>
           </div>
 
-          <div>
+          <div className='containerBtnCarouselProjects'>
           <button className='btnLeft' onClick={prevMainSlide}> ⬅️ Proyecto Anterior </button>
           <button className='btnRight' onClick={nextMainSlide}> Proyecto Siguiente ➡️ </button>
           </div>

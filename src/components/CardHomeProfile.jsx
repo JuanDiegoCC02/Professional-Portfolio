@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 function CardHomeProfile() {
   return (
     <div className='AllCardHomeProfile'>
-
+  
       <div className='CardFtProfileHome'>
         <Link to="/profile">
         <img src={photoProfile} alt="Ft Profile" width={150} height={150} className='FtProfileHome' />
