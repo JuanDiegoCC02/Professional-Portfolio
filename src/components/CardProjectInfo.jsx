@@ -1,5 +1,6 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
+import "../styles/CardProjectInfo.css"
   import homeBE from "../images/imgSharedReading/homeBE.PNG";
   import formBooksBE from "../images/imgSharedReading/formBooksBE.PNG";
   import newBooksBE from "../images/imgSharedReading/newBooksBE.PNG";
@@ -108,35 +109,45 @@ function CardProjectInfo({projectTitle, onClose }) {
   };
 
   return (
+
     <div className='modalOverlay' onClick={handleOutside}>
-      <div>
-        <h1>{project.title}</h1>
-        <p>{project.description} </p>
-        <ul>
+      <div className='allContainerCardProjectInfo'>
+        <div className='containerTitleCardProjectInfo'>
+        <h1 className='TitleCardProjectInfo'>{project.title}</h1>
+        <p className='DescriptionCardProjectInfo'>{project.description} </p>
+        </div>
+
+        <div className='containerPartsCardProjectInfo'>
+        <ul className='UlPartsCardProjectInfo'>
           {project.partsPage.map((partsPage, index) =>(
-            <li key={index}>
-              <div>
-                <p>{partsPage.info}</p>
-                <img src={partsPage.imgSrc} alt={`Detalle de ${partsPage.info}`} />
+            <li className='LiPartsCardProjectInfo' key={index}>
+              <div className='subContainerPartsCardProjectInfo'>
+                <p className='InfoPartsCardProjectInfo'>{partsPage.info}</p>
+                <img className='ImgPartsCardProjectInfo' src={partsPage.imgSrc} alt={`Detalle de ${partsPage.info}`} height={250} width={250}/>
               </div>
             </li>
           ))}
         </ul>
+        </div>
 
-        <div>
-          <ul>
-            <li>{project.languages} </li>
-          <li>{project.framework} </li>
-          <li>{project.back_end} </li>
-          <li>{project.tools} </li>
+        <div className='containerSkillsCardProjectInfo'>
+          <ul className='UlSkillsCardProjectInfo'>
+          <li className='LiSkillsCardProjectInfo'>{project.languages} </li>
+          <li className='LiSkillsCardProjectInfo'>{project.framework} </li>
+          <li className='LiSkillsCardProjectInfo'>{project.back_end} </li>
+          <li className='LiSkillsCardProjectInfo'>{project.tools} </li>
           </ul>
         </div>
 
-          <img src={project.src} alt={project.title} />
+          <div className='containerImgPCardProjectInfo'>
+          <img className='ImgPCardProjectInfo' src={project.src} alt={project.title} />
+          </div>
 
-          <button className="closeBtnInfoProyecto" onClick={onClose}>
+        <div className='containerBtnCloseCardProjectInfo'>
+         <button className="closeBtnInfoProyecto" onClick={onClose}>
           Cerrar
         </button>
+        </div>
 
       </div>
     </div>
