@@ -1,59 +1,87 @@
-/* --- 1. Estilo General del Footer --- */
-.TotalFooterPortfolio {
-    /* Posicionamiento y diseño */
-    width: 100%; /* Ocupa todo el ancho */
-    padding: 20px 0;
-    background-color: #2c3e50; /* Mismo color oscuro que el Nav */
-    color: #ecf0f1; /* Color de texto claro */
-    text-align: center; /* Centra cualquier texto (aunque aquí solo hay íconos) */
-    
-    /* Fija el footer en la parte inferior de la ventana, asegurando que esté siempre visible 
-       Solo si quieres un footer fijo. Si quieres que se desplace con el contenido, usa position: static/relative. */
-    /* position: fixed; 
-    bottom: 0;
-    left: 0; */
+/*
+ * Archivo: FooterPortfolio.css
+ * Estilo: Barra de Pie de Página Oscura, Profunda y de Alto Contraste
+ * Paleta: Negro (#000000), Azul Oscuro (#05051a), Celeste Brillante (#3498db)
+ */
 
-    /* Importante para que no quede debajo del nav fijo */
-    z-index: 999; 
+/* --- 1. Contenedor Principal (TotalFooterPortfolio) --- */
+.TotalFooterPortfolio {
+    width: 100%;
+    padding: 15px 0;
     
-    /* Pequeña sombra superior para separarlo visualmente */
-    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3); 
+    /* Mantenemos el negro profundo */
+    background-color: #0a0a0a; 
+    border-top: 3px solid #3498db; 
+    
+    /* Oscurecemos la sombra para que se mezcle con el fondo, pero aún con la luz azul */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.9), 0 -1px 15px rgb(0, 14, 141); 
+    
+    text-align: center;
+    height: 6%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 900;
 }
 
-/* --- 2. Estilo de la Lista de Iconos --- */
+/* --- 2. Lista de Iconos (UlFooterPortfolio) --- */
 .UlFooterPortfolio {
     list-style: none;
     padding: 0;
     margin: 0;
-    /* Usa Flexbox para centrar y distribuir los íconos horizontalmente */
     display: flex;
-    justify-content: center; /* Centra los elementos horizontalmente */
-    align-items: center; 
-    gap: 20px; /* Espacio entre los iconos */
+    justify-content: center;
+    gap: 40px;
 }
 
-/* --- 3. Estilo de los Elementos de la Lista (Íconos) --- */
+/* --- 3. Ítem de Lista (LiFooterPortfolio) --- */
 .LiFooterPortfolio {
-    /* Estilos base para el contenedor de cada ícono */
-    cursor: pointer; /* Indica que son elementos interactivos */
-    transition: transform 0.3s ease-in-out; 
+    cursor: pointer;
+    line-height: 0;
+    transition: transform 0.3s ease;
 }
 
-/* Efecto al pasar el mouse sobre el ícono (opcional, pero recomendado) */
-.LiFooterPortfolio:hover {
-    transform: translateY(-5px); /* Pequeño levantamiento visual */
-    opacity: 0.9; /* Opacidad sutil */
-}
-
-/* --- 4. Asegurar el Estilo del Click de Email --- */
-.LiFooterPortfolio:nth-child(3) { /* Selecciona el li del Gmail */
-    cursor: pointer; 
-}
-
-/* --- 5. Estilos para las Imágenes (Íconos) --- */
+/* --- 4. Estilo y Efecto Hover en Iconos (AJUSTE CLAVE PARA EL TONO OSCURO) --- */
 .LiFooterPortfolio img {
-    /* Ajusta el tamaño de los íconos y asegura la calidad */
-    width: 40px; 
-    height: 40px; 
-    object-fit: contain; /* Asegura que el ícono no se distorsione */
+    border-radius: 20%;
+    
+    /* CAMBIO CLAVE: Utilizamos una combinación de filtros para forzar un tono azul muy oscuro */
+    /* Lo volvemos gris y luego le aplicamos un tono azul tenue y oscuro */
+    filter: grayscale(100%) brightness(0.7) sepia(50%) hue-rotate(180deg) saturate(200%);
+    
+    /* Iconos por defecto son más pequeños y sutiles */
+    width: 40px;
+    height: 40px;
+    
+    transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.LiFooterPortfolio:hover img {
+    /* Mantenemos el efecto de alto impacto al hacer hover */
+    
+    /* CAMBIO: Eliminamos filtros para que aparezca el color original del icono */
+    filter: none; 
+    
+    transform: scale(1.2); /* Aumentamos el zoom para mayor impacto */
+    box-shadow: 0 0 18px 4px #3498db; /* Brillo más fuerte */
+    
+    /* Añadimos un borde sutil para enmarcar */
+    border: 1px solid rgba(52, 152, 219, 0.5); 
+}
+
+/* --- 5. Responsividad (Móviles) --- */
+@media (max-width: 600px) {
+    .TotalFooterPortfolio {
+        padding: 10px 0;
+    }
+    .UlFooterPortfolio {
+        gap: 25px;
+    }
+    .LiFooterPortfolio img {
+        width: 32px; /* Reducimos el tamaño de los iconos */
+        height: 32px;
+    }
+    .LiFooterPortfolio:hover img {
+        box-shadow: 0 0 15px 3px #3498db; /* Ajustamos la sombra para móvil */
+    }
 }

@@ -1,57 +1,116 @@
-/* --- 1. Contenedor Principal (Estado por Defecto: Contraído) --- */
+/*
+ * Archivo: NavPortfolio.css
+ * Estilo: Barra Superior Horizontal que se DESPLIEGA en ALTURA al hacer HOVER
+ * Soluciones: Centrado Horizontal y Corrección de Colisión con Contenido Principal
+ */
+
+/* --- 1. Contenedor Principal (Estado por Defecto: Compacto/Desplegado) --- */
 .TotalNavPortfolio {
-    /* Fija el nav a la izquierda de la ventana */
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh; /* Ocupa toda la altura */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
-
-    /* Define el ancho completo del menú (cuando está abierto) */
-    width: 200px; 
+    width: 100%;
+    z-index: 1000;
     
-    background-color: #2c3e50; /* Un color oscuro para el nav */
-    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5); /* Sombra para destacarlo */
-
-    /* --- El truco de la transición --- */
-    /* Aplica transición a la transformación para un movimiento suave */
-    transition: transform 0.4s ease-in-out; 
-
-    /* --- Estado Inicial: Oculto --- */
-    /* Mueve el nav hacia la izquierda, dejando solo una pequeña 'pestaña' visible (ej. 50px) */
-    transform: translateX(calc(-100% + 50px)); 
+    background-color: #000000;
+    box-shadow: 0 3px 10px rgb(0, 14, 141);
+    
+    /* --- LÓGICA DE DESPLIEGUE VERTICAL --- */
+    height: 30px; /* Altura inicial muy pequeña */
+    padding: 0;
+    overflow: hidden; /* Oculta el contenido */
+    transition: height 0.4s ease-out, box-shadow 0.4s ease-out;
 }
 
-/* --- 2. Estado Extendido (Al Pasar el Mouse) --- */
+/* --- 2. Estado Desplegado (Al Pasar el Mouse) --- */
 .TotalNavPortfolio:hover {
-    /* Desliza el nav de vuelta a su posición original (completamente visible) */
-    transform: translateX(0); 
+    height: 60px; /* Altura final (desplegada) */
+    box-shadow: 0 5px 25px #3498db;
 }
 
-/* --- 3. Estilos de la Lista y Elementos --- */
+/* --- 3. Lista de Enlaces (UlNavPortfolio) --- */
 .UlNavPortfolio {
-    list-style: none; /* Elimina los puntos de la lista */
-    padding: 20px 0; /* Padding superior e inferior */
+    list-style: none;
+    
+    /* MODIFICACIÓN CLAVE: Centrado Horizontal */
+    display: flex;
+    justify-content: center; /* ¡Centra los enlaces horizontalmente! */
+    align-items: center; 
+    
+    gap: 30px; 
+    padding: 0 50px; 
     margin: 0;
+    
+    height: 100%; 
 }
 
+/* --- 4. Elementos de la Lista (LiNavPortfolio y Enlaces) --- */
 .LiNavPortfolio a {
-    /* Estiliza los enlaces de React Router (NavLink) */
     display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: #ecf0f1; /* Color de texto claro */
+    padding: 8px 0;
     font-size: 1.1em;
-    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    text-decoration: none;
+    color: #ecf0f1;
+    font-weight: 500;
+    position: relative; 
+    
+    /* Nueva animación de Opacidad para que el texto "aparezca" */
+    opacity: 0; 
+    transition: color 0.3s ease, opacity 0.1s linear 0.2s; /* Se retrasa la opacidad para que aparezca después del despliegue */
+}
+
+/* --- 5. Despliegue de Texto con el Nav --- */
+.TotalNavPortfolio:hover .LiNavPortfolio a {
+    opacity: 1; /* El texto se hace visible al desplegar el nav */
+    transition: color 0.3s ease, opacity 0.3s ease 0.1s; /* Animación normal al hover */
+}
+
+/* EFECTO HOVER en los enlaces */
+.LiNavPortfolio a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #3498db;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
 .LiNavPortfolio a:hover {
-    background-color: #34495e; /* Un color de fondo ligeramente diferente al hacer hover */
-    color: #ffffff;
+    color: #3498db; 
+}
+.LiNavPortfolio a:hover::after {
+    width: 100%; 
+    left: 0;
 }
 
-/* Estilo para el enlace activo, si usas la funcionalidad NavLink */
+/* Estilo para el Enlace Activo */
 .LiNavPortfolio .active {
-    border-left: 5px solid #3498db; /* Una línea azul para indicar la página actual */
-    background-color: #34495e; 
+    color: #3498db;
+    font-weight: bold;
+}
+.LiNavPortfolio .active::after {
+    width: 100%;
+    left: 0;
+}
+
+
+/* --- 6. Responsividad (Móviles) --- */
+@media (max-width: 768px) {
+    .TotalNavPortfolio {
+        height: 8px; 
+    }
+    .TotalNavPortfolio:hover {
+        height: 45px; 
+    }
+    .UlNavPortfolio {
+        justify-content: center; 
+        padding: 0 10px;
+        gap: 15px;
+    }
+    .LiNavPortfolio a {
+        font-size: 1em;
+        padding: 5px 0;
+    }
 }

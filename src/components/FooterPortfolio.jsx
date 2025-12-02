@@ -2,7 +2,7 @@ import React from 'react'
 import Cv from "../icons/Cv.png"
 import gmail from "../icons/gmail.png"
 import github from "../icons/github.png"
-import linkeIn from "../icons/linkeIn.png"
+import linkedin from "../icons/linkedin.png"
 import "../styles/FooterPortfolio.css";
 
 
@@ -19,19 +19,19 @@ function FooterPortfolio() {
   <footer className='TotalFooterPortfolio'>
         <ul className='UlFooterPortfolio'> 
             <li className='LiFooterPortfolio'><a href="https://www.linkedin.com/in/juan-diego-corella-camacho-a543ba1a9/" target='blank'rel="noopener noreferrer">
-                <img src={linkeIn} width={45} height={45} alt="LinkeInIcon" />
+                <img src={linkedin} width={40} height={40} alt="LinkedinIcon" />
             </a></li>
 
               <li className='LiFooterPortfolio'><a href="https://github.com/JuanDiegoCC02" target='blank'rel="noopener noreferrer">
-                <img src={github} width={45} height={45} alt="GithubIcon" />
+                <img src={github} width={40} height={40} alt="GithubIcon" />
             </a></li>
 
               <li className='LiFooterPortfolio' onClick={generateEmail}>
-                <img src={gmail} width={45} height={45} alt="GmailIcon" />
+                <img src={gmail} width={40} height={40} alt="GmailIcon" />
             </li>
 
               <li className='LiFooterPortfolio'><a href="/CV JDiego.pdf" target='blank'rel="noopener noreferrer">
-                <img src={Cv} width={45} height={45} alt="CvIcon" />
+                <img src={Cv} width={40} height={40} alt="CvIcon" />
             </a></li>
         </ul>
   </footer>
