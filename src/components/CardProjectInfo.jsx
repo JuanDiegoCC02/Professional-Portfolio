@@ -26,21 +26,45 @@ function CardProjectInfo({projectTitle, onClose }) {
       description:"Description of page",
       partsPage: [
         {
-          info:"part1",
+          info:"Register: ",
           imgSrc: formBooksBE
         },
         {
-          info:"part2",
+          info:"Log In: ",
+          imgSrc: formBooksBE
+        },
+        {
+          info:"Home: ",
+          imgSrc: homeBE
+        },
+         {
+          info:"Form Books: ",
+          imgSrc: formBooksBE
+        },
+        {
+          info:"New Books Schedule: ",
           imgSrc: newBooksBE
         },
         {
-          info:"part3",
+          info:"Favorite Books: ",
+          imgSrc: favBooksBE
+        },
+           {
+          info:"Profile: ",
           imgSrc: favBooksBE
         },
         {
-          info:"part4",
+          info:"Contact Us: ",
           imgSrc: contactUsBE
-        }
+        },
+           {
+          info:"Administration Users: ",
+          imgSrc: favBooksBE
+        },
+           {
+          info:"Administration Books: ",
+          imgSrc: favBooksBE
+        },
       ],
     languages:"HTML, CSS and JavaScript",
     framework:"React, React Router, Next.js and ApexChart ",
@@ -54,39 +78,51 @@ function CardProjectInfo({projectTitle, onClose }) {
     description:"Description of page",
     partsPage: [
        {
-         info:"part1",
+         info:"Register: The website has a registration section so that users can create a user account.",
+         imgSrc: AdminTasks
+       },
+        {
+         info:"Log In: The website has a login section so that users can enter their credentials and be validated in order to access the website with their respective users.",
+         imgSrc: AdminTasks
+       },
+       {
+         info:"Home: .",
+         imgSrc: homeNA
+       },
+       {
+         info:"Form Tasks: ",
          imgSrc: taskFormNA
        },
        {
-         info:"part2",
+         info:"Get Tasks Schedule: ",
          imgSrc: taskAgendaNA
        },
        {
-         info:"part3",
+         info:"Star Map: ",
          imgSrc: starMapNA
        },
        {
-         info:"part4",
+         info:"Star Loot: ",
          imgSrc: starLootNA
        },
         {
-         info:"part5",
+         info:"Profile: ",
          imgSrc: profileNA
        },
         {
-         info:"part6",
+         info:"Contact Us: ",
          imgSrc: contactUsNA
        },
         {
-         info:"part7",
+         info:"Administration Users: ",
          imgSrc: AdminUsersGet
        },
         {
-         info:"part8",
+         info:"Administration Chart Users: ",
          imgSrc: UsersChart
        },
         {
-         info:"part9",
+         info:"Administration Charts Tasks: ",
          imgSrc: AdminTasks
        }
       ],
