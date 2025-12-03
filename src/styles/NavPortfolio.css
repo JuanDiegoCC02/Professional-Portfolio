@@ -1,93 +1,88 @@
-/*
- * Archivo: NavPortfolio.css
- * Estilo: Barra Superior Horizontal que se DESPLIEGA en ALTURA al hacer HOVER
- * Soluciones: Centrado Horizontal y Corrección de Colisión con Contenido Principal
- */
-
-/* --- 1. Contenedor Principal (Estado por Defecto: Compacto/Desplegado) --- */
+/* --- 1. Contenedor Principal (SIN CAMBIOS - Sigue siendo vertical) --- */
 .TotalNavPortfolio {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    height: 100%; 
+    width: 70px;
     z-index: 1000;
     
     background-color: #000000;
-    box-shadow: 0 3px 10px rgb(0, 14, 141);
+    box-shadow: 0 5px 12px rgb(0, 36, 196);
     
-    /* --- LÓGICA DE DESPLIEGUE VERTICAL --- */
-    height: 30px; /* Altura inicial muy pequeña */
     padding: 0;
-    overflow: hidden; /* Oculta el contenido */
-    transition: height 0.4s ease-out, box-shadow 0.4s ease-out;
+    overflow: hidden; 
+    transition: width 0.4s ease-out, box-shadow 0.4s ease-out; 
 }
 
-/* --- 2. Estado Desplegado (Al Pasar el Mouse) --- */
 .TotalNavPortfolio:hover {
-    height: 60px; /* Altura final (desplegada) */
-    box-shadow: 0 5px 25px #3498db;
+    width: 180px;
+    box-shadow: 5px 0 25px #9294ff; 
 }
 
-/* --- 3. Lista de Enlaces (UlNavPortfolio) --- */
 .UlNavPortfolio {
     list-style: none;
-    
-    /* MODIFICACIÓN CLAVE: Centrado Horizontal */
     display: flex;
-    justify-content: center; /* ¡Centra los enlaces horizontalmente! */
-    align-items: center; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     
-    gap: 30px; 
-    padding: 0 50px; 
+    gap: 7px; 
+    padding: 20px 0; 
     margin: 0;
-    
+    width: 100%; 
     height: 100%; 
 }
 
-/* --- 4. Elementos de la Lista (LiNavPortfolio y Enlaces) --- */
+
 .LiNavPortfolio a {
     display: block;
-    padding: 8px 0;
+    padding: 8px 15px;
     font-size: 1.1em;
     text-decoration: none;
-    color: #ecf0f1;
+    color: #aaaaaa;
     font-weight: 500;
     position: relative; 
+    white-space: nowrap; 
     
-    /* Nueva animación de Opacidad para que el texto "aparezca" */
     opacity: 0; 
-    transition: color 0.3s ease, opacity 0.1s linear 0.2s; /* Se retrasa la opacidad para que aparezca después del despliegue */
+    transition: color 0.3s ease, opacity 0.1s linear 0.2s; 
 }
 
-/* --- 5. Despliegue de Texto con el Nav --- */
+/* --- 5. Despliegue de Texto con el Nav - SIN CAMBIOS --- */
 .TotalNavPortfolio:hover .LiNavPortfolio a {
-    opacity: 1; /* El texto se hace visible al desplegar el nav */
-    transition: color 0.3s ease, opacity 0.3s ease 0.1s; /* Animación normal al hover */
+    opacity: 1; 
+    transition: color 0.3s ease, opacity 0.3s ease 0.1s; 
 }
 
-/* EFECTO HOVER en los enlaces */
+/* 🚀 EFECTO HOVER en los enlaces (AJUSTES CLAVE AQUÍ) */
 .LiNavPortfolio a::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background-color: #3498db;
-    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+    /* --- CAMBIOS PARA BARRA HORIZONTAL INFERIOR --- */
+    bottom: 0; 
+    left: 50%; 
+    width: 0; 
+    height: 2px; 
+    background-color: #7ee5ff;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out; 
 }
 
 .LiNavPortfolio a:hover {
-    color: #3498db; 
-}
-.LiNavPortfolio a:hover::after {
-    width: 100%; 
-    left: 0;
+    color: #a7dcff; 
+    
 }
 
-/* Estilo para el Enlace Activo */
+.LiNavPortfolio a:hover::after {
+    /* --- CAMBIOS PARA EXPANDIR HORIZONTALMENTE --- */
+    width: 100%; /* La barra cubre todo el ancho */
+    left: 0; /* Se mueve para cubrir desde el inicio */
+  
+}
+
+/* Estilo para el Enlace Activo (AJUSTES CLAVE AQUÍ) */
 .LiNavPortfolio .active {
-    color: #3498db;
+    color: #00d9ff;
     font-weight: bold;
 }
 .LiNavPortfolio .active::after {
@@ -96,21 +91,20 @@
 }
 
 
-/* --- 6. Responsividad (Móviles) --- */
+
 @media (max-width: 768px) {
     .TotalNavPortfolio {
-        height: 8px; 
+        width: 8px;
     }
     .TotalNavPortfolio:hover {
-        height: 45px; 
+        width: 120px;
     }
     .UlNavPortfolio {
-        justify-content: center; 
-        padding: 0 10px;
-        gap: 15px;
+        padding: 10px 0;
+        gap: 10px;
     }
     .LiNavPortfolio a {
-        font-size: 1em;
-        padding: 5px 0;
+        font-size: 0.9em;
+        padding: 5px 10px;
     }
 }

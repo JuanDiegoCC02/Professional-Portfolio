@@ -7,16 +7,13 @@
   
     background-color: #000000; 
     color: #ecf0f1; 
-    
     border-radius: 1%; 
     
+    /* border shadow p */
+    box-shadow: 0 10px 20px rgb(0, 16, 165), 
+       /* border shadow color s*/
+       0 0 0 5px rgb(7, 7, 7); 
     
-    /* shadow p */
-    box-shadow: 0 10px 20px rgb(0, 14, 141), 
-    /* border shadow color s*/
-       0 0 0 5px rgba(71, 71, 71, 0.89); 
-    
-    /* distribute content Flex */
     display: flex;
     align-items: center;
     gap: 12%; 
@@ -26,8 +23,6 @@
     transform: translateY(20px);
     animation: fadeInSlide 0.8s ease-out forwards;
 }
-
-/* Keyframes from entrance */
 @keyframes fadeInSlide {
     to {
         opacity: 1;
@@ -36,13 +31,11 @@
 }
 
 
-
 .CardFtProfileHome {
-    flex-shrink: 0; /* Avoid image-by-text bug */
+    flex-shrink: 0; 
 }
 
 .FtProfileHome {
-   
     border-radius: 50%; 
     border: 5px solid #000000f5;
     object-fit: cover; 
@@ -51,57 +44,53 @@
 }
 
 .FtProfileHome:hover {
-    transform: scale(1.05); /* Zoom sutil al pasar el mouse */
-    box-shadow:  0 4px 14px #625cb3; /* Brillo al pasar el mouse */
+    transform: scale(1.05);
+    box-shadow:  0 4px 14px #c497ffda; 
 }
 
 
-/* --- 3. Estilos de la Información del Perfil --- */
 .CardHomeInfoP {
-    /* El contenedor de la información textual */
     text-align: left;
 }
 
 .TitleNameHome {
-    /* Nombre principal */
     font-size: 2.2em;
     margin-bottom: 5px;
-    color: #ecf0f1;
+    color: #d5ecff;
     letter-spacing: 1px;
+    text-shadow: 0 0 10px #7a00ff, 0 0 20px #c700ff;
 }
 
+
 .InfoStudyHome {
-    /* Título o Rol */
     font-size: 1.3em;
     margin-bottom: 15px;
-    color: #3498db; /* Color de acento para el rol */
+    color: #cacaca; 
     font-weight: 500;
     text-transform: uppercase;
+      text-shadow: 0 0 10px #0011ff, 0 0 20px #777777;
 }
 
 .InfoIdeaHome {
-    /* Frase clave o Slogan */
     font-size: 1em;
     font-style: italic;
-    color: #bdc3c7; /* Color gris claro para contraste */
-    border-left: 3px solid #3498db;
+    color: #80cffd; 
+    border-left: 2px groove #a5f2ff;
     padding-left: 10px;
 }
 
-/* --- 4. Responsividad (Adaptación a Móviles) --- */
 @media (max-width: 650px) {
     .AllCardHomeProfile {
-        /* En pantallas pequeñas, apila la foto y la info verticalmente */
         flex-direction: column;
-        text-align: center; /* Centra el texto */
-        max-width: 90%; /* Ocupa casi todo el ancho disponible */
+        text-align: center; 
+        max-width: 90%;
         margin: 30px auto;
         padding: 20px;
         gap: 20px;
     }
     
     .CardHomeInfoP {
-        text-align: center; /* Centra la información textual */
+        text-align: center;
     }
 
     .TitleNameHome {
@@ -113,9 +102,9 @@
     }
 
     .InfoIdeaHome {
-        border-left: none; /* Elimina el borde lateral */
+        border-left: none; 
         padding-left: 0;
         padding-top: 10px;
-        border-top: 2px solid #3498db; /* Agrega un borde superior para separación */
+        border-top: 2px solid #3498db; 
     }
 }

@@ -1,19 +1,9 @@
-/*
- * Archivo: FooterPortfolio.css
- * Estilo: Barra de Pie de Página Oscura, Profunda y de Alto Contraste
- * Paleta: Negro (#000000), Azul Oscuro (#05051a), Celeste Brillante (#3498db)
- */
 
-/* --- 1. Contenedor Principal (TotalFooterPortfolio) --- */
 .TotalFooterPortfolio {
     width: 100%;
     padding: 15px 0;
-    
-    /* Mantenemos el negro profundo */
     background-color: #0a0a0a; 
-    border-top: 3px solid #3498db; 
-    
-    /* Oscurecemos la sombra para que se mezcle con el fondo, pero aún con la luz azul */
+    border-top: 5px groove #001625; 
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.9), 0 -1px 15px rgb(0, 14, 141); 
     
     text-align: center;
@@ -24,7 +14,6 @@
     z-index: 900;
 }
 
-/* --- 2. Lista de Iconos (UlFooterPortfolio) --- */
 .UlFooterPortfolio {
     list-style: none;
     padding: 0;
@@ -34,42 +23,30 @@
     gap: 40px;
 }
 
-/* --- 3. Ítem de Lista (LiFooterPortfolio) --- */
 .LiFooterPortfolio {
     cursor: pointer;
     line-height: 0;
     transition: transform 0.3s ease;
 }
 
-/* --- 4. Estilo y Efecto Hover en Iconos (AJUSTE CLAVE PARA EL TONO OSCURO) --- */
+
 .LiFooterPortfolio img {
     border-radius: 20%;
-    
-    /* CAMBIO CLAVE: Utilizamos una combinación de filtros para forzar un tono azul muy oscuro */
-    /* Lo volvemos gris y luego le aplicamos un tono azul tenue y oscuro */
     filter: grayscale(100%) brightness(0.7) sepia(50%) hue-rotate(180deg) saturate(200%);
-    
-    /* Iconos por defecto son más pequeños y sutiles */
     width: 40px;
     height: 40px;
-    
     transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .LiFooterPortfolio:hover img {
-    /* Mantenemos el efecto de alto impacto al hacer hover */
-    
-    /* CAMBIO: Eliminamos filtros para que aparezca el color original del icono */
     filter: none; 
+    transform: scale(1.2); 
+    box-shadow: 0 0 18px 4px #3498db; 
     
-    transform: scale(1.2); /* Aumentamos el zoom para mayor impacto */
-    box-shadow: 0 0 18px 4px #3498db; /* Brillo más fuerte */
-    
-    /* Añadimos un borde sutil para enmarcar */
     border: 1px solid rgba(52, 152, 219, 0.5); 
 }
 
-/* --- 5. Responsividad (Móviles) --- */
+
 @media (max-width: 600px) {
     .TotalFooterPortfolio {
         padding: 10px 0;
@@ -78,10 +55,10 @@
         gap: 25px;
     }
     .LiFooterPortfolio img {
-        width: 32px; /* Reducimos el tamaño de los iconos */
+        width: 32px; 
         height: 32px;
     }
     .LiFooterPortfolio:hover img {
-        box-shadow: 0 0 15px 3px #3498db; /* Ajustamos la sombra para móvil */
+        box-shadow: 0 0 15px 3px #3498db; 
     }
 }
