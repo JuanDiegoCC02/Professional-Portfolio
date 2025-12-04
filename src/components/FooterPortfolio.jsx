@@ -9,7 +9,7 @@ import "../styles/FooterPortfolio.css";
 function FooterPortfolio() {
     const generateEmail= ()=> {
         const email = "dcorella2324@gmail.com"
-        const subject = "Portfolio consultaion"
+        const subject = "Portfolio consultation"
         const message = "Hi, I'd like to know more about your work." 
         const gmailUrl  = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&message=${encodeURIComponent(message)}`;
         window.open(gmailUrl, "_blank");
