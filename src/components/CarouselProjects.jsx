@@ -6,6 +6,11 @@ import "../styles/CarouselProjects.css"
   import newBooksBE from "../images/imgSharedReading/newBooksBE.PNG";
   import favBooksBE from "../images/imgSharedReading/favBooksBE.PNG";
   import contactUsBE from "../images/imgSharedReading/contactUsBE.PNG";
+  import profileBE from "../images/imgSharedReading/profileBE.PNG";
+  import AdminUsersBE from "../images/imgSharedReading/AdminUsersBE.PNG";
+  import UsersChartBE from "../images/imgSharedReading/UsersChartBE.PNG";
+  import AdminBooksBE from "../images/imgSharedReading/AdminBooksBE.PNG";
+  import BooksChartsBE from "../images/imgSharedReading/BooksChartsBE.PNG";
 
   import homeNA from "../images/imgNumbAstro/homeNA.PNG";
   import contactUsNA from "../images/imgNumbAstro/contactUsNA.PNG";
@@ -37,7 +42,12 @@ const cardsProjects =[
       {src: formBooksBE, alt: "Image SharedReading"},
       {src: newBooksBE, alt: "Image SharedReading"},
       {src: favBooksBE, alt: "Image SharedReading"},
-      {src: contactUsBE, alt: "Image SharedReading"}
+      {src: contactUsBE, alt: "Image SharedReading"},
+      {src: profileBE, alt: "Image SharedReading"},
+      {src: AdminUsersBE, alt: "Image SharedReading"},
+      {src: UsersChartBE, alt: "Image SharedReading"},
+      {src: AdminBooksBE, alt: "Image SharedReading"},
+      {src: BooksChartsBE, alt: "Image SharedReading"}
     ]
   },
   {

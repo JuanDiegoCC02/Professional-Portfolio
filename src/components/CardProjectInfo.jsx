@@ -1,12 +1,21 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
 import "../styles/CardProjectInfo.css"
+  import registerBE from "../images/imgSharedReading/registerBE.PNG";
+  import LogInBE from "../images/imgSharedReading/LogInBE.PNG";
   import homeBE from "../images/imgSharedReading/homeBE.PNG";
   import formBooksBE from "../images/imgSharedReading/formBooksBE.PNG";
   import newBooksBE from "../images/imgSharedReading/newBooksBE.PNG";
   import favBooksBE from "../images/imgSharedReading/favBooksBE.PNG";
   import contactUsBE from "../images/imgSharedReading/contactUsBE.PNG";
+  import profileBE from "../images/imgSharedReading/profileBE.PNG";
+  import AdminUsersBE from "../images/imgSharedReading/AdminUsersBE.PNG";
+  import UsersChartBE from "../images/imgSharedReading/UsersChartBE.PNG";
+  import AdminBooksBE from "../images/imgSharedReading/AdminBooksBE.PNG";
+  import BooksChartsBE from "../images/imgSharedReading/BooksChartsBE.PNG";
 
+  import registerNA from "../images/imgNumbAstro/registerNA.PNG";
+  import logInNA from "../images/imgNumbAstro/logInNA.PNG";
   import homeNA from "../images/imgNumbAstro/homeNA.PNG";
   import contactUsNA from "../images/imgNumbAstro/contactUsNA.PNG";
   import taskFormNA from "../images/imgNumbAstro/taskFormNA.PNG";
@@ -27,11 +36,11 @@ function CardProjectInfo({projectTitle, onClose }) {
       partsPage: [
         {
           info:"Register: ",
-          imgSrc: formBooksBE
+          imgSrc: registerBE
         },
         {
           info:"Log In: ",
-          imgSrc: formBooksBE
+          imgSrc: LogInBE
         },
         {
           info:"Home: ",
@@ -51,7 +60,7 @@ function CardProjectInfo({projectTitle, onClose }) {
         },
            {
           info:"Profile: ",
-          imgSrc: favBooksBE
+          imgSrc: profileBE
         },
         {
           info:"Contact Us: ",
@@ -59,11 +68,19 @@ function CardProjectInfo({projectTitle, onClose }) {
         },
            {
           info:"Administration Users: ",
-          imgSrc: favBooksBE
+          imgSrc: AdminUsersBE
+        },
+         {
+          info:"Chart Users: ",
+          imgSrc: UsersChartBE
+        },
+         {
+          info:"Administration Books: ",
+          imgSrc: AdminBooksBE
         },
            {
-          info:"Administration Books: ",
-          imgSrc: favBooksBE
+          info:"Charts Books: ",
+          imgSrc: BooksChartsBE
         },
       ],
     languages:"HTML, CSS and JavaScript",
@@ -79,11 +96,11 @@ function CardProjectInfo({projectTitle, onClose }) {
     partsPage: [
        {
          info:"Register: The website has a registration section so that users can create a user account.",
-         imgSrc: AdminTasks
+         imgSrc: registerNA
        },
         {
          info:"Log In: The website has a login section so that users can enter their credentials and be validated in order to access the website with their respective users.",
-         imgSrc: AdminTasks
+         imgSrc: logInNA
        },
        {
          info:"Home: .",
