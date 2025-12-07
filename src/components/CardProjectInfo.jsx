@@ -56,51 +56,51 @@ function CardProjectInfo({projectTitle, onClose }) {
       description:"Description of page",
       partsPage: [
         {
-          info:"Register: ",
+          info:"Register: The Shared Reading website has a registration form for users to create a user account.",
           imgSrc: registerBE
         },
         {
-          info:"Log In: ",
+          info:"Log In: The Shared Reading website has a login for users to enter their respective credentials and, through validations, verify that their credentials are correct.",
           imgSrc: LogInBE
         },
         {
-          info:"Home: ",
+          info:"Home: The Shared Reading website has a homepage that displays a navigation menu and a brief explanation of what the site is and its goal, as well as showing in a column some of the books that users have uploaded to the site.",
           imgSrc: homeBE
         },
          {
-          info:"Form Books: ",
+          info:"Form Books: The Shared Reading website has a Books form where users can post books they are interested in exchanging on the website. ",
           imgSrc: formBooksBE
         },
         {
-          info:"New Books Schedule: ",
+          info:"New Books Schedule: The Shared Reading website has a section where you can view the latest books published on the site, as well as a search bar to find all the published books using filters. ",
           imgSrc: newBooksBE
         },
         {
-          info:"Favorite Books: ",
+          info:"Favorite Books: The Shared Reading website has a section where users can view the books they have saved as favorites in their profile.",
           imgSrc: favBooksBE
         },
            {
-          info:"Profile: ",
+          info:"Profile: The Shared Reading website has a Profile for each user with basic information about each user and a counter of the number of exchanges that each respective user has made.",
           imgSrc: profileBE
         },
         {
-          info:"Contact Us: ",
+          info:"Contact Us: The Shared Reading website has a contact section where information about Shared Reading is provided, along with ways to contact the site owners for any assistance with the website. ",
           imgSrc: contactUsBE
         },
            {
-          info:"Administration Users: ",
+          info:"Administration Users: The Shared Reading website has a User Administration section where everything related to users and their profiles will be moderated and made secure. ",
           imgSrc: AdminUsersBE
         },
          {
-          info:"Chart Users: ",
+          info:"Chart Users: The Shared Reading website has a user graph section to record user logins and their numbers, as well as to provide order and structure to moderation. ",
           imgSrc: UsersChartBE
         },
          {
-          info:"Administration Books: ",
+          info:"Administration Books:  The Shared Reading website has a Book Management section where you can find everything related to the published books, including information about the users who created the publication, with a focus on moderation and security.",
           imgSrc: AdminBooksBE
         },
            {
-          info:"Charts Books: ",
+          info:"Charts Books: The Shared Reading website has a book charts section to record book publications and their numbers in exchanges, thus providing order and structure to moderation. ",
           imgSrc: BooksChartsBE
         },
       ],
@@ -207,10 +207,10 @@ function CardProjectInfo({projectTitle, onClose }) {
 
         <div className='containerSkillsCardProjectInfo'>
           <ul className='UlSkillsCardProjectInfo'>
-          <li className='LiSkillsCardProjectInfo'>{project.languages} </li>
-          <li className='LiSkillsCardProjectInfo'>{project.framework} </li>
-          <li className='LiSkillsCardProjectInfo'>{project.back_end} </li>
-          <li className='LiSkillsCardProjectInfo'>{project.tools} </li>
+          <li className='LiSkillsCardProjectInfo'>LANGUAGES <br />  {project.languages} </li>
+          <li className='LiSkillsCardProjectInfo'>FRAMEWORK <br /> {project.framework} </li>
+          <li className='LiSkillsCardProjectInfo'>BACK-END <br /> {project.back_end} </li>
+          <li className='LiSkillsCardProjectInfo'>TOOLS <br /> {project.tools} </li>
           </ul>
         </div>
 

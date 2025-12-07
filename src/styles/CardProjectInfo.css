@@ -1,6 +1,6 @@
-/* --- VARIABLES DE COLOR NEÓN OSCURO --- */
+
 :root {
-    /* Basado en TitleNameProject y sombras del contenedor */
+    
     --accent-blue-light: #afdbff; /* Azul Claro Principal */
     --accent-blue-deep: #00e1ff; /* Azul Cian para bordes */
     --accent-purple: #7a00ff; /* Morado para sombras de brillo */
@@ -12,7 +12,7 @@
     --border-main: #668aff; /* Azul para bordes de contenedores */
 }
 
-/* --- OVERLAY & ANIMATION (Manteniendo la base oscura) --- */
+
 .modalOverlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -32,19 +32,15 @@
     max-width: 95%;
     max-height: 90vh;
     border-radius: 16px;
-    padding: 50px; /* Padding aumentado para look premium */
-    
-    /* Sombra de Brillo Neón Fuerte */
+    padding: 50px; 
     box-shadow: 
         0 0 50px var(--shadow-main), /* Gran sombra exterior azul/morado */
         0 0 0 3px var(--border-main); /* Borde sutil del contenedor */
     
     overflow-y: auto;
-    
-    /* Layout */
     display: flex;
     flex-direction: column;
-    gap: 50px; /* Mayor separación */
+    gap: 50px; 
     
     transform: translateY(-50px);
     opacity: 0;
@@ -57,7 +53,7 @@
     }
 }
 
-/* --- 2. HEADER Y IMAGEN PRINCIPAL --- */
+
 .HeaderAndImageWrapper {
     display: flex;
     align-items: center;
@@ -72,12 +68,12 @@
 }
 
 .TitleCardProjectInfo {
-    font-size: 3.5em; /* Título más grande */
+    font-size: 3.5em; 
     color: var(--accent-blue-light);
     margin-bottom: 5px;
     font-weight: 900;
     letter-spacing: -1px;
-    /* Efecto Neón basado en TitleNameProject */
+  
     text-shadow: 0 0 10px var(--accent-purple), 0 0 20px #1696ff;
 }
 
@@ -86,14 +82,14 @@
     color: var(--text-subtle);
     line-height: 1.6;
     text-align: left;
-    /* Efecto de sombra para claridad en fondo oscuro */
+
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); 
 }
 
 /* Imagen Principal como Mockup */
 .containerImgPCardProjectInfo {
     flex-shrink: 0;
-    width: 250px; /* Tamaño ligeramente mayor */
+    width: 250px; 
     text-align: right;
 }
 .ImgPCardProjectInfo {
@@ -104,7 +100,7 @@
     box-shadow: 0 0 20px var(--shadow-main);
 }
 
-/* --- 3. LAYOUT PRINCIPAL DE CONTENIDO (Mantiene Asimétrico) --- */
+
 .ContentGridWrapper {
     display: flex;
     gap: 40px;
@@ -127,7 +123,7 @@
     top: 20px; 
 }
 
-/* --- ESTILO DE SECCIÓN --- */
+
 .SectionTitleCardProjectInfo {
     font-size: 1.8em;
     color: var(--accent-blue-light);
@@ -149,14 +145,14 @@
 
 .LiPartsCardProjectInfo {
     padding: 25px;
-    background-color: #0d0d0d; /* Ligero contraste con el fondo base */
+    background-color: #0d0d0d; 
     border-radius: 10px;
-    border-left: 6px solid var(--accent-purple); /* Borde morado de acento */
+    border-left: 6px solid var(--accent-purple);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s, border-color 0.3s;
 }
 .LiPartsCardProjectInfo:hover {
-    transform: translateX(5px); /* Pequeño desplazamiento hacia la derecha */
+    transform: translateX(5px); 
     border-color: var(--accent-blue-deep);
 }
 
@@ -189,7 +185,7 @@
     opacity: 0.8;
 }
 
-/* --- 4. SKILLS EN EL PANEL LATERAL --- */
+
 .containerSkillsCardProjectInfo {
     margin-bottom: 40px;
     padding: 0;
@@ -202,13 +198,13 @@
     padding: 0;
     margin: 15px 0 0 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+
+    justify-content: center;
     gap: 10px;
 }
 
 .LiSkillsCardProjectInfo {
-    /* Basado en LiCarouselProjects */
+    
     color: #93e9ff;
     background-color: var(--background-card); 
     padding: 8px 15px;
@@ -228,7 +224,7 @@
     transform: translateY(-2px);
 }
 
-/* --- 5. BOTÓN DE CIERRE --- */
+
 .containerBtnCloseCardProjectInfo {
     padding-top: 30px;
     border-top: 1px solid var(--border-subtle);
@@ -244,7 +240,7 @@
     font-size: 1.1em;
     font-weight: bold;
     letter-spacing: 1px;
-    /* Sombra de neón suave */
+    
     box-shadow: 0 0 20px rgba(0, 225, 255, 0.5);
     transition: all 0.3s ease;
 }
@@ -265,8 +261,7 @@
     .allContainerCardProjectInfo {
         padding: 20px;
     }
-    
-    /* Cambiar de 2 columnas a 1 columna */
+   
     .ContentGridWrapper {
         flex-direction: column;
         gap: 20px;

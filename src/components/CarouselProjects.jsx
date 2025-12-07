@@ -129,10 +129,10 @@ function CarouselProjects() {
 
       <div className='ContainerStudyOfProject'>
         <ul className='UlCarouselProjects'>
-          <li className='LiCarouselProjects'>{project.languages} </li>
-          <li className='LiCarouselProjects'>{project.framework} </li>
-          <li className='LiCarouselProjects'>{project.back_end} </li>
-          <li className='LiCarouselProjects'>{project.tools} </li>
+          <li className='LiCarouselProjects'>Languages <br /> {project.languages} </li>
+          <li className='LiCarouselProjects'>Framework <br /> {project.framework} </li>
+          <li className='LiCarouselProjects'>Back-End <br /> {project.back_end} </li>
+          <li className='LiCarouselProjects'>Tools <br /> {project.tools} </li>
         </ul>
       </div>
 
