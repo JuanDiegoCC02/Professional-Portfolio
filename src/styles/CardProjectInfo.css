@@ -1,41 +1,54 @@
+/* --- VARIABLES DE COLOR NEÓN OSCURO --- */
+:root {
+    /* Basado en TitleNameProject y sombras del contenedor */
+    --accent-blue-light: #afdbff; /* Azul Claro Principal */
+    --accent-blue-deep: #00e1ff; /* Azul Cian para bordes */
+    --accent-purple: #7a00ff; /* Morado para sombras de brillo */
+    --background-deep: #000000; /* Negro Puro Base */
+    --background-card: #040024; /* Azul oscuro/Negro para tarjetas (Basado en LiCarouselProjects) */
+    --text-primary: #ecf0f1; /* Texto principal */
+    --text-subtle: #daf9ff; /* Gris/Azul muy claro para descripciones */
+    --shadow-main: rgb(0, 3, 151); /* Azul oscuro fuerte para box-shadow */
+    --border-main: #668aff; /* Azul para bordes de contenedores */
+}
 
+/* --- OVERLAY & ANIMATION (Manteniendo la base oscura) --- */
 .modalOverlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow: hidden; /* Esto desactiva el scroll principal */
-
-    width: 100%; /* Mantiene el ancho correcto */
-    /* Centrado Absoluto */
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    z-index: 2000; /* Alto para aparecer por encima de todo */
-    backdrop-filter: blur(5px);
+    z-index: 2000;
+    backdrop-filter: blur(8px);
 }
 
-
 .allContainerCardProjectInfo {
-    background-color: #0a0a0a;
-    color: #ecf0f1;
-    width: 900px;
+    background-color: var(--background-deep);
+    color: var(--text-primary);
+    width: 1100px;
     max-width: 95%;
     max-height: 90vh;
-    border-radius: 12px;
-    padding: 40px;
+    border-radius: 16px;
+    padding: 50px; /* Padding aumentado para look premium */
     
-    box-shadow: 0 10px 30px rgb(0, 14, 141), 0 0 0 4px rgba(71, 71, 71, 0.89);
+    /* Sombra de Brillo Neón Fuerte */
+    box-shadow: 
+        0 0 50px var(--shadow-main), /* Gran sombra exterior azul/morado */
+        0 0 0 3px var(--border-main); /* Borde sutil del contenedor */
     
     overflow-y: auto;
     
-    /* Animación de entrada: Aparecer desde el centro */
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    gap: 50px; /* Mayor separación */
+    
     transform: translateY(-50px);
     opacity: 0;
-    animation: modalSlideIn 0.4s ease-out forwards;
+    animation: modalSlideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 @keyframes modalSlideIn {
     to {
@@ -44,176 +57,264 @@
     }
 }
 
+/* --- 2. HEADER Y IMAGEN PRINCIPAL --- */
+.HeaderAndImageWrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-main);
+}
 
 .containerTitleCardProjectInfo {
-    text-align: center; /* Centrado del texto */
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #3498db;
+    flex-grow: 1;
+    text-align: left;
 }
 
 .TitleCardProjectInfo {
-    font-size: 2.5em;
-    color: #3498db;
-    margin-bottom: 10px;
+    font-size: 3.5em; /* Título más grande */
+    color: var(--accent-blue-light);
+    margin-bottom: 5px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    /* Efecto Neón basado en TitleNameProject */
+    text-shadow: 0 0 10px var(--accent-purple), 0 0 20px #1696ff;
 }
 
 .DescriptionCardProjectInfo {
-    font-size: 1.1em;
-    color: #bdc3c7;
+    font-size: 1.15em;
+    color: var(--text-subtle);
     line-height: 1.6;
-    text-align: center; /* Centramos el texto */
+    text-align: left;
+    /* Efecto de sombra para claridad en fondo oscuro */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); 
 }
 
-
-.containerSkillsCardProjectInfo {
-    margin-bottom: 40px;
-    padding: 15px;
-    background-color: #000000;
-    border-radius: 8px;
-    border: 1px solid #3498db;
-    text-align: center; /* Centrado del contenedor */
+/* Imagen Principal como Mockup */
+.containerImgPCardProjectInfo {
+    flex-shrink: 0;
+    width: 250px; /* Tamaño ligeramente mayor */
+    text-align: right;
 }
-.UlSkillsCardProjectInfo {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.ImgPCardProjectInfo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid var(--accent-blue-deep);
+    box-shadow: 0 0 20px var(--shadow-main);
+}
+
+/* --- 3. LAYOUT PRINCIPAL DE CONTENIDO (Mantiene Asimétrico) --- */
+.ContentGridWrapper {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centra las píldoras */
-    gap: 10px;
-}
-.LiSkillsCardProjectInfo {
-    background-color: rgba(52, 152, 219, 0.15);
-    color: #3498db;
-    padding: 6px 12px;
-    border-radius: 15px;
-    font-size: 0.9em;
-    font-weight: 500;
+    gap: 40px;
+    align-items: flex-start;
 }
 
 .containerPartsCardProjectInfo {
-    margin-bottom: 40px;
-    padding: 20px 0;
-    background-color: #1a1a1a;
-    border-radius: 10px;
-    text-align: center; /* Aseguramos centrado del bloque de galería */
+    flex: 2; 
+    order: 1;
+}
+
+.SidePanelWrapper {
+    flex: 1; 
+    order: 2;
+    background: var(--background-card);
+    border-radius: 12px;
+    padding: 30px; /* Más padding interno */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7), 0 0 10px var(--shadow-main);
+    position: sticky;
+    top: 20px; 
+}
+
+/* --- ESTILO DE SECCIÓN --- */
+.SectionTitleCardProjectInfo {
+    font-size: 1.8em;
+    color: var(--accent-blue-light);
+    margin-bottom: 30px;
+    border-left: 5px solid var(--accent-blue-deep);
+    padding-left: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .UlPartsCardProjectInfo {
     list-style: none;
-    padding: 0 10px;
+    padding: 0;
     margin: 0;
-    
-    /* GRID DE 3 COLUMNAS */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    justify-items: center; /* Centra los elementos de la cuadrícula */
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
 }
 
 .LiPartsCardProjectInfo {
-    padding: 15px;
-    background-color: #0a0a0a;
-    border-radius: 8px;
-    border: 1px solid rgba(52, 152, 219, 0.3);
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    height: 100%;
+    padding: 25px;
+    background-color: #0d0d0d; /* Ligero contraste con el fondo base */
+    border-radius: 10px;
+    border-left: 6px solid var(--accent-purple); /* Borde morado de acento */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s, border-color 0.3s;
+}
+.LiPartsCardProjectInfo:hover {
+    transform: translateX(5px); /* Pequeño desplazamiento hacia la derecha */
+    border-color: var(--accent-blue-deep);
 }
 
 .subContainerPartsCardProjectInfo {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center; /* Centrado absoluto de items dentro de la tarjeta */
-}
-
-.ImgPartsCardProjectInfo {
-    width: 100%;
-    max-width: 250px;
-    height: 150px;
-    object-fit: cover;
-    
-    border-radius: 5px;
-    border: 3px solid #3498db;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.ImgPartsCardProjectInfo:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 10px 20px rgb(0, 14, 141);
-    cursor: zoom-in;
+    flex-direction: row;
+    gap: 30px;
+    align-items: flex-start;
 }
 
 .InfoPartsCardProjectInfo {
-    font-size: 0.95em;
-    color: #bdc3c7;
-    line-height: 1.4;
-    padding: 5px 0;
-    max-width: 100%;
-    text-align: center;
+    flex-grow: 1;
+    font-size: 1.05em;
+    color: var(--text-light);
+    line-height: 1.7;
+    text-align: justify;
 }
 
-
-.containerImgPCardProjectInfo {
-    text-align: center;
-    margin-bottom: 30px;
-    padding-top: 20px;
-    border-top: 2px solid #3498db;
+.ImgPartsCardProjectInfo {
+    flex-shrink: 0;
+    width: 200px;
+    height: 120px; 
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--accent-blue-deep);
+    box-shadow: 0 0 10px rgba(0, 162, 255, 0.3);
+    transition: opacity 0.3s;
 }
-.ImgPCardProjectInfo {
-    max-width: 90%;
-    height: auto;
-    border-radius: 10px;
-    border: 2px solid #3498db;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.ImgPCardProjectInfo:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 20px rgb(0, 14, 141);
+.ImgPartsCardProjectInfo:hover {
+    opacity: 0.8;
 }
 
-.containerBtnCloseCardProjectInfo {
-    text-align: center;
-}
-.closeBtnInfoProyecto {
-    padding: 10px 30px;
-    background-color: #3498db;
-    color: #000000;
+/* --- 4. SKILLS EN EL PANEL LATERAL --- */
+.containerSkillsCardProjectInfo {
+    margin-bottom: 40px;
+    padding: 0;
+    background: transparent;
     border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
-.closeBtnInfoProyecto:hover {
-    background-color: transparent;
-    color: #3498db;
-    border: 2px solid #3498db;
+
+.UlSkillsCardProjectInfo {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.LiSkillsCardProjectInfo {
+    /* Basado en LiCarouselProjects */
+    color: #93e9ff;
+    background-color: var(--background-card); 
+    padding: 8px 15px;
+    border-radius: 20px; 
+    font-size: 0.9em;
+    border: 1px solid var(--border-main);
+    transition: all 0.2s ease;
+    box-shadow: inset 0 0 5px rgba(102, 138, 255, 0.5);
+}
+
+.LiSkillsCardProjectInfo:hover {
+    background-color: rgba(90, 230, 255, 0.925);
+    border-color: #000baa;
+    color: #000000;
+    /* Efecto de brillo morado/azul fuerte */
+    box-shadow: 0 0 20px rgba(102, 138, 255, 0.8);
     transform: translateY(-2px);
 }
 
-/* --- 8. Responsividad --- */
-@media (max-width: 900px) {
-    .UlPartsCardProjectInfo {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* --- 5. BOTÓN DE CIERRE --- */
+.containerBtnCloseCardProjectInfo {
+    padding-top: 30px;
+    border-top: 1px solid var(--border-subtle);
+    text-align: center;
+}
+.closeBtnInfoProyecto {
+    width: 100%;
+    padding: 15px 0;
+    background-color: var(--accent-blue-deep);
+    color: var(--background-deep);
+    border: 2px solid var(--accent-blue-deep);
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    /* Sombra de neón suave */
+    box-shadow: 0 0 20px rgba(0, 225, 255, 0.5);
+    transition: all 0.3s ease;
+}
+.closeBtnInfoProyecto:hover {
+    background-color: transparent;
+    color: var(--accent-blue-deep);
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(0, 225, 255, 0.8);
+}
+
+@media (max-width: 1150px) {
+    .ImgPartsCardProjectInfo {
+        width: 150px;
     }
 }
-@media (max-width: 650px) {
+
+@media (max-width: 900px) {
     .allContainerCardProjectInfo {
         padding: 20px;
     }
-    .UlPartsCardProjectInfo {
-        grid-template-columns: 1fr;
+    
+    /* Cambiar de 2 columnas a 1 columna */
+    .ContentGridWrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .SidePanelWrapper {
+        order: -1;
+        position: static;
+        width: 100%;
+    }
+
+    .HeaderAndImageWrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    .containerTitleCardProjectInfo {
+        text-align: center;
+    }
+    .DescriptionCardProjectInfo {
+        text-align: center;
+    }
+
+    .TitleCardProjectInfo {
+        font-size: 2.8em;
+    }
+
+    .containerImgPCardProjectInfo {
+        width: 150px;
+    }
+    
+    /* Partes del proyecto: la imagen se apila sobre el texto */
+    .subContainerPartsCardProjectInfo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
     .ImgPartsCardProjectInfo {
-        max-width: 80%;
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+        cursor: zoom-in;
     }
-    .TitleCardProjectInfo {
-        font-size: 2em;
+
+    .closeBtnInfoProyecto {
+        max-width: 300px;
+        margin: 0 auto;
     }
 }

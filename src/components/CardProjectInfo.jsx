@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from "react-router-dom";
 import "../styles/CardProjectInfo.css"
   import registerBE from "../images/imgSharedReading/registerBE.PNG";
@@ -26,6 +26,27 @@ import "../styles/CardProjectInfo.css"
   import AdminUsersGet from "../images/imgNumbAstro/AdminUsersGet.PNG";
   import UsersChart from "../images/imgNumbAstro/UsersChart.PNG";
   import AdminTasks from "../images/imgNumbAstro/AdminTasks.PNG";
+
+  const ZoomModal = ({ imgSrc, onClose }) => {
+    if (!imgSrc) return null;
+
+    return (
+        <div className='zoomModalOverlay' onClick={onClose}>
+            <div className='zoomModalContent'>
+                {/* La imagen ampliada, previene el cierre si se hace clic en ella */}
+                <img 
+                    src={imgSrc} 
+                    alt="Zoomed Project Detail" 
+                    className='zoomedImage'
+                    // Evita que el clic en la imagen cierre el modal
+                    onClick={(e) => e.stopPropagation()} 
+                />
+                <button className='zoomCloseBtn' onClick={onClose}>X</button>
+            </div>
+        </div>
+    );
+};
+
 
 function CardProjectInfo({projectTitle, onClose }) {
   const projects =[
@@ -161,27 +182,28 @@ function CardProjectInfo({projectTitle, onClose }) {
     }
   };
 
+  const [zoomedImgSrc, setZoomedImgSrc] = useState(null);
+  const openZoom = (src) => {
+    setZoomedImgSrc(src);
+  };
+  const closeZoom = ()=>{
+    setZoomedImgSrc(null);
+  }
+
   return (
 
     <div className='modalOverlay' onClick={handleOutside}>
       <div className='allContainerCardProjectInfo'>
+     
+
         <div className='containerTitleCardProjectInfo'>
         <h1 className='TitleCardProjectInfo'>{project.title}</h1>
         <p className='DescriptionCardProjectInfo'>{project.description} </p>
         </div>
 
-        <div className='containerPartsCardProjectInfo'>
-        <ul className='UlPartsCardProjectInfo'>
-          {project.partsPage.map((partsPage, index) =>(
-            <li className='LiPartsCardProjectInfo' key={index}>
-              <div className='subContainerPartsCardProjectInfo'>
-                <p className='InfoPartsCardProjectInfo'>{partsPage.info}</p>
-                <img className='ImgPartsCardProjectInfo' src={partsPage.imgSrc} alt={`Detalle de ${partsPage.info}`} height={250} width={250}/>
-              </div>
-            </li>
-          ))}
-        </ul>
-        </div>
+        {/* <div className='containerImgPCardProjectInfo'>
+            <img className='ImgPCardProjectInfo' src={project.src} alt={project.title} />
+            </div> */}
 
         <div className='containerSkillsCardProjectInfo'>
           <ul className='UlSkillsCardProjectInfo'>
@@ -192,10 +214,22 @@ function CardProjectInfo({projectTitle, onClose }) {
           </ul>
         </div>
 
-          <div className='containerImgPCardProjectInfo'>
-          <img className='ImgPCardProjectInfo' src={project.src} alt={project.title} />
-          </div>
+        <div className='containerPartsCardProjectInfo'>
+        <ul className='UlPartsCardProjectInfo'>
+          {project.partsPage.map((partsPage, index) =>(
+            <li className='LiPartsCardProjectInfo' key={index}>
+              <div className='subContainerPartsCardProjectInfo'>
+                <p className='InfoPartsCardProjectInfo'>{partsPage.info}</p>
+                <img className='ImgPartsCardProjectInfo' 
+                onClick={() => openZoom(partsPage.imgSrc)} 
+                src={partsPage.imgSrc} alt={`Detalle de ${partsPage.info}`} height={250} width={250}/>
+              </div>
+            </li>
+          ))}
+        </ul>
+        </div>
 
+          
         <div className='containerBtnCloseCardProjectInfo'>
          <button className="closeBtnInfoProyecto" onClick={onClose}>
           Cerrar
@@ -203,6 +237,7 @@ function CardProjectInfo({projectTitle, onClose }) {
         </div>
 
       </div>
+      <ZoomModal imgSrc={zoomedImgSrc} onClose={closeZoom} />
     </div>
   )
 }
