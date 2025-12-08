@@ -57,7 +57,7 @@ const cardsProjects =[
     github:"https://github.com/JuanDiegoCC02/Agenda-Numb-Astro.git",
     languages:"HTML, CSS and JavaScript ",
     framework:"React, React Router, Next.js and Apexchart",
-    back_end:"Json, Node.js, Local Storage and Cookies",
+    back_end:"DBJson, Node.js, Local Storage and Cookies",
     tools:"VS Code, GitHub, Trello, Slack and Canva",
      imagesProjects: [
       {src: homeNA, alt: "Image Home"},
@@ -127,14 +127,7 @@ function CarouselProjects() {
         <p className='DescriptionProject'>{project.description}</p>
       </div>
 
-      <div className='ContainerStudyOfProject'>
-        <ul className='UlCarouselProjects'>
-          <li className='LiCarouselProjects'>Languages <br /> {project.languages} </li>
-          <li className='LiCarouselProjects'>Framework <br /> {project.framework} </li>
-          <li className='LiCarouselProjects'>Back-End <br /> {project.back_end} </li>
-          <li className='LiCarouselProjects'>Tools <br /> {project.tools} </li>
-        </ul>
-      </div>
+    
 
       <div className='ContainerAllCardsCarousel'>
         <div className='ContainerImagesProject'>
@@ -146,15 +139,16 @@ function CarouselProjects() {
         <div className='ContainerHRCarouselrojects'><hr className='HRCarouselProjects'/></div>
 
         <div className='ContainerIMGandLinkCarouselProjects'>
+           <div className='containerBtnCarouselProjects'>
+          <button className='btnLeft' onClick={prevMainSlide}> ⬅️ Proyecto Anterior </button>
+          <button className='btnRight' onClick={nextMainSlide}> Proyecto Siguiente ➡️ </button>
+          </div><br />
           <div className='ContainerImgCarouselProjects'>
             <img className='ImgCarouselProjects' src={project.src} alt={project.title} /> <br />
             <a className='LinkGithubCarouselProjects' href={project.github} >GitHub</a>
           </div>
 
-          <div className='containerBtnCarouselProjects'>
-          <button className='btnLeft' onClick={prevMainSlide}> ⬅️ Proyecto Anterior </button>
-          <button className='btnRight' onClick={nextMainSlide}> Proyecto Siguiente ➡️ </button>
-          </div>
+          
         </div>
 
         {modalOpen && selectedProjectTitle && (

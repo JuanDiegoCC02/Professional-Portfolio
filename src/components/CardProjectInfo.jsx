@@ -116,7 +116,7 @@ function CardProjectInfo({projectTitle, onClose }) {
     description:"Description of page",
     partsPage: [
        {
-         info:"Register: The website has a registration section so that users can create a user account.",
+         info:"Register: The Numb Astro website has a registration section so users can create a user account.",
          imgSrc: registerNA
        },
         {
@@ -124,43 +124,43 @@ function CardProjectInfo({projectTitle, onClose }) {
          imgSrc: logInNA
        },
        {
-         info:"Home: .",
+         info:"Home: Numb Astro's website has a home section where users can see a carousel that explains how the website works and its main objectives.",
          imgSrc: homeNA
        },
        {
-         info:"Form Tasks: ",
+         info:"Form Tasks: Numb Astro's website has a task form section where users can create tasks or habits they want to start working on.",
          imgSrc: taskFormNA
        },
        {
-         info:"Get Tasks Schedule: ",
+         info:"Get Tasks Schedule: Numb Astro's website has a calendar section where users can view their record of tasks or habits, as well as update, delete, or complete them.",
          imgSrc: taskAgendaNA
        },
        {
-         info:"Star Map: ",
+         info:"Star Map: The Numb Astro website has a star map section where users can track their progress on this space journey by completing tasks and earning new stars.",
          imgSrc: starMapNA
        },
        {
-         info:"Star Loot: ",
+         info:"Star Loot: The Numb Astro website has a star loot section where users will obtain star memories as they complete goals on the star map.",
          imgSrc: starLootNA
        },
         {
-         info:"Profile: ",
+         info:"Profile: The Numb Astro website has a profile section where users can find basic information about themselves, as well as a star counter and a card with the title of their current advancement status.",
          imgSrc: profileNA
        },
         {
-         info:"Contact Us: ",
+         info:"Contact Us: The Numb Astro website has a contact us section where users can get our official contact information as well as a brief description of our site and our goals.",
          imgSrc: contactUsNA
        },
         {
-         info:"Administration Users: ",
+         info:"User Administration : The Numb Astro website has a section for user moderation and administration to maintain the structure and stability of the website.",
          imgSrc: AdminUsersGet
        },
         {
-         info:"Administration Chart Users: ",
+         info:"User Administration Charts: Numb Astro's website has a section for user graphs to maintain the structure and stability of the website.",
          imgSrc: UsersChart
        },
         {
-         info:"Administration Charts Tasks: ",
+         info:"Task Administration Charts: Numb Astro's website has a section for task graphs to track website performance, comparison, and stability.",
          imgSrc: AdminTasks
        }
       ],
