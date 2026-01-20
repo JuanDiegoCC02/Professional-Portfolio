@@ -5,18 +5,18 @@
     max-width: 900px;
     margin: 50px auto;
     padding: 40px;
+    margin-top: 7%;
 
-    /* Fondo base negro y bordes */
+ 
     background-color: #000000;
     border-radius: 12px;
     border: 2px groove rgb(1, 0, 12);
 
-    /* Efecto de brillo/sombra exterior */
     box-shadow: 
         0 10px 25px rgb(0, 3, 151), 
         0 0 0 5px rgba(5, 0, 22, 0.89);
 
-    /* Animación de entrada */
+
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInSlide 0.8s ease-out forwards;
@@ -43,8 +43,8 @@
 .titleAboutMe {
     font-size: 2.2em;
     margin: 0;
-    letter-spacing: 2px;
-    text-transform: uppercase; /* Para darle más fuerza */
+    letter-spacing: 1px;
+
     color: #d5ecff;
     
     /* Efecto de texto neón morado/azul */
