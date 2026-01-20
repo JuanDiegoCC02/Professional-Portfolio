@@ -17,8 +17,8 @@ function CardHomeProfile() {
 
       <div className='CardHomeInfoP'>
         <h1 className='TitleNameHome'>Juan Diego Corella Camacho</h1>
-        <p className='InfoStudyHome'>Developer Web Full Stack</p>
-        <p className='InfoIdeaHome'>Innovation, Creativity and Connection</p>
+        <p className='InfoStudyHome'>Front-End and Back-End Developer Web</p>
+        <p className='InfoIdeaHome'>Innovation, Connection and Creativity</p>
       </div>
 
     </div>
