@@ -1,0 +1,92 @@
+/* --- Contenedor Principal Flotante --- */
+.TotalNavPortfolio {
+    position: fixed;
+    top: 20px; /* Separado del borde superior para efecto flotante */
+    left: 50%;
+    transform: translateX(-50%); /* Centrado horizontal exacto */
+    width: auto;
+    min-width: 400px;
+    height: 55px;
+    z-index: 2000;
+    
+    /* Efecto Cristal (Glassmorphism) */
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Bordes y Sombras Neón */
+    border: 1px solid rgba(0, 225, 255, 0.3);
+    border-radius: 30px; /* Bordes redondeados modernos */
+    box-shadow: 0 4px 20px rgba(0, 36, 196, 0.4);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
+}
+
+/* --- Lista de Enlaces --- */
+.UlNavPortfolio {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 40px; /* Espacio generoso entre links */
+    padding: 0;
+    margin: 0;
+}
+
+/* --- Estilo de los Enlaces (NavLinks) --- */
+.LiNavPortfolio {
+    display: flex;
+    align-items: center;
+}
+
+.LiNavPortfolio a {
+    text-decoration: none;
+    color: #aaaaaa;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Efecto Hover */
+.LiNavPortfolio a:hover {
+    color: #00d9ff;
+    text-shadow: 0 0 8px #00d9ff;
+}
+
+/* --- Indicador de Página Activa (NavLink de React Router) --- */
+.LiNavPortfolio .active {
+    color: #00d9ff !important;
+    font-weight: bold;
+}
+
+/* Bolita neón debajo del activo */
+.LiNavPortfolio .active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: #00d9ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+}
+
+/* --- Ajuste para Móviles --- */
+@media (max-width: 600px) {
+    .TotalNavPortfolio {
+        width: 90%;
+        min-width: unset;
+        bottom: 20px; /* En móviles queda mejor abajo tipo dock de iPhone */
+        top: auto;
+    }
+    .UlNavPortfolio {
+        gap: 20px;
+    }
+}

@@ -4,7 +4,6 @@ import FooterPortfolio from '../components/FooterPortfolio'
 import CardHomeProfile from '../components/CardHomeProfile'
 import CardHomeAboutMe from '../components/CardHomeAboutMe'
 
-import { motion } from 'framer-motion';
 import CarouselHomeProjects from '../components/CarouselHomeProjects'
 
 function Home() {
