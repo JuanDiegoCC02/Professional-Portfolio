@@ -1,20 +1,27 @@
 import React from 'react'
 import "../styles/NavPortfolioTest.css";
-import { NavLink } from 'react-router-dom';
 
-function NavPortfolioTest() {
+function NavPortfolioTest({ onNavigate, activeIndex }) {
   return (
     <nav className='TotalNavPortfolio'>
         <ul className='UlNavPortfolio'>
-            {/* NavLink detecta automáticamente la ruta y pone la clase 'active' */}
             <li className='LiNavPortfolio'> 
-              <NavLink to="/homeTest" className={({ isActive }) => isActive ? "active" : ""}>Home</NavLink> 
+              <button 
+                onClick={() => onNavigate(0)} 
+                className={activeIndex === 0 ? "active" : ""}
+              >Home</button> 
             </li>
             <li className='LiNavPortfolio'> 
-              <NavLink to="/profile" className={({ isActive }) => isActive ? "active" : ""}>Profile</NavLink> 
+              <button 
+                onClick={() => onNavigate(1)} 
+                className={activeIndex === 1 ? "active" : ""}
+              >Profile</button> 
             </li>
             <li className='LiNavPortfolio'> 
-              <NavLink to="/projects" className={({ isActive }) => isActive ? "active" : ""}>Projects</NavLink> 
+              <button 
+                onClick={() => onNavigate(2)} 
+                className={activeIndex === 2 ? "active" : ""}
+              >Projects</button> 
             </li>
         </ul>
     </nav>
