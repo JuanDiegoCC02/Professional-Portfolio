@@ -7,14 +7,20 @@ function CardProfileMyInfo() {
 
         <div className='ContainerTitleCardPrfoile'>
             <h1 className='TitleNameCardProfile'>Juan Diego Corella Camacho</h1>
-            <h2 className='subTitleWorkCardProfile'>Developer Full Stack</h2>
+            <h2 className='subTitleWorkCardProfile'>Front-End & Back-End Developer</h2>
         </div>
 
         <div className='ContainerMyInfoCardProfile'>
             <h3 className='AboutMeTitleCardProfile'>About me</h3>
-            <p className='DescriptionCardProfile'> I am a Full Stack programmer with a solid background in both front-end and back-end.</p>
+            <p className='DescriptionCardProfile'> 
+                I'm a Front-End and Back-End developer with a strong foundation in React and Django. 
+                I also have experience in other areas such as GitHub, MySQL, and WordPress.
+            </p>
             
-             <p className='DescriptionCardProfile'>I consider myself a passionate person, eager to learn new technologies and apply them to create functional, intuitive, and efficient solutions. I also consider myself detail-oriented, focused on quality, and stable, capable of working effectively both under pressure and as part of a team.</p>
+             <p className='DescriptionCardProfile'>
+                I consider myself a passionate person, eager to learn constantly, seeking more experience, and I enjoy being supportive and helpful. 
+                I'm also detail-oriented, focused on quality, and reliable, capable of working effectively both under pressure and as part of a team.
+             </p>
         </div>
 
     <div className='AllContainerStudiesCardProfile'>

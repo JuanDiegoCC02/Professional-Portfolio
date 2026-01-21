@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import CardHomeAboutMe from '../components/CardHomeAboutMe'; 
 import CarouselHomeProjects from '../components/CarouselHomeProjects';
 import CardHomeProfile from '../components/CardHomeProfile';
 import NavPortfolioTest from '../components/NavPortfolioTest'; 
 import "../styles/HomePage.css";
+import CardProfileMyInfo from '../components/CardProfileMyInfo';
 
 const HomeTest = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,7 +22,7 @@ const HomeTest = () => {
     const interval = setInterval(() => {
       const nextIndex = (currentIndex + 1) % sectionRefs.length;
       scrollToSection(nextIndex);
-    }, 8000); // Subí a 8s para que no interrumpa tanto si el usuario hace clic
+    }, 50000); // Subí a 8s para que no interrumpa tanto si el usuario hace clic
 
     return () => clearInterval(interval);
   }, [currentIndex]);
@@ -38,7 +38,7 @@ const HomeTest = () => {
         </section>
         
         <section ref={sectionRefs[1]} className="section-vignette">
-          <CardHomeAboutMe />
+          <CardProfileMyInfo />
         </section>
         
         <section ref={sectionRefs[2]} className="section-vignette">
