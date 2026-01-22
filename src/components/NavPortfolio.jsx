@@ -1,14 +1,28 @@
 import React from 'react'
 import "../styles/NavPortfolio.css";
-import { NavLink } from 'react-router-dom';
 
-function NavPortfolio() {
+function NavPortfolio({ onNavigate, activeIndex }) {
   return (
     <nav className='TotalNavPortfolio'>
         <ul className='UlNavPortfolio'>
-            <li className='LiNavPortfolio'> <NavLink to="/">Home</NavLink> </li>
-            <li className='LiNavPortfolio'> <NavLink to="/profile">Profile</NavLink> </li>
-            <li className='LiNavPortfolio'> <NavLink to="/projects">Projects</NavLink> </li>
+            <li className='LiNavPortfolio'> 
+              <button 
+                onClick={() => onNavigate(0)} 
+                className={activeIndex === 0 ? "active" : ""}
+              >Home</button> 
+            </li>
+            <li className='LiNavPortfolio'> 
+              <button 
+                onClick={() => onNavigate(1)} 
+                className={activeIndex === 1 ? "active" : ""}
+              >Profile</button> 
+            </li>
+            <li className='LiNavPortfolio'> 
+              <button 
+                onClick={() => onNavigate(2)} 
+                className={activeIndex === 2 ? "active" : ""}
+              >Projects</button> 
+            </li>
         </ul>
     </nav>
   )

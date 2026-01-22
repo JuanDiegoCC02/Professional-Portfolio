@@ -1,11 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import CarouselHomeProjects from '../components/CarouselHomeProjects';
 import CardHomeProfile from '../components/CardHomeProfile';
-import NavPortfolioTest from '../components/NavPortfolioTest'; 
+import NavPortfolio from '../components/NavPortfolio'; 
 import "../styles/HomePage.css";
 import CardProfileMyInfo from '../components/CardProfileMyInfo';
+import FooterPortfolio from '../components/FooterPortfolio';
+import CarouselProjects from '../components/CarouselProjects';
 
-const HomeTest = () => {
+const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRefs = [useRef(null), useRef(null), useRef(null)];
 
@@ -30,7 +32,7 @@ const HomeTest = () => {
   return (
     <>
       {/* Pasamos la función al Nav */}
-      <NavPortfolioTest onNavigate={scrollToSection} activeIndex={currentIndex} />
+      <NavPortfolio onNavigate={scrollToSection} activeIndex={currentIndex} />
       
       <div className="portfolio-container">
         <section ref={sectionRefs[0]} className="section-vignette">
@@ -42,11 +44,15 @@ const HomeTest = () => {
         </section>
         
         <section ref={sectionRefs[2]} className="section-vignette">
-          <CarouselHomeProjects />
+          <CarouselProjects />
         </section>
       </div>
+
+      <footer>
+        <FooterPortfolio/>
+      </footer>
     </>
   );
 };
 
-export default HomeTest;
+export default Home;

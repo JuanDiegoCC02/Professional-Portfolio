@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Projects from '../pages/Projects';
-import HomeTest from '../pages/HomeTest';
+import Home from '../pages/Home';
 
 
 
@@ -11,9 +10,7 @@ function Routing() {
      
       <Router >
         <Routes>
-          <Route path="/" element={<HomeTest />} />
-          <Route path="/projects" element={<Projects/>} />
-          
+          <Route path="/" element={<Home />} />
         </Routes>
       </Router>
     </div>

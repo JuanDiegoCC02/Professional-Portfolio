@@ -19,3 +19,57 @@
     /* Empuja el contenido del componente hacia abajo */
     padding-top: 80px; 
 }
+
+/* Solo el fondo del contenedor principal */
+.portfolio-container {
+    position: relative;
+    background-color: #000a12; /* Color base oscuro */
+    background-attachment: fixed;
+    z-index: 1;
+}
+
+/* Capa de Rejilla Tecnológica Animada */
+.portfolio-container::before {
+    content: "";
+    position: fixed; /* Se queda quieto mientras haces scroll */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    /* Dibujamos la rejilla con gradientes */
+    background-image: 
+        linear-gradient(rgba(0, 217, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 217, 255, 0.05) 1px, transparent 1px);
+    background-size: 45px 45px;
+    
+    /* Efecto de máscara para que se desvanezca en los bordes */
+    mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+    
+    z-index: -1; /* Se va al fondo de todo */
+    pointer-events: none; /* No interfiere con los clics */
+}
+
+/* Efecto de resplandor en movimiento (Nebulosa sutil) */
+.portfolio-container::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+        rgba(0, 89, 255, 0.15) 0%, 
+        transparent 50%
+    );
+    z-index: -1;
+    pointer-events: none;
+    animation: auroraMove 10s ease-in-out infinite alternate;
+}
+
+@keyframes auroraMove {
+    0% { transform: scale(1) translate(-5%, -5%); }
+    100% { transform: scale(1.2) translate(5%, 5%); }
+}
