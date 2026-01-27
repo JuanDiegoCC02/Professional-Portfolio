@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import CarouselHomeProjects from '../components/CarouselHomeProjects';
 import CardHomeProfile from '../components/CardHomeProfile';
 import NavPortfolio from '../components/NavPortfolio'; 
 import "../styles/HomePage.css";
 import CardProfileMyInfo from '../components/CardProfileMyInfo';
 import FooterPortfolio from '../components/FooterPortfolio';
 import CarouselProjects from '../components/CarouselProjects';
+import CarouselHomeProjects from '../components/CarouselHomeProjects';
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,6 +37,7 @@ const Home = () => {
       <div className="portfolio-container">
         <section ref={sectionRefs[0]} className="section-vignette">
           <CardHomeProfile />
+          <CarouselHomeProjects/>
         </section>
         
         <section ref={sectionRefs[1]} className="section-vignette">

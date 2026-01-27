@@ -1,0 +1,127 @@
+/* Variables de paleta de colores (Ajusta los hex según tu chat anterior) */
+:root {
+  --bg-card: #1a1a1e;           /* Fondo oscuro profundo */
+  --accent-color: #00d4ff;      /* Tu color de acento (ej. Azul cyan o Púrpura) */
+  --text-main: #ffffff;
+  --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Contenedor General */
+.projects-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.projects-container h3 {
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  font-family: 'Inter', sans-serif; /* O la que uses en tu portfolio */
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+/* El Carrousel Pequeño */
+.custom-carousel {
+  position: relative;
+  max-width: 700px;         /* Tamaño controlado para el Home */
+  height: 350px;            /* Altura fija para que no salte el contenido */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;      /* Bordes muy redondeados (moderno) */
+  background: var(--bg-card);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); /* Sombra para dar relieve */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: var(--transition-smooth);
+  transform: scale(1.05); /* Efecto de zoom leve al entrar */
+}
+
+.carousel-item.active {
+  opacity: 1;
+  transform: scale(1);    /* Regresa a su tamaño original */
+  z-index: 1;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* Evita que la imagen se deforme */
+  filter: brightness(0.8);
+}
+
+/* Botones Flotantes Minimalistas */
+.control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.control:hover {
+  background: var(--accent-color);
+  box-shadow: 0 0 15px var(--accent-color);
+  border-color: transparent;
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
+
+/* Indicadores tipo Píldora */
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--accent-color);
+  width: 20px;            /* Se estira cuando está activo */
+  border-radius: 10px;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .custom-carousel {
+    max-width: 95%;
+    height: 250px;
+  }
+}
