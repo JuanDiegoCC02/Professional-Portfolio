@@ -38,19 +38,41 @@ const cardsProjects =[
     back_end:"Json, Node.js, Local Storage and Cookies",
     tools:"VS Code, GitHub, Trello, Slack and Figma",
     imagesProjects: [
-      {src: homeBE, alt: "Image Home"},
-      {src: formBooksBE, alt: "Image SharedReading"},
-      {src: newBooksBE, alt: "Image SharedReading"},
-      {src: favBooksBE, alt: "Image SharedReading"},
-      {src: contactUsBE, alt: "Image SharedReading"},
-      {src: profileBE, alt: "Image SharedReading"},
-      {src: AdminUsersBE, alt: "Image SharedReading"},
-      {src: UsersChartBE, alt: "Image SharedReading"},
-      {src: AdminBooksBE, alt: "Image SharedReading"},
-      {src: BooksChartsBE, alt: "Image SharedReading"}
+      {src: homeBE, alt: "Image Home", subDescription:"This is the home of the shared reading website where you will find a welcome message and some of our books available for exchange."},
+      {src: formBooksBE, alt: "Image SharedReading", subDescription:"This is the form to create new book exchange posts."},
+      {src: newBooksBE, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: favBooksBE, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: contactUsBE, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: profileBE, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: AdminUsersBE, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: UsersChartBE, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: AdminBooksBE, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: BooksChartsBE, alt: "Image SharedReading", subDescription:"zzz"}
     ]
   },
   {
+    src:homeNA,
+    title:"Noticias Ambientales C.R.",
+    description:"A web-based planner platform with a galactic space design and atmosphere, the platform features the creation of habits or tasks, the option to edit them, mark them as completed or delete them, as well as daily tracking and rewards for motivation.",
+    github:"https://github.com/JuanDiegoCC02/Agenda-Numb-Astro.git",
+    languages:"HTML, CSS and JavaScript ",
+    framework:"React, React Router, Next.js and Apexchart",
+    back_end:"DJango, Node.js, Local Storage and Cookies",
+    tools:"VS Code, GitHub, Trello, Slack and Canva",
+     imagesProjects: [
+      {src: homeNA, alt: "Image Home", subDescription:"zzz"},
+      {src: contactUsNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: taskFormNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: taskAgendaNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: starMapNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: starLootNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: profileNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: AdminUsersGet, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: UsersChart, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: AdminTasks, alt: "Image NumbAstro", subDescription:"zzz"}
+    ]
+  },
+   {
     src:homeNA,
     title:"Numb Astro",
     description:"A web-based planner platform with a galactic space design and atmosphere, the platform features the creation of habits or tasks, the option to edit them, mark them as completed or delete them, as well as daily tracking and rewards for motivation.",
@@ -60,16 +82,16 @@ const cardsProjects =[
     back_end:"DBJson, Node.js, Local Storage and Cookies",
     tools:"VS Code, GitHub, Trello, Slack and Canva",
      imagesProjects: [
-      {src: homeNA, alt: "Image Home"},
-      {src: contactUsNA, alt: "Image NumbAstro"},
-      {src: taskFormNA, alt: "Image NumbAstro"},
-      {src: taskAgendaNA, alt: "Image NumbAstro"},
-      {src: starMapNA, alt: "Image NumbAstro"},
-      {src: starLootNA, alt: "Image NumbAstro"},
-      {src: profileNA, alt: "Image NumbAstro"},
-      {src: AdminUsersGet, alt: "Image NumbAstro"},
-      {src: UsersChart, alt: "Image NumbAstro"},
-      {src: AdminTasks, alt: "Image NumbAstro"}
+      {src: homeNA, alt: "Image Home", subDescription:"zzz"},
+      {src: contactUsNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: taskFormNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: taskAgendaNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: starMapNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: starLootNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: profileNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: AdminUsersGet, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: UsersChart, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: AdminTasks, alt: "Image NumbAstro", subDescription:"zzz"}
     ]
   }
 
@@ -131,7 +153,8 @@ function CarouselProjects() {
 
       <div className='ContainerAllCardsCarousel'>
         <div className='ContainerImagesProject'>
-          <img className='ImagesProjectCarousel' src={project.imagesProjects[secondaryIndex].src} onClick={openModal}  alt={project.imagesProjects[secondaryIndex].alt} />
+          <img className='ImagesProjectCarousel' src={project.imagesProjects[secondaryIndex].src}   alt={project.imagesProjects[secondaryIndex].alt} />
+          <p>{project.imagesProjects[secondaryIndex].subDescription}</p>
            <button className='btnImgLeft' onClick={prevSecondarySlide}> ⬅️ </button>
            <button className='btnImgRight' onClick={nextSecondarySlide}> ➡️ </button>
         </div>
@@ -142,11 +165,10 @@ function CarouselProjects() {
            <div className='containerBtnCarouselProjects'>
           <button className='btnLeft' onClick={prevMainSlide}> ⬅️ Proyecto Anterior </button>
           <button className='btnRight' onClick={nextMainSlide}> Proyecto Siguiente ➡️ </button>
-          </div><br />
-          <div className='ContainerImgCarouselProjects'>
-            <img className='ImgCarouselProjects' src={project.src} alt={project.title} /> <br />
-            <a className='LinkGithubCarouselProjects' href={project.github} >GitHub</a>
           </div>
+          <div className='ContainerImgCarouselProjects'>
+            <a className='LinkGithubCarouselProjects' href={project.github} >GitHub</a>
+          </div><br />
 
           
         </div>

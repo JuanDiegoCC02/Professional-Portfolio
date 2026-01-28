@@ -38,11 +38,11 @@ const Home = () => {
         <section ref={sectionRefs[0]} className="section-vignette">
           <CardHomeProfile />
           <CarouselHomeProjects onImageClick={() => scrollToSection(2)}/>
-        </section>
+        </section><br />
         
         <section ref={sectionRefs[1]} className="section-vignette">
           <CardProfileMyInfo />
-        </section>
+        </section><br />
         
         <section ref={sectionRefs[2]} className="section-vignette">
           <CarouselProjects />
