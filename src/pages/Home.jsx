@@ -37,7 +37,7 @@ const Home = () => {
       <div className="portfolio-container">
         <section ref={sectionRefs[0]} className="section-vignette">
           <CardHomeProfile />
-          <CarouselHomeProjects/>
+          <CarouselHomeProjects onImageClick={() => scrollToSection(2)}/>
         </section>
         
         <section ref={sectionRefs[1]} className="section-vignette">

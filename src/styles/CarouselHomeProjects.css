@@ -1,127 +1,197 @@
-/* Variables de paleta de colores (Ajusta los hex según tu chat anterior) */
-:root {
-  --bg-card: #1a1a1e;           /* Fondo oscuro profundo */
-  --accent-color: #00d4ff;      /* Tu color de acento (ej. Azul cyan o Púrpura) */
-  --text-main: #ffffff;
-  --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Contenedor General */
+/* --- Contenedor Principal (Basado en tu estilo AllCarouselProjects) --- */
 .projects-container {
-  padding: 20px;
-  text-align: center;
+    max-width: 1100px; 
+    margin: 50px auto; 
+    padding: 40px;
+    background-color: #000000; 
+    color: #ecf0f1; 
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgb(0, 3, 151), 0 0 0 5px rgba(5, 0, 22, 0.89); 
+    text-align: center;
+    position: relative; 
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlide 0.8s ease-out forwards;
 }
 
-.projects-container h3 {
-  color: var(--text-main);
-  margin-bottom: 1.5rem;
-  font-family: 'Inter', sans-serif; /* O la que uses en tu portfolio */
-  font-size: 1.8rem;
-  letter-spacing: 1px;
+@keyframes fadeInSlide {
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* El Carrousel Pequeño */
+/* --- Título de Sección --- */
+.containerTitleProjectsCr {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #00e1ff; 
+}
+
+.titleProjectsCr {
+    font-size: 2.5em;
+    color: #d5ecff;
+    text-shadow: 0 0 10px #7a00ff, 0 0 20px #1696ff;
+    margin: 0;
+}
+
+/* --- Estructura del Carrusel (Grande) --- */
 .custom-carousel {
-  position: relative;
-  max-width: 700px;         /* Tamaño controlado para el Home */
-  height: 350px;            /* Altura fija para que no salte el contenido */
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 20px;      /* Bordes muy redondeados (moderno) */
-  background: var(--bg-card);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); /* Sombra para dar relieve */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    max-width: 1000px; 
+    height: 600px; /* Tamaño aumentado */
+    margin: 0 auto; 
+    overflow: hidden; 
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgb(0, 3, 151), 0 0 0 5px rgba(5, 0, 22, 0.89); 
+    border: 3px groove #001947;
+    background-color: #001620;
 }
 
 .carousel-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .carousel-item {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: var(--transition-smooth);
-  transform: scale(1.05); /* Efecto de zoom leve al entrar */
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Empuja info al fondo */
+    box-sizing: border-box;
 }
 
 .carousel-item.active {
-  opacity: 1;
-  transform: scale(1);    /* Regresa a su tamaño original */
-  z-index: 1;
+    opacity: 1;
+    visibility: visible;
 }
 
-.carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;      /* Evita que la imagen se deforme */
-  filter: brightness(0.8);
+/* --- Imagen de Fondo --- */
+.imgCarouselHome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.5); /* Ajuste de brillo para legibilidad */
+    transition: transform 0.5s ease;
+    cursor: pointer;
 }
 
-/* Botones Flotantes Minimalistas */
+/* --- Bloque de Información (HUD inferior) --- */
+.titleCarouselHome, .descriptionCarouselHome, .containerToolsCarouselHome {
+    position: relative;
+    z-index: 5; /* Por encima de la imagen */
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: left;
+}
+
+.titleCarouselHome {
+    font-size: 2.1em;
+    color: #afdbff;
+    text-shadow: 0 0 10px #7a00ff, 0 0 20px #1696ff;
+    margin: 0 0 10px 0;
+}
+
+.descriptionCarouselHome {
+    font-size: 1.05em;
+    color: #93e9ff;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 80%;
+    text-shadow: 0 2px 4px #000;
+}
+
+.containerToolsCarouselHome {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 50px; /* Margen extra para no chocar con los indicadores */
+}
+
+.infoToolCarouselHome {
+    font-size: 0.85em;
+    color: #93e9ff;
+    background-color: rgb(4, 0, 24); 
+    padding: 6px 15px;
+    border-radius: 20px;
+    border: 1px solid #668aff;
+    margin: 0;
+}
+
+/* --- Botones / Flechas (Separados de la info) --- */
 .control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
+    position: absolute;
+    top: 40%; /* Subidos para separarlos del bloque de texto inferior */
+    transform: translateY(-50%);
+    background-color: rgba(0, 162, 255, 0.3);
+    color: #55c1ff; 
+    border: 1px solid #00e1ff;
+    padding: 15px 12px;
+    font-size: 1.8em;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+    transition: 0.3s;
 }
 
 .control:hover {
-  background: var(--accent-color);
-  box-shadow: 0 0 15px var(--accent-color);
-  border-color: transparent;
+    background-color: #7bb0ff; 
+    color: #000;
+    box-shadow: 0 0 15px #00e1ff;
 }
 
-.prev { left: 15px; }
-.next { right: 15px; }
+.prev { left: 20px; }
+.next { right: 20px; }
 
-/* Indicadores tipo Píldora */
+/* --- Indicadores --- */
 .carousel-indicators {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 10;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
 }
 
 .dot {
-  width: 8px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: all 0.3s ease;
+    width: 20px;
+    height: 4px;
+    background-color: rgba(4, 0, 24, 0.8);
+    border: 1px solid #6ed6ff;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .dot.active {
-  background: var(--accent-color);
-  width: 20px;            /* Se estira cuando está activo */
-  border-radius: 10px;
+    background-color: #6ed6ff;
+    width: 40px;
+    box-shadow: 0 0 10px #6ed6ff;
 }
 
-/* Ajuste para móviles */
-@media (max-width: 768px) {
-  .custom-carousel {
-    max-width: 95%;
-    height: 250px;
-  }
+/* --- RESPONSIVO --- */
+@media (max-width: 900px) {
+    .projects-container { max-width: 90%; padding: 25px; }
+    .custom-carousel { height: 500px; }
+    .titleCarouselHome { font-size: 1.8em; }
+    .control { top: 35%; padding: 10px; } /* Ajuste de botones en tablet */
+}
+
+@media (max-width: 600px) {
+    .custom-carousel { height: 550px; } /* Más alto para que quepa el texto */
+    .titleCarouselHome { font-size: 1.5em; padding-left: 20px; }
+    .descriptionCarouselHome { font-size: 0.9em; padding-left: 20px; max-width: 100%; }
+    .containerToolsCarouselHome { padding-left: 20px; }
+    
+    .control { 
+        top: 30%; /* Flechas más arriba en móvil */
+        font-size: 1.3em;
+    }
 }
