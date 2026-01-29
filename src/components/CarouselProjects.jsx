@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import "../styles/CarouselProjects.css"
 
   import homeBE from "../images/imgSharedReading/homeBE.PNG";
@@ -50,28 +51,6 @@ const cardsProjects =[
       {src: BooksChartsBE, alt: "Image SharedReading", subDescription:"zzz"}
     ]
   },
-  {
-    src:homeNA,
-    title:"Noticias Ambientales C.R.",
-    description:"A web-based planner platform with a galactic space design and atmosphere, the platform features the creation of habits or tasks, the option to edit them, mark them as completed or delete them, as well as daily tracking and rewards for motivation.",
-    github:"https://github.com/JuanDiegoCC02/Agenda-Numb-Astro.git",
-    languages:"HTML, CSS and JavaScript ",
-    framework:"React, React Router, Next.js and Apexchart",
-    back_end:"DJango, Node.js, Local Storage and Cookies",
-    tools:"VS Code, GitHub, Trello, Slack and Canva",
-     imagesProjects: [
-      {src: homeNA, alt: "Image Home", subDescription:"zzz"},
-      {src: contactUsNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: taskFormNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: taskAgendaNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: starMapNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: starLootNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: profileNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: AdminUsersGet, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: UsersChart, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: AdminTasks, alt: "Image NumbAstro", subDescription:"zzz"}
-    ]
-  },
    {
     src:homeNA,
     title:"Numb Astro",
@@ -93,15 +72,37 @@ const cardsProjects =[
       {src: UsersChart, alt: "Image NumbAstro", subDescription:"zzz"},
       {src: AdminTasks, alt: "Image NumbAstro", subDescription:"zzz"}
     ]
+  },
+  {
+    src:homeNA,
+    title:"Noticias Ambientales C.R.",
+    description:"A web-based planner platform with a galactic space design and atmosphere, the platform features the creation of habits or tasks, the option to edit them, mark them as completed or delete them, as well as daily tracking and rewards for motivation.",
+    github:"https://github.com/JuanDiegoCC02/Agenda-Numb-Astro.git",
+    languages:"HTML, CSS and JavaScript ",
+    framework:"React, React Router, Next.js and Apexchart",
+    back_end:"DJango, Node.js, Local Storage and Cookies",
+    tools:"VS Code, GitHub, Trello, Slack and Canva",
+     imagesProjects: [
+      {src: homeNA, alt: "Image Home", subDescription:"zzz"},
+      {src: contactUsNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: taskFormNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: taskAgendaNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: starMapNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: starLootNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: profileNA, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: AdminUsersGet, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: UsersChart, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: AdminTasks, alt: "Image NumbAstro", subDescription:"zzz"}
+    ]
   }
-
 ]
 
-function CarouselProjects() {
-  const [mainIndex, setMainIndex] = useState(0)
+function CarouselProjects({externalIndex, setExternalIndex}) {
+  const location = useLocation ();
   const [secondaryIndex, setSecondaryIndex] = useState(0)
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedProjectTitle, setSelectedProjectTitle] = useState(null)
+  const mainIndex = externalIndex;
 
   const openModal = () => {
     setSelectedProjectTitle(cardsProjects[mainIndex].title);
@@ -114,14 +115,14 @@ function CarouselProjects() {
   }
 
   const nextMainSlide = () => {
-    setMainIndex((prevIndex) => (
+    setExternalIndex((prevIndex) => (
     prevIndex === cardsProjects.length - 1 ? 0 : prevIndex + 1
     ));
     setSecondaryIndex(0); 
   }
 
   const prevMainSlide = () => {
-    setMainIndex((prevIndex) => (
+    setExternalIndex((prevIndex) => (
     prevIndex === 0 ? cardsProjects.length - 1 : prevIndex - 1
     ));
     setSecondaryIndex(0);
@@ -140,6 +141,21 @@ function CarouselProjects() {
     prevIndex === 0 ? project.imagesProjects.length - 1 : prevIndex - 1
     ));
   }
+
+  useEffect(() => {
+    if (location.state && typeof location.state.projectIndex === "number") {
+      const indexReceived = location.state.projectIndex;
+      if (indexReceived < cardsProjects.length) {
+        setMainIndex(indexReceived)
+      }
+    }
+  }, [location])
+
+  //Reset secondaryIndex, if !mainIndex
+  useEffect(() => {
+    setSecondaryIndex(0);
+  }, [mainIndex]);
+
   return (
 
     <div className='AllCarouselProjects'>

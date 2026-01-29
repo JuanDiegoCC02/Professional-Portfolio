@@ -10,6 +10,7 @@ import '../styles//CarouselHomeProjects.css'; // Asegúrate de pegar aquí el CS
 function CarouselHomeProjects({onImageClick}) {
   // 1. Creamos un estado para controlar qué slide se ve
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   // Lista de tus proyectos (puedes añadir más aquí fácilmente)
   const projects = [
@@ -33,6 +34,11 @@ function CarouselHomeProjects({onImageClick}) {
 
     { id: 3, img: "tu-proyecto-3.jpg", alt: "Proyecto 3" },
   ];
+
+  const handleImageClick = () => {
+    // Navegamos a la ruta de proyectos pasando el índice actual
+    navigate('/projects', { state: { projectIndex: currentSlide } });
+  };
 
   // 2. Funciones para cambiar de slide
   const moveSlide = (step) => {
@@ -58,7 +64,7 @@ function CarouselHomeProjects({onImageClick}) {
               key={project.id}
               className={`carousel-item ${index === currentSlide ? 'active' : ''}`}
             >
-             <img className='imgCarouselHome' src={project.img} alt={project.alt} onClick={onImageClick}/>
+             <img className='imgCarouselHome' src={project.img} alt={project.alt} onClick={() => onImageClick(currentSlide)}/>
               <h3 className='titleCarouselHome'>{project.title}</h3>
               <p className='descriptionCarouselHome'>{project.description}</p>
 

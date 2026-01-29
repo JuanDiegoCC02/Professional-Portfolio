@@ -10,6 +10,7 @@ import CarouselHomeProjects from '../components/CarouselHomeProjects';
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRefs = [useRef(null), useRef(null), useRef(null)];
+  const [selectedProject, setSelectedProject] = useState(0);
 
   // FUNCIÓN PARA HACER SCROLL MANUAL DESDE EL NAV
   const scrollToSection = (index) => {
@@ -18,6 +19,11 @@ const Home = () => {
       behavior: 'smooth',
       block: 'start',
     });
+  };
+
+  const handleProjectClick = (projectIndex) => {
+    setSelectedProject(projectIndex); // Cambia el proyecto
+    scrollToSection(2); // Hace scroll a la sección de CarouselProjects
   };
 
   useEffect(() => {
@@ -37,7 +43,7 @@ const Home = () => {
       <div className="portfolio-container">
         <section ref={sectionRefs[0]} className="section-vignette">
           <CardHomeProfile />
-          <CarouselHomeProjects onImageClick={() => scrollToSection(2)}/>
+          <CarouselHomeProjects onImageClick={handleProjectClick}/>
         </section><br />
         
         <section ref={sectionRefs[1]} className="section-vignette">
@@ -45,7 +51,10 @@ const Home = () => {
         </section><br />
         
         <section ref={sectionRefs[2]} className="section-vignette">
-          <CarouselProjects />
+          <CarouselProjects
+          externalIndex={selectedProject} 
+          setExternalIndex={setSelectedProject}
+          />
         </section>
       </div>
 
