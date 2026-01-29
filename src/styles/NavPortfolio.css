@@ -69,6 +69,7 @@
     font-weight: 700;
 }
 
+
 /* La bolita neón debajo del activo */
 .LiNavPortfolio button.active::after {
     content: '';

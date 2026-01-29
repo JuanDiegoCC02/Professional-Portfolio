@@ -9,10 +9,10 @@ import CarouselHomeProjects from '../components/CarouselHomeProjects';
 
 const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const sectionRefs = [useRef(null), useRef(null), useRef(null)];
   const [selectedProject, setSelectedProject] = useState(0);
+  const sectionRefs = [useRef(null), useRef(null), useRef(null)];
 
-  // FUNCIÓN PARA HACER SCROLL MANUAL DESDE EL NAV
+  // scroll manual
   const scrollToSection = (index) => {
     setCurrentIndex(index);
     sectionRefs[index].current?.scrollIntoView({
@@ -22,38 +22,74 @@ const Home = () => {
   };
 
   const handleProjectClick = (projectIndex) => {
-    setSelectedProject(projectIndex); // Cambia el proyecto
-    scrollToSection(2); // Hace scroll a la sección de CarouselProjects
+    setSelectedProject(projectIndex);
+    scrollToSection(2);
   };
 
+  // logic reading nav Section
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      //margin For avoid navigation reading errors
+      rootMargin: '-20% 0px -70% 0px', 
+      threshold: 0, 
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = sectionRefs.findIndex(ref => ref.current === entry.target);
+          if (index !== -1) {
+            setCurrentIndex(index);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sectionRefs.forEach(ref => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => observer.disconnect();
+  }, []); 
+
+  // autoScroll
   useEffect(() => {
     const interval = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % sectionRefs.length;
-      scrollToSection(nextIndex);
-    }, 50000); // Subí a 8s para que no interrumpa tanto si el usuario hace clic
+      setCurrentIndex((prev) => {
+        const nextIndex = (prev + 1) % sectionRefs.length;
+        // IMPORTANT -->No llamar a scrollToSection aquí directamente para evitar bucles de estado
+        sectionRefs[nextIndex].current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        return nextIndex;
+      });
+    }, 35000);
 
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, []); 
 
   return (
     <>
-      {/* Pasamos la función al Nav */}
       <NavPortfolio onNavigate={scrollToSection} activeIndex={currentIndex} />
       
       <div className="portfolio-container">
         <section ref={sectionRefs[0]} className="section-vignette">
-          <CardHomeProfile />
+          <CardHomeProfile onNavigate={scrollToSection}/>
           <CarouselHomeProjects onImageClick={handleProjectClick}/>
-        </section><br />
+        </section>
         
         <section ref={sectionRefs[1]} className="section-vignette">
           <CardProfileMyInfo />
-        </section><br />
+        </section>
         
         <section ref={sectionRefs[2]} className="section-vignette">
           <CarouselProjects
-          externalIndex={selectedProject} 
-          setExternalIndex={setSelectedProject}
+            externalIndex={selectedProject} 
+            setExternalIndex={setSelectedProject}
           />
         </section>
       </div>

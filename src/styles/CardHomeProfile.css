@@ -41,6 +41,7 @@
     object-fit: cover; 
    box-shadow: 0 4px 15px rgb(25, 0, 255);
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .FtProfileHome:hover {

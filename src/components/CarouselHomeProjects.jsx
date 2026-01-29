@@ -54,7 +54,7 @@ function CarouselHomeProjects({onImageClick}) {
   return (
     <div className="projects-container">
       <div className='containerTitleProjectsCr'>
-        <h2 className='titleProjectsCr'>Projects</h2>
+        <h2 className='titleProjectsCr'>Jobs</h2>
       </div>
 
       <div className="custom-carousel">
