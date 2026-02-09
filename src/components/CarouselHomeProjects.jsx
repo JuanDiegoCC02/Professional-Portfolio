@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import homeNA from "../images/imgNumbAstro/homeNA.PNG";
-import homeBE from "../images/imgSharedReading/homeBE.PNG";
+import homeNA from "../images/imgNumbAstro/homeNA.png";
+import homeSR from "../images/imgSharedReading/homeSR.png";
+import homeTL from "../images/imgTodoList/homeTL.png";
+import inicioNoticiasCR from "../images/imgNoticiasCR/inicioNoticiasCR.png";
 
-import '../styles//CarouselHomeProjects.css'; // Asegúrate de pegar aquí el CSS que hicimos
+
+import '../styles//CarouselHomeProjects.css'; 
 
 
 function CarouselHomeProjects({onImageClick}) {
@@ -15,7 +18,7 @@ function CarouselHomeProjects({onImageClick}) {
   // Lista de tus proyectos (puedes añadir más aquí fácilmente)
   const projects = [
     {  id: 1,
-       img:homeBE,
+       img:homeSR,
        title:"Shared Reading",
        description:"Shared Reading It's a web platform for exchanging books, built with React, that connects book lovers. Our goal is to give new life to those books you've already read, encouraging reading & promoting social interaction among readers through a culture of sharing.",
        languages:"HTML, CSS & JavaScript",
@@ -32,7 +35,23 @@ function CarouselHomeProjects({onImageClick}) {
         back_end:"DBJson, Node.js, Local Storage & Cookies",
         tools:"VS Code, GitHub, Trello, Slack & Canva"},
 
-    { id: 3, img: "tu-proyecto-3.jpg", alt: "Proyecto 3" },
+    {  id: 3, 
+        img:homeTL,
+        title:"Recipe TodoList",
+        description:" description ",
+        languages:"HTML, CSS & JavaScript ",
+        framework:"React, React Router, Next.js & Apexchart",
+        back_end:"DBJson, Node.js, Local Storage & Cookies",
+        tools:"VS Code, GitHub, Trello, Slack & Canva"},
+
+    {  id: 3, 
+        img:inicioNoticiasCR,
+        title:"Noticias Ambientales C.R.",
+        description:" description ",
+        languages:"HTML, CSS & JavaScript ",
+        framework:"React, React Router, Next.js & Apexchart",
+        back_end:"Django, Node.js, Local Storage & Cookies",
+        tools:"VS Code, GitHub, Trello, Slack & Canva"},
   ];
 
   const handleImageClick = () => {

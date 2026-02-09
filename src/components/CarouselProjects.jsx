@@ -2,27 +2,36 @@ import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import "../styles/CarouselProjects.css"
 
-  import homeBE from "../images/imgSharedReading/homeBE.PNG";
-  import formBooksBE from "../images/imgSharedReading/formBooksBE.PNG";
-  import newBooksBE from "../images/imgSharedReading/newBooksBE.PNG";
-  import favBooksBE from "../images/imgSharedReading/favBooksBE.PNG";
-  import contactUsBE from "../images/imgSharedReading/contactUsBE.PNG";
-  import profileBE from "../images/imgSharedReading/profileBE.PNG";
-  import AdminUsersBE from "../images/imgSharedReading/AdminUsersBE.PNG";
-  import UsersChartBE from "../images/imgSharedReading/UsersChartBE.PNG";
-  import AdminBooksBE from "../images/imgSharedReading/AdminBooksBE.PNG";
-  import BooksChartsBE from "../images/imgSharedReading/BooksChartsBE.PNG";
+  import homeSR from "../images/imgSharedReading/homeSR.png";
+  import formSR from "../images/imgSharedReading/formSR.png";
+  import newBooksSR from "../images/imgSharedReading/newBooksSR.png";
+  import favBooksSR from "../images/imgSharedReading/favBooksSR.png";
+  import contactUsSR from "../images/imgSharedReading/contactUsSR.png";
+  import profileSR from "../images/imgSharedReading/profileSR.png";
+  import AdminUsersSR from "../images/imgSharedReading/AdminUsersSR.png";
+  import chartUsersSR from "../images/imgSharedReading/chartUsersSR.png";
+  import AdminBooksSR from "../images/imgSharedReading/AdminBooksSR.png";
+  import chartsBooksSR from "../images/imgSharedReading/chartsBooksSR.png";
 
-  import homeNA from "../images/imgNumbAstro/homeNA.PNG";
-  import contactUsNA from "../images/imgNumbAstro/contactUsNA.PNG";
-  import taskFormNA from "../images/imgNumbAstro/taskFormNA.PNG";
-  import taskAgendaNA from "../images/imgNumbAstro/taskAgendaNA.PNG";
-  import starMapNA from "../images/imgNumbAstro/starMapNA.PNG";
-  import starLootNA from "../images/imgNumbAstro/starLootNA.PNG";
-  import profileNA from "../images/imgNumbAstro/profileNA.PNG";
-  import AdminUsersGet from "../images/imgNumbAstro/AdminUsersGet.PNG";
-  import UsersChart from "../images/imgNumbAstro/UsersChart.PNG";
-  import AdminTasks from "../images/imgNumbAstro/AdminTasks.PNG";
+  import homeNA from "../images/imgNumbAstro/homeNA.png";
+  import contactUsNA from "../images/imgNumbAstro/contactUsNA.png";
+  import taskFormNA from "../images/imgNumbAstro/taskFormNA.png";
+  import taskAgendaNA from "../images/imgNumbAstro/taskAgendaNA.png";
+  import starMapNA from "../images/imgNumbAstro/starMapNA.png";
+  import starLootNA from "../images/imgNumbAstro/starLootNA.png";
+  import profileNA from "../images/imgNumbAstro/profileNA.png";
+  import AdminUsersGet from "../images/imgNumbAstro/AdminUsersGet.png";
+  import UsersChart from "../images/imgNumbAstro/UsersChart.png";
+  import AdminTasks from "../images/imgNumbAstro/AdminTasks.png";
+
+  import homeTL from "../images/imgTodoList/homeTL.png";
+  import registerTL from "../images/imgTodoList/registerTL.png";
+  import logInTL from "../images/imgTodoList/logInTL.png";
+  import formTL from "../images/imgTodoList/formTL.png";
+  import listTL from "../images/imgTodoList/listTL.png";
+  import recipeTL from "../images/imgTodoList/recipeTL.png";
+  import stepTL from "../images/imgTodoList/stepTL.png";
+
 
 import CardProjectInfo from './CardProjectInfo';
 
@@ -30,7 +39,7 @@ import CardProjectInfo from './CardProjectInfo';
 const cardsProjects =[
 
   {
-    src:homeBE,
+    src:homeSR,
     title:"Shared Reading",
     description:"Shared Reading It's a web platform for exchanging books, built with React, that connects book lovers. Our goal is to give new life to those books you've already read, encouraging reading and promoting social interaction among readers through a culture of sharing.",
     github:"https://github.com/JuanDiegoCC02/books-exchange.git",
@@ -39,16 +48,16 @@ const cardsProjects =[
     back_end:"Json, Node.js, Local Storage and Cookies",
     tools:"VS Code, GitHub, Trello, Slack and Figma",
     imagesProjects: [
-      {src: homeBE, alt: "Image Home", subDescription:"This is the home of the shared reading website where you will find a welcome message and some of our books available for exchange."},
-      {src: formBooksBE, alt: "Image SharedReading", subDescription:"This is the form to create new book exchange posts."},
-      {src: newBooksBE, alt: "Image SharedReading", subDescription:"zzz"},
-      {src: favBooksBE, alt: "Image SharedReading", subDescription:"zzz"},
-      {src: contactUsBE, alt: "Image SharedReading", subDescription:"zzz"},
-      {src: profileBE, alt: "Image SharedReading", subDescription:"zzz"},
-      {src: AdminUsersBE, alt: "Image SharedReading", subDescription:"zzz"},
-      {src: UsersChartBE, alt: "Image SharedReading", subDescription:"zzz"},
-      {src: AdminBooksBE, alt: "Image SharedReading", subDescription:"zzz"},
-      {src: BooksChartsBE, alt: "Image SharedReading", subDescription:"zzz"}
+      {src: homeSR, alt: "Image Home", subDescription:"This is the home of the shared reading website where you will find a welcome message and some of our books available for exchange."},
+      {src: formSR, alt: "Image SharedReading", subDescription:"This is the form to create new book exchange posts."},
+      {src: newBooksSR, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: favBooksSR, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: contactUsSR, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: profileSR, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: AdminUsersSR, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: chartUsersSR, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: AdminBooksSR, alt: "Image SharedReading", subDescription:"zzz"},
+      {src: chartsBooksSR, alt: "Image SharedReading", subDescription:"zzz"}
     ]
   },
    {
@@ -71,6 +80,26 @@ const cardsProjects =[
       {src: AdminUsersGet, alt: "Image NumbAstro", subDescription:"zzz"},
       {src: UsersChart, alt: "Image NumbAstro", subDescription:"zzz"},
       {src: AdminTasks, alt: "Image NumbAstro", subDescription:"zzz"}
+    ]
+  },
+    {
+    src:homeTL,
+    title:"Recipes TodoList",
+    description:" description",
+    github:"https://github.com/JuanDiegoCC02/Todo-List-React.git",
+    languages:"HTML, CSS and JavaScript ",
+    framework:"React, React Router, Next.js and Apexchart",
+    back_end:"DBJson, Node.js, Local Storage and Cookies",
+    tools:"VS Code, GitHub, Trello, Slack and Canva",
+     imagesProjects: [
+      {src: homeTL, alt: "Image Home", subDescription:"zzz"},
+      {src: registerTL, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: logInTL, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: formTL, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: listTL, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: recipeTL, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: stepTL, alt: "Image NumbAstro", subDescription:"zzz"},
+  
     ]
   },
   {

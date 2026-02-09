@@ -1,31 +1,41 @@
 import React, { useState } from 'react'
 import { useParams } from "react-router-dom";
 import "../styles/CardProjectInfo.css"
-  import registerBE from "../images/imgSharedReading/registerBE.PNG";
-  import LogInBE from "../images/imgSharedReading/LogInBE.PNG";
-  import homeBE from "../images/imgSharedReading/homeBE.PNG";
-  import formBooksBE from "../images/imgSharedReading/formBooksBE.PNG";
-  import newBooksBE from "../images/imgSharedReading/newBooksBE.PNG";
-  import favBooksBE from "../images/imgSharedReading/favBooksBE.PNG";
-  import contactUsBE from "../images/imgSharedReading/contactUsBE.PNG";
-  import profileBE from "../images/imgSharedReading/profileBE.PNG";
-  import AdminUsersBE from "../images/imgSharedReading/AdminUsersBE.PNG";
-  import UsersChartBE from "../images/imgSharedReading/UsersChartBE.PNG";
-  import AdminBooksBE from "../images/imgSharedReading/AdminBooksBE.PNG";
-  import BooksChartsBE from "../images/imgSharedReading/BooksChartsBE.PNG";
+  import registerSR from "../images/imgSharedReading/registerSR.png";
+  import logInSR from "../images/imgSharedReading/logInSR.png";
+  import homeSR from "../images/imgSharedReading/homeSR.png";
+  import formSR from "../images/imgSharedReading/formSR.png";
+  import newBooksSR from "../images/imgSharedReading/newBooksSR.png";
+  import favBooksSR from "../images/imgSharedReading/favBooksSR.png";
+  import contactUsSR from "../images/imgSharedReading/contactUsSR.png";
+  import profileSR from "../images/imgSharedReading/profileSR.png";
+  import AdminUsersSR from "../images/imgSharedReading/AdminUsersSR.png";
+  import chartUsersSR from "../images/imgSharedReading/chartUsersSR.png";
+  import AdminBooksSR from "../images/imgSharedReading/AdminBooksSR.png";
+  import chartsBooksSR from "../images/imgSharedReading/chartsBooksSR.png";
 
-  import registerNA from "../images/imgNumbAstro/registerNA.PNG";
-  import logInNA from "../images/imgNumbAstro/logInNA.PNG";
-  import homeNA from "../images/imgNumbAstro/homeNA.PNG";
-  import contactUsNA from "../images/imgNumbAstro/contactUsNA.PNG";
-  import taskFormNA from "../images/imgNumbAstro/taskFormNA.PNG";
-  import taskAgendaNA from "../images/imgNumbAstro/taskAgendaNA.PNG";
-  import starMapNA from "../images/imgNumbAstro/starMapNA.PNG";
-  import starLootNA from "../images/imgNumbAstro/starLootNA.PNG";
-  import profileNA from "../images/imgNumbAstro/profileNA.PNG";
-  import AdminUsersGet from "../images/imgNumbAstro/AdminUsersGet.PNG";
-  import UsersChart from "../images/imgNumbAstro/UsersChart.PNG";
-  import AdminTasks from "../images/imgNumbAstro/AdminTasks.PNG";
+  import registerNA from "../images/imgNumbAstro/registerNA.png";
+  import logInNA from "../images/imgNumbAstro/logInNA.png";
+  import homeNA from "../images/imgNumbAstro/homeNA.png";
+  import contactUsNA from "../images/imgNumbAstro/contactUsNA.png";
+  import taskFormNA from "../images/imgNumbAstro/taskFormNA.png";
+  import taskAgendaNA from "../images/imgNumbAstro/taskAgendaNA.png";
+  import starMapNA from "../images/imgNumbAstro/starMapNA.png";
+  import starLootNA from "../images/imgNumbAstro/starLootNA.png";
+  import profileNA from "../images/imgNumbAstro/profileNA.png";
+  import AdminUsersGet from "../images/imgNumbAstro/AdminUsersGet.png";
+  import UsersChart from "../images/imgNumbAstro/UsersChart.png";
+  import AdminTasks from "../images/imgNumbAstro/AdminTasks.png";
+
+  import homeTL from "../images/imgTodoList/homeTL.png";
+  import registerTL from "../images/imgTodoList/registerTL.png";
+  import logInTL from "../images/imgTodoList/logInTL.png";
+  import formTL from "../images/imgTodoList/formTL.png";
+  import listTL from "../images/imgTodoList/listTL.png";
+  import recipeTL from "../images/imgTodoList/recipeTL.png";
+  import stepTL from "../images/imgTodoList/stepTL.png";
+
+
 
   const ZoomModal = ({ imgSrc, onClose }) => {
     if (!imgSrc) return null;
@@ -51,57 +61,57 @@ import "../styles/CardProjectInfo.css"
 function CardProjectInfo({projectTitle, onClose }) {
   const projects =[
     {
-      src: homeBE,
+      src: homeSR,
       title: "Shared Reading",
       description:"Description of page",
       partsPage: [
         {
           info:"Register: The Shared Reading website has a registration form for users to create a user account.",
-          imgSrc: registerBE
+          imgSrc: registerSR
         },
         {
           info:"Log In: The Shared Reading website has a login for users to enter their respective credentials and, through validations, verify that their credentials are correct.",
-          imgSrc: LogInBE
+          imgSrc: logInSR
         },
         {
           info:"Home: The Shared Reading website has a homepage that displays a navigation menu and a brief explanation of what the site is and its goal, as well as showing in a column some of the books that users have uploaded to the site.",
-          imgSrc: homeBE
+          imgSrc: homeSR
         },
          {
           info:"Form Books: The Shared Reading website has a Books form where users can post books they are interested in exchanging on the website. ",
-          imgSrc: formBooksBE
+          imgSrc: formSR
         },
         {
           info:"New Books Schedule: The Shared Reading website has a section where you can view the latest books published on the site, as well as a search bar to find all the published books using filters. ",
-          imgSrc: newBooksBE
+          imgSrc: newBooksSR
         },
         {
           info:"Favorite Books: The Shared Reading website has a section where users can view the books they have saved as favorites in their profile.",
-          imgSrc: favBooksBE
+          imgSrc: favBooksSR
         },
            {
           info:"Profile: The Shared Reading website has a Profile for each user with basic information about each user and a counter of the number of exchanges that each respective user has made.",
-          imgSrc: profileBE
+          imgSrc: profileSR
         },
         {
           info:"Contact Us: The Shared Reading website has a contact section where information about Shared Reading is provided, along with ways to contact the site owners for any assistance with the website. ",
-          imgSrc: contactUsBE
+          imgSrc: contactUsSR
         },
            {
           info:"Administration Users: The Shared Reading website has a User Administration section where everything related to users and their profiles will be moderated and made secure. ",
-          imgSrc: AdminUsersBE
+          imgSrc: AdminUsersSR
         },
          {
           info:"Chart Users: The Shared Reading website has a user graph section to record user logins and their numbers, as well as to provide order and structure to moderation. ",
-          imgSrc: UsersChartBE
+          imgSrc: chartUsersSR
         },
          {
           info:"Administration Books:  The Shared Reading website has a Book Management section where you can find everything related to the published books, including information about the users who created the publication, with a focus on moderation and security.",
-          imgSrc: AdminBooksBE
+          imgSrc: AdminBooksSR
         },
            {
           info:"Charts Books: The Shared Reading website has a book charts section to record book publications and their numbers in exchanges, thus providing order and structure to moderation. ",
-          imgSrc: BooksChartsBE
+          imgSrc: chartsBooksSR
         },
       ],
     languages:"HTML, CSS and JavaScript",
@@ -168,6 +178,45 @@ function CardProjectInfo({projectTitle, onClose }) {
     framework:"React, React Router, Next.js and Apexchart",
     back_end:"Json, Node.js, Local Storage and Cookies",
     tools:"VS Code, GitHub, Trello, Slack and Canva",
+    },
+     {
+      src: homeTL,
+      title: "Recipes Cooking TodoList",
+      description:"Description of page",
+      partsPage: [
+        {
+          info:"Register ",
+          imgSrc: registerTL
+        },
+        {
+          info:"Log In",
+          imgSrc: logInTL
+        },
+        {
+          info:"Home ",
+          imgSrc: homeTL
+        },
+         {
+          info:"Form  ",
+          imgSrc: formTL
+        },
+        {
+          info:" List ",
+          imgSrc: listTL
+        },
+        {
+          info:"Recipe ",
+          imgSrc: recipeTL
+        },
+           {
+          info:"Step ",
+          imgSrc: stepTL
+        },
+      ],
+    languages:"HTML, CSS and JavaScript",
+    framework:"React, React Router, Next.js and ApexChart ",
+    back_end:"Json, Node.js, Local Storage and Cookies",
+    tools:"VS Code, GitHub, Trello, Slack and Figma",
     },
   ];
 
