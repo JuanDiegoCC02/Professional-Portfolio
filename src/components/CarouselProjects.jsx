@@ -29,8 +29,11 @@ import "../styles/CarouselProjects.css"
   import logInTL from "../images/imgTodoList/logInTL.png";
   import formTL from "../images/imgTodoList/formTL.png";
   import listTL from "../images/imgTodoList/listTL.png";
-  import recipeTL from "../images/imgTodoList/recipeTL.png";
-  import stepTL from "../images/imgTodoList/stepTL.png";
+  import newStepTL from "../images/imgTodoList/newStepTL.png";
+  import editStepTL from "../images/imgTodoList/editStepTL.png";
+
+  import inicioNoticiasCR from "../images/imgNoticiasCR/inicioNoticiasCR.png";
+
 
 
 import CardProjectInfo from './CardProjectInfo';
@@ -84,7 +87,7 @@ const cardsProjects =[
   },
     {
     src:homeTL,
-    title:"Recipes TodoList",
+    title:"Recipes To-Do List",
     description:" description",
     github:"https://github.com/JuanDiegoCC02/Todo-List-React.git",
     languages:"HTML, CSS and JavaScript ",
@@ -97,13 +100,13 @@ const cardsProjects =[
       {src: logInTL, alt: "Image NumbAstro", subDescription:"zzz"},
       {src: formTL, alt: "Image NumbAstro", subDescription:"zzz"},
       {src: listTL, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: recipeTL, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: stepTL, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: newStepTL, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: editStepTL, alt: "Image NumbAstro", subDescription:"zzz"},
   
     ]
   },
   {
-    src:homeNA,
+    src:inicioNoticiasCR,
     title:"Noticias Ambientales C.R.",
     description:"A web-based planner platform with a galactic space design and atmosphere, the platform features the creation of habits or tasks, the option to edit them, mark them as completed or delete them, as well as daily tracking and rewards for motivation.",
     github:"https://github.com/JuanDiegoCC02/Agenda-Numb-Astro.git",
@@ -112,7 +115,7 @@ const cardsProjects =[
     back_end:"DJango, Node.js, Local Storage and Cookies",
     tools:"VS Code, GitHub, Trello, Slack and Canva",
      imagesProjects: [
-      {src: homeNA, alt: "Image Home", subDescription:"zzz"},
+      {src: inicioNoticiasCR, alt: "Image Home", subDescription:"zzz"},
       {src: contactUsNA, alt: "Image NumbAstro", subDescription:"zzz"},
       {src: taskFormNA, alt: "Image NumbAstro", subDescription:"zzz"},
       {src: taskAgendaNA, alt: "Image NumbAstro", subDescription:"zzz"},

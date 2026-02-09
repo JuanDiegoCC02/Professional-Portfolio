@@ -32,8 +32,8 @@ import "../styles/CardProjectInfo.css"
   import logInTL from "../images/imgTodoList/logInTL.png";
   import formTL from "../images/imgTodoList/formTL.png";
   import listTL from "../images/imgTodoList/listTL.png";
-  import recipeTL from "../images/imgTodoList/recipeTL.png";
-  import stepTL from "../images/imgTodoList/stepTL.png";
+  import newStepTL from "../images/imgTodoList/newStepTL.png";
+  import editStepTL from "../images/imgTodoList/editStepTL.png";
 
 
 
@@ -206,11 +206,11 @@ function CardProjectInfo({projectTitle, onClose }) {
         },
         {
           info:"Recipe ",
-          imgSrc: recipeTL
+          imgSrc: newStepTL
         },
            {
           info:"Step ",
-          imgSrc: stepTL
+          imgSrc: editStepTL
         },
       ],
     languages:"HTML, CSS and JavaScript",

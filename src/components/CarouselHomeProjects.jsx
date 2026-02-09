@@ -37,7 +37,7 @@ function CarouselHomeProjects({onImageClick}) {
 
     {  id: 3, 
         img:homeTL,
-        title:"Recipe TodoList",
+        title:"Recipes To-Do List",
         description:" description ",
         languages:"HTML, CSS & JavaScript ",
         framework:"React, React Router, Next.js & Apexchart",
