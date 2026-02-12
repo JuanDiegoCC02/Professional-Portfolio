@@ -55,22 +55,7 @@ const Home = () => {
     return () => observer.disconnect();
   }, []); 
 
-  // autoScroll
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => {
-        const nextIndex = (prev + 1) % sectionRefs.length;
-        // IMPORTANT -->No llamar a scrollToSection aquí directamente para evitar bucles de estado
-        sectionRefs[nextIndex].current?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-        return nextIndex;
-      });
-    }, 35000);
 
-    return () => clearInterval(interval);
-  }, []); 
 
   return (
     <>

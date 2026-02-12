@@ -54,10 +54,6 @@ function CarouselHomeProjects({onImageClick}) {
         tools:"VS Code, GitHub, Trello, Slack & Canva"},
   ];
 
-  const handleImageClick = () => {
-    // Navegamos a la ruta de proyectos pasando el índice actual
-    navigate('/projects', { state: { projectIndex: currentSlide } });
-  };
 
   // 2. Funciones para cambiar de slide
   const moveSlide = (step) => {
@@ -73,7 +69,7 @@ function CarouselHomeProjects({onImageClick}) {
   return (
     <div className="projects-container">
       <div className='containerTitleProjectsCr'>
-        <h2 className='titleProjectsCr'>Jobs</h2>
+        <h2 className='titleProjectsCr'>Web Sites</h2>
       </div>
 
       <div className="custom-carousel">
