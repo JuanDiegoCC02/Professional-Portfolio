@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import homeNA from "../images/imgNumbAstro/homeNA.png";
 import homeSR from "../images/imgSharedReading/homeSR.png";
 import homeTL from "../images/imgTodoList/homeTL.png";
 import inicioNoticiasCR from "../images/imgNoticiasCR/inicioNoticiasCR.png";
-
 
 import '../styles//CarouselHomeProjects.css'; 
 
@@ -13,7 +11,6 @@ import '../styles//CarouselHomeProjects.css';
 function CarouselHomeProjects({onImageClick}) {
   // 1. Creamos un estado para controlar qué slide se ve
   const [currentSlide, setCurrentSlide] = useState(0);
-  const navigate = useNavigate();
 
   // Lista de tus proyectos (puedes añadir más aquí fácilmente)
   const projects = [
@@ -27,6 +24,15 @@ function CarouselHomeProjects({onImageClick}) {
        tools:"VS Code, GitHub, Trello, Slack & Figma"},
 
     {  id: 2, 
+        img:inicioNoticiasCR,
+        title:"Noticias Ambientales C.R.",
+        description:" description ",
+        languages:"HTML, CSS & JavaScript ",
+        framework:"React, React Router, Next.js & Apexchart",
+        back_end:"Django, Node.js, Local Storage & Cookies",
+        tools:"VS Code, GitHub, Trello, Slack & Canva"},
+
+    {  id: 3, 
         img:homeNA,
         title:"Numb Astro",
         description:"A web-based planner platform with a galactic space design & atmosphere, the platform features the creation of habits or tasks, the option to edit them, mark them as completed or delete them, as well as daily tracking & rewards for motivation.",
@@ -35,7 +41,7 @@ function CarouselHomeProjects({onImageClick}) {
         back_end:"DBJson, Node.js, Local Storage & Cookies",
         tools:"VS Code, GitHub, Trello, Slack & Canva"},
 
-    {  id: 3, 
+    {  id: 4, 
         img:homeTL,
         title:"Recipes To-Do List",
         description:" description ",
@@ -44,14 +50,7 @@ function CarouselHomeProjects({onImageClick}) {
         back_end:"DBJson, Node.js, Local Storage & Cookies",
         tools:"VS Code, GitHub, Trello, Slack & Canva"},
 
-    {  id: 3, 
-        img:inicioNoticiasCR,
-        title:"Noticias Ambientales C.R.",
-        description:" description ",
-        languages:"HTML, CSS & JavaScript ",
-        framework:"React, React Router, Next.js & Apexchart",
-        back_end:"Django, Node.js, Local Storage & Cookies",
-        tools:"VS Code, GitHub, Trello, Slack & Canva"},
+  
   ];
 
 

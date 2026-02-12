@@ -56,6 +56,7 @@ import CardProjectInfo from './CardProjectInfo';
 
 const cardsProjects =[
 
+  //Shared Reading
   {
     src:homeSR,
     title:"Shared Reading",
@@ -78,6 +79,34 @@ const cardsProjects =[
       {src: chartsBooksSR, alt: "Image SharedReading", subDescription:"zzz"}
     ]
   },
+
+  //News CR
+  {
+    src:inicioNoticiasCR,
+    title:"Noticias Ambientales C.R.",
+    description:"A web-based planner platform with a galactic space design and atmosphere, the platform features the creation of habits or tasks, the option to edit them, mark them as completed or delete them, as well as daily tracking and rewards for motivation.",
+    github:"https://github.com/JuanDiegoCC02/Pagina-Web-Noticias-Ambientales-C.R..git",
+    languages:"HTML, CSS and JavaScript ",
+    framework:"React, React Router, Next.js and Apexchart",
+    back_end:"DJango, Node.js, Local Storage and Cookies",
+    tools:"VS Code, GitHub, Trello, Slack and Canva",
+     imagesProjects: [
+      {src: inicioNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: registroNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: inicioSesionNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: contactoNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: formNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: perfilNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: menuAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: TNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: TUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: TContactosNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: graficoAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: graficoUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"}
+    ]
+  },
+
+  //Numb Astro
    {
     src:homeNA,
     title:"Numb Astro",
@@ -100,6 +129,8 @@ const cardsProjects =[
       {src: AdminTasks, alt: "Image NumbAstro", subDescription:"zzz"}
     ]
   },
+
+  //Recipes ToDo-List 
     {
     src:homeTL,
     title:"Recipes To-Do List",
@@ -120,30 +151,7 @@ const cardsProjects =[
   
     ]
   },
-  {
-    src:inicioNoticiasCR,
-    title:"Noticias Ambientales C.R.",
-    description:"A web-based planner platform with a galactic space design and atmosphere, the platform features the creation of habits or tasks, the option to edit them, mark them as completed or delete them, as well as daily tracking and rewards for motivation.",
-    github:"https://github.com/JuanDiegoCC02/Agenda-Numb-Astro.git",
-    languages:"HTML, CSS and JavaScript ",
-    framework:"React, React Router, Next.js and Apexchart",
-    back_end:"DJango, Node.js, Local Storage and Cookies",
-    tools:"VS Code, GitHub, Trello, Slack and Canva",
-     imagesProjects: [
-      {src: inicioNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: registroNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: inicioSesionNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: contactoNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: formNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: perfilNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: menuAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: TNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: TUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: TContactosNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: graficoAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: graficoUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"}
-    ]
-  }
+
 ]
 
 function CarouselProjects({externalIndex, setExternalIndex}) {
@@ -232,7 +240,7 @@ function CarouselProjects({externalIndex, setExternalIndex}) {
           <button className='btnRight' onClick={nextMainSlide}> Proyecto Siguiente ➡️ </button>
           </div>
           <div className='ContainerImgCarouselProjects'>
-            <a className='LinkGithubCarouselProjects' href={project.github} >GitHub</a>
+            <a  className='LinkGithubCarouselProjects' target='blank'  href={project.github} >GitHub</a>
           </div><br />
 
           
