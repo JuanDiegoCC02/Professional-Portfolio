@@ -33,6 +33,21 @@ import "../styles/CarouselProjects.css"
   import editStepTL from "../images/imgTodoList/editStepTL.png";
 
   import inicioNoticiasCR from "../images/imgNoticiasCR/inicioNoticiasCR.png";
+  import registroNoticiasCR from "../images/imgNoticiasCR/registroNoticiasCR.png";
+  import inicioSesionNoticiasCR from "../images/imgNoticiasCR/inicioSesionNoticiasCR.png";
+  import contactoNoticiasCR from "../images/imgNoticiasCR/contactoNoticiasCR.png";
+  import formNoticiasCR from "../images/imgNoticiasCR/formNoticiasCR.png";
+  import perfilNoticiasCR from "../images/imgNoticiasCR/perfilNoticiasCR.png";
+
+
+  import menuAdminNoticiasCR from "../images/imgNoticiasCR/menuAdminNoticiasCR.png";
+  import TNoticiasCR from "../images/imgNoticiasCR/TNoticiasCR.png";
+  import TUsuariosNoticiasCR from "../images/imgNoticiasCR/TUsuariosNoticiasCR.png";
+  import TContactosNoticiasCR from "../images/imgNoticiasCR/TContactosNoticiasCR.png";
+  import graficoAdminNoticiasCR from "../images/imgNoticiasCR/graficoAdminNoticiasCR.png";
+  import graficoUsuariosNoticiasCR from "../images/imgNoticiasCR/graficoUsuariosNoticiasCR.png";
+
+
 
 
 
@@ -115,16 +130,18 @@ const cardsProjects =[
     back_end:"DJango, Node.js, Local Storage and Cookies",
     tools:"VS Code, GitHub, Trello, Slack and Canva",
      imagesProjects: [
-      {src: inicioNoticiasCR, alt: "Image Home", subDescription:"zzz"},
-      {src: contactUsNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: taskFormNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: taskAgendaNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: starMapNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: starLootNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: profileNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: AdminUsersGet, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: UsersChart, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: AdminTasks, alt: "Image NumbAstro", subDescription:"zzz"}
+      {src: inicioNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: registroNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: inicioSesionNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: contactoNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: formNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: perfilNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: menuAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: TNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: TUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: TContactosNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: graficoAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: graficoUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"}
     ]
   }
 ]
