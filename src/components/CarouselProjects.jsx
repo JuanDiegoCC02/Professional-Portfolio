@@ -29,6 +29,7 @@ import "../styles/CarouselProjects.css"
   import logInTL from "../images/imgTodoList/logInTL.png";
   import formTL from "../images/imgTodoList/formTL.png";
   import listTL from "../images/imgTodoList/listTL.png";
+  import editListTL from "../images/imgTodoList/editListTL.png";
   import newStepTL from "../images/imgTodoList/newStepTL.png";
   import editStepTL from "../images/imgTodoList/editStepTL.png";
 
@@ -37,6 +38,7 @@ import "../styles/CarouselProjects.css"
   import inicioSesionNoticiasCR from "../images/imgNoticiasCR/inicioSesionNoticiasCR.png";
   import contactoNoticiasCR from "../images/imgNoticiasCR/contactoNoticiasCR.png";
   import formNoticiasCR from "../images/imgNoticiasCR/formNoticiasCR.png";
+  import ultimasNoticiasCR from "../images/imgNoticiasCR/ultimasNoticiasCR.png";
   import perfilNoticiasCR from "../images/imgNoticiasCR/perfilNoticiasCR.png";
 
 
@@ -96,7 +98,8 @@ const cardsProjects =[
       {src: inicioSesionNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
       {src: contactoNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
       {src: formNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
-      {src: perfilNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: ultimasNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
+      {src: perfilNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},      
       {src: menuAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
       {src: TNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
       {src: TUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:"zzz"},
@@ -146,6 +149,7 @@ const cardsProjects =[
       {src: logInTL, alt: "Image NumbAstro", subDescription:"zzz"},
       {src: formTL, alt: "Image NumbAstro", subDescription:"zzz"},
       {src: listTL, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: editListTL, alt: "Image NumbAstro", subDescription:"zzz"},
       {src: newStepTL, alt: "Image NumbAstro", subDescription:"zzz"},
       {src: editStepTL, alt: "Image NumbAstro", subDescription:"zzz"},
   
