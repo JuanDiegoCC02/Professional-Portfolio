@@ -63,7 +63,7 @@ const cardsProjects =[
     src:homeSR,
     title:"Shared Reading",
     description:"Shared Reading It's a web platform for exchanging books, built with React, that connects book lovers. Our goal is to give new life to those books you've already read, encouraging reading and promoting social interaction among readers through a culture of sharing.",
-    github:"https://github.com/JuanDiegoCC02/books-exchange.git",
+    github:"https://github.com/JuanDiegoCC02/Shared-Reading.git",
     languages:"HTML, CSS and JavaScript",
     framework:"React, React Router, Next.js and ApexChart ",
     back_end:"Json, Node.js, Local Storage and Cookies",
