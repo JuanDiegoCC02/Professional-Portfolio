@@ -4,15 +4,14 @@ import homeNA from "../images/imgNumbAstro/homeNA.png";
 import homeSR from "../images/imgSharedReading/homeSR.png";
 import homeTL from "../images/imgTodoList/homeTL.png";
 import inicioNoticiasCR from "../images/imgNoticiasCR/inicioNoticiasCR.png";
-
 import '../styles//CarouselHomeProjects.css'; 
 
 
 function CarouselHomeProjects({onImageClick}) {
-  // 1. Creamos un estado para controlar qué slide se ve
+  // state slide
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Lista de tus proyectos (puedes añadir más aquí fácilmente)
+  // List projects home
   const projects = [
     {  id: 1,
        img:homeSR,
@@ -20,7 +19,7 @@ function CarouselHomeProjects({onImageClick}) {
        description:" Shared Reading is a web site for literary exchange designed to promote reading and social interaction. Developed with React, it features a complete CRUD system with administration tables, a mock backend in JSON server format, validation via LocalStorage/Cookies, and charts for data analysis using ApexCharts.",
        languages:"HTML, CSS3 & JavaScript",
        framework:"React, React Router, & ApexChart ",
-       back_end:"JSON-Server, DbJson, Local Storage & Cookies",
+       back_end:"Node.JS, JSON-Server, DbJson, Local Storage & Cookies",
        tools:"VS Code, GitHub, Trello, Slack & Figma"},
 
     {  id: 2, 
@@ -38,7 +37,7 @@ function CarouselHomeProjects({onImageClick}) {
         description:" Numb Astro is a personal web app built with React, focused on creating and tracking habits through a space-based reward system. It features a CRUD interface with admin tables and displays user and habit metrics, as well as a mock backend with a JSON server and session management using LocalStorage/Cookies for data privacy and management.",
         languages:"HTML, CSS3 & JavaScript ",
         framework:"React, React Router & Apexchart",
-        back_end:"JSON-Server DbJson, Local Storage & Cookies",
+        back_end:"Node.JS, JSON-Server DbJson, Local Storage & Cookies",
         tools:"VS Code, GitHub, Trello, Slack & Figma"},
 
     {  id: 4, 
@@ -54,10 +53,10 @@ function CarouselHomeProjects({onImageClick}) {
   ];
 
 
-  // 2. Funciones para cambiar de slide
+  // change slide
   const moveSlide = (step) => {
     const totalSlides = projects.length;
-    // Lógica para que sea infinito (vuelva al inicio o al final)
+    // return start
     setCurrentSlide((prev) => (prev + step + totalSlides) % totalSlides);
   };
 
@@ -68,7 +67,7 @@ function CarouselHomeProjects({onImageClick}) {
   return (
     <div className="projects-container">
       <div className='containerTitleProjectsCr'>
-        <h2 className='titleProjectsCr'>WebSites</h2>
+        <h2 className='titleProjectsCr'>Web Projects</h2>
       </div>
 
       <div className="custom-carousel">
@@ -91,9 +90,7 @@ function CarouselHomeProjects({onImageClick}) {
             </div>
           ))}
         </div>
-        
 
-        {/* BOTONES: Ahora usan onClick con mayúscula y funciones de React */}
         <button className="control prev" onClick={() => moveSlide(-1)} aria-label="Anterior">
           &#10094;
         </button>
@@ -101,7 +98,6 @@ function CarouselHomeProjects({onImageClick}) {
           &#10095;
         </button>
 
-        {/* INDICADORES */}
         <div className="carousel-indicators">
           {projects.map((_, index) => (
             <span

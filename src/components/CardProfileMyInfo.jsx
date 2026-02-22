@@ -41,10 +41,11 @@ function CardProfileMyInfo() {
             <ul className='UlCardProfile'>
                 <li className='LiCardProfile'>React</li>
                 <li className='LiCardProfile'>React Router</li>
-                <li className='LiCardProfile'>Next.js</li>
+                <li className='LiCardProfile'>Native Fetch API</li>
                 <li className='LiCardProfile'>Bootstrap</li>
                 <li className='LiCardProfile'>Tailwin</li>
                 <li className='LiCardProfile'>ApexCharts</li>
+                <li className='LiCardProfile'>Leaflet</li>
             </ul>
         </div>
 
@@ -52,11 +53,12 @@ function CardProfileMyInfo() {
             <h5 className='TitleStudyCardProfile'>Back-End and DataBases</h5>
             <ul className='UlCardProfile'>
                 <li className='LiCardProfile'>DJango</li>
-                <li className='LiCardProfile'>Json Web Token</li>
+                <li className='LiCardProfile'>DJango REST Framework</li>
+                <li className='LiCardProfile'>JWT-Json Web Tokens</li>
                 <li className='LiCardProfile'>MySQL</li>
                 <li className='LiCardProfile'>Node.js</li>
                 <li className='LiCardProfile'>Cookies</li>
-                <li className='LiCardProfile'>Amazon Web Services</li>
+                <li className='LiCardProfile'>AWS-Amazon Web Services</li>
                 <li className='LiCardProfile'>Cloudinary</li>
                 <li className='LiCardProfile'>Integration of AI services to Model Context Protocol</li>
             </ul>
