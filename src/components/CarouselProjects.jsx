@@ -14,6 +14,8 @@ import "../styles/CarouselProjects.css"
   import chartsBooksSR from "../images/imgSharedReading/chartsBooksSR.png";
 
   import homeNA from "../images/imgNumbAstro/homeNA.png";
+  import registerNA from "../images/imgNumbAstro/registerNA.png";
+  import logInNA from "../images/imgNumbAstro/logInNA.png";
   import contactUsNA from "../images/imgNumbAstro/contactUsNA.png";
   import taskFormNA from "../images/imgNumbAstro/taskFormNA.png";
   import taskAgendaNA from "../images/imgNumbAstro/taskAgendaNA.png";
@@ -109,23 +111,25 @@ const cardsProjects =[
    {
     src:homeNA,
     title:"Numb Astro",
-    description:"A web-based planner platform with a galactic space design and atmosphere, the platform features the creation of habits or tasks, the option to edit them, mark them as completed or delete them, as well as daily tracking and rewards for motivation.",
+    description:"Numb Astro is a personal development web application focused on creating and tracking new habits through an incentive system inspired by space travel. As part of this incentive system, users receive stars on a star map, unlock stellar memories, and earn titles at each level as they progress in their habits, promoting consistency and personal growth. Developed with React, it implements a complete CRUD system with admin tables for managing habits and users, as well as visualizing metrics through interactive charts, using ApexCharts for accessible analysis. It features a simulated backend with a JSON server and is structured in JSON format for data management. Furthermore, it integrates session validation and storage using LocalStorage /Cookies, ensuring privacy and structured control for users.",
     github:"https://github.com/JuanDiegoCC02/Agenda-Numb-Astro.git",
-    languages:"HTML, CSS and JavaScript ",
-    framework:"React, React Router, Next.js and Apexchart",
-    back_end:"DBJson, Node.js, Local Storage and Cookies",
-    tools:"VS Code, GitHub, Trello, Slack and Canva",
+    languages:"HTML, CSS3 & JavaScript ",
+    framework:"React, React Router & Apexchart",
+    back_end:"DBJson, Node.js, Local Storage & Cookies",
+    tools:"VS Code, GitHub, Trello, Slack & Canva",
      imagesProjects: [
-      {src: homeNA, alt: "Image Home", subDescription:"zzz"},
-      {src: contactUsNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: taskFormNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: taskAgendaNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: starMapNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: starLootNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: profileNA, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: AdminUsersGet, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: UsersChart, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: AdminTasks, alt: "Image NumbAstro", subDescription:"zzz"}
+      {src: homeNA, alt: "Image Home", subDescription:"Numb Astro's homepage features a welcome message for users. It also includes an interactive carousel that explains the website's concept and provides guidance on how to navigate and use its main features, ensuring a clear and engaging user experience."},
+      {src: registerNA, alt: "Image register", subDescription:"In the registration section, users will be able to create their user account through a form where they must enter their personal information and accept the terms and conditions in order to access the website and enjoy its features and resources."},
+      {src: logInNA, alt: "Image logIn", subDescription:"In the Login section, users can validate their existing account with their personal data, where they must enter their username and password in a form to access the website and enjoy its features and resources."},
+      {src: contactUsNA, alt: "Image NumbAstro", subDescription:"The Contact section of Numb Astro is structured with three informational cards. The first card presents the mission of the platform, highlighting its purpose and vision. The second card expresses appreciation to users for visiting the website. The final card provides contact details, including email and phone number, allowing users to reach out for support or inquiries."},
+      {src: taskFormNA, alt: "Image NumbAstro", subDescription:"The Task Form module allows users to register new tasks or habits by submitting structured data, such as title, task type, description, and assigned day. Validation ensures that all fields are required and completed correctly before the data is processed and stored."},
+      {src: taskAgendaNA, alt: "Image NumbAstro", subDescription:"The New Tasks section retrieves and displays user-created tasks in an organized manner. It includes a filter option that allows users to sort tasks by type, making it easy to find specific activities. Users can edit task information or mark them as completed using a checkmark, facilitating efficient task management and progress tracking."},
+      {src: starMapNA, alt: "Image NumbAstro", subDescription:"The Star Map section visually represents the user's progress through an interactive, space-themed interface. A new star is generated on the map each time a task is completed, transforming productivity into a motivating experience. This feature is based on controlled random generation logic that dynamically positions the stars according to task completion, combined with CSS styles to create an immersive and visually appealing space environment."},
+      {src: starLootNA, alt: "Image NumbAstro", subDescription:"The Loot section features Star Memories, motivational quotes from famous figures designed to inspire users to keep improving. These memories are unlocked progressively as users earn more stars, reinforcing consistency and personal growth through a gamified reward system."},
+      {src: profileNA, alt: "Image NumbAstro", subDescription:"The Profile section is accessed via a drop-down menu in the upper right corner of the screen. From there, users can log out of their account or access their personal profile, where they can view and edit their account information. The profile also includes a star counter that tracks the total number of stars earned and an achievement title that reflects the user's current progress level on the platform."},
+      {src: AdminUsersGet, alt: "Image NumbAstro", subDescription:"The Administration section offers moderation and management tools for the entire website. It is divided into two main modules: Users and Tasks.In the Users module, administrators can access a structured table that displays all registered users along with their relevant information, facilitating efficient data management and account monitoring."},
+      {src: UsersChart, alt: "Image NumbAstro", subDescription:"Additionally, in the Users section, they can access a user registration chart that provides a more structured and intuitive view of account creation records."},
+      {src: AdminTasks, alt: "Image NumbAstro", subDescription:"The Administration section offers moderation and management tools for the entire website. It is divided into two main modules: Users and Tasks.In the Tasks module, administrators can access structured charts that show the daily record of task creation and a comparison of completed and incomplete tasks, facilitating efficient data management and tracking."}
     ]
   },
 
