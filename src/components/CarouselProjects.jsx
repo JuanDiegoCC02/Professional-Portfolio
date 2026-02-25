@@ -144,14 +144,14 @@ const cardsProjects =[
     back_end:"DBJson, Node.js, Local Storage and Cookies",
     tools:"VS Code, GitHub, Trello, Slack and Canva",
      imagesProjects: [
-      {src: homeTL, alt: "Image Home", subDescription:"zzz"},
-      {src: registerTL, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: logInTL, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: formTL, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: listTL, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: editListTL, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: newStepTL, alt: "Image NumbAstro", subDescription:"zzz"},
-      {src: editStepTL, alt: "Image NumbAstro", subDescription:"zzz"},
+      {src: homeTL, alt: "Image Home", subDescription:"The Home section includes information cards that explain the purpose of the application and guide users on how to use its main features. This provides a clear overview of how to manage recipes, helping users understand the workflow intuitively and easily."},
+      {src: registerTL, alt: "Image NumbAstro", subDescription:"Registration allows users to create an account via a form connected to a simulated backend using JSON server technology. Data is stored in a db.json file, simulating database persistence and enabling basic authentication."},
+      {src: logInTL, alt: "Image NumbAstro", subDescription:"During login, the user's credentials are validated against the simulated backend, powered by a json-server. Once verified, users gain access to the platform through their registered account."},
+      {src: formTL, alt: "Image NumbAstro", subDescription:"The Recipe Form section, accessible from the navigation bar, allows you to create and submit recipes using a structured form. Users will be able to add the main recipe details (such as name, description, and ingredients)."},
+      {src: listTL, alt: "Image NumbAstro", subDescription:"In the List Cooking Recipes section, accessible from the navigation bar, you can view and read  the new recipes using structured cards. Users will also be able to see a counter of completed recipes."},
+      {src: editListTL, alt: "Image NumbAstro", subDescription:"Users can edit the main recipe data if they encounter errors during form submission, and even delete the recipe if necessary. This is thanks to the CRUD logic implemented in the simulated backend."},
+      {src: newStepTL, alt: "Image NumbAstro", subDescription:"With the Add Steps button, which opens a compact form interface, users can record each recipe step by entering a description and selecting the priority level. The data is processed and stored using the simulated backend, making it easy to structure the steps within each recipe."},
+      {src: editStepTL, alt: "Image NumbAstro", subDescription:"The Edit Steps feature allows users to update or delete individual steps in a recipe after they've been created. Each step can be modified separately, allowing for corrections to information or adjustments to priority as needed."},
   
     ]
   },

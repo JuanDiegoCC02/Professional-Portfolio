@@ -42,12 +42,12 @@ function CarouselHomeProjects({onImageClick}) {
 
     {  id: 4, 
         img:homeTL,
-        title:"Recipes To-Do List",
-        description:" description ",
-        languages:"HTML, CSS & JavaScript ",
-        framework:"React, React Router, Next.js & Apexchart",
-        back_end:"DBJson, Node.js, Local Storage & Cookies",
-        tools:"VS Code, GitHub, Trello, Slack & Canva"},
+        title:"Recipe To-Do List",
+        description:" The Recipe To-Do List is an application developed with React on the frontend and Node.js with a json server to simulate a RESTful API. It stores data in a db.json file, enabling CRUD operations to manage recipes. With state management, API consumption, and a structured component design, it reflects fundamental web development principles. ",
+        languages:"HTML, CSS3 & JavaScript ",
+        framework:"React & React Router",
+        back_end:" Json-Server, DbJson, Node.js & Local Storage ",
+        tools:"VS Code, GitHub, Trello, Slack & Figma"},
 
   
   ];
