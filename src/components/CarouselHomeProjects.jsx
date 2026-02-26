@@ -13,16 +13,7 @@ function CarouselHomeProjects({onImageClick}) {
 
   // List projects home
   const projects = [
-    {  id: 1,
-       img:homeSR,
-       title:"Shared Reading",
-       description:" Shared Reading is a web site for literary exchange designed to promote reading and social interaction. Developed with React, it features a complete CRUD system with administration tables, a mock backend in JSON server format, validation via LocalStorage/Cookies, and charts for data analysis using ApexCharts.",
-       languages:"HTML, CSS3 & JavaScript",
-       framework:"React, React Router, & ApexChart ",
-       back_end:"Node.JS, JSON-Server, DbJson, Local Storage & Cookies",
-       tools:"VS Code, GitHub, Trello, Slack & Figma"},
-
-    {  id: 2, 
+    {  id: 1, 
         img:inicioNoticiasCR,
         title:"Noticias Ambientales C.R.",
         description:" Noticias Ambientales C.R. is a website developed with a Front-End using React and Back-end using DJango and MySQL along with LocalStorage/Cookies, focused on the creation and monitoring of environmental news and campaigns, promoting citizen participation, with an authentication system based on JWT and role management for users and administrators. ",
@@ -31,7 +22,7 @@ function CarouselHomeProjects({onImageClick}) {
         back_end:"Django, Django REST Framework, Django Admin, MySQL, Simple JWT, Cloudinary, Local Storage & Cookies",
         tools:"VS Code, GitHub, Trello, Slack & Figma"},
 
-    {  id: 3, 
+    {  id: 2, 
         img:homeNA,
         title:"Numb Astro",
         description:" Numb Astro is a personal web app built with React, focused on creating and tracking habits through a space-based reward system. It features a CRUD interface with admin tables and displays user and habit metrics, as well as a mock backend with a JSON server and session management using LocalStorage/Cookies for data privacy and management.",
@@ -39,6 +30,15 @@ function CarouselHomeProjects({onImageClick}) {
         framework:"React, React Router & Apexchart",
         back_end:"Node.JS, JSON-Server DbJson, Local Storage & Cookies",
         tools:"VS Code, GitHub, Trello, Slack & Figma"},
+
+    {  id: 3,
+       img:homeSR,
+       title:"Shared Reading",
+       description:" Shared Reading is a web site for literary exchange designed to promote reading and social interaction. Developed with React, it features a complete CRUD system with administration tables, a mock backend in JSON server format, validation via LocalStorage/Cookies, and charts for data analysis using ApexCharts.",
+       languages:"HTML, CSS3 & JavaScript",
+       framework:"React, React Router, & ApexChart ",
+       back_end:"Node.JS, JSON-Server, DbJson, Local Storage & Cookies",
+       tools:"VS Code, GitHub, Trello, Slack & Figma"},
 
     {  id: 4, 
         img:homeTL,

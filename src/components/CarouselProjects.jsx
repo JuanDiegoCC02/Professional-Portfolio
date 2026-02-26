@@ -56,29 +56,6 @@ import CardProjectInfo from './CardProjectInfo';
 
 const cardsProjects =[
 
-  //Shared Reading
-  {
-    src:homeSR,
-    title:"Shared Reading",
-    description:"Shared Reading is a collaborative reading project that allows multiple users to share the experience of exchanging books. Its main objective is to facilitate the reuse of books, not only by reading and preserving them, but also by ensuring that the book reaches another person, thus promoting reading among different users.This web platform is developed with React as the frontend interface framework, and for the backend, I created a simulation using json-server and db.json.",
-    github:"https://github.com/JuanDiegoCC02/Shared-Reading.git",
-    languages:"HTML, CSS3 & JavaScript",
-    framework:"React, React Router, & ApexChart ",
-    back_end:"Json-Server, Node.js, ,DbJson, Local Storage & Cookies",
-    tools:"VS Code, GitHub, Trello, Slack & Figma",
-    imagesProjects: [
-      {src: homeSR, alt: "Image Home", subDescription:"The homepage of the shared reading website features a welcome message and a collection of book cards that display key information about each book available for exchange."},
-      {src: formSR, alt: "Image SharedReading", subDescription:"The book registration form allows users to submit new books to the system. It includes input fields for the book title, author, category, additional information, and an image upload function. The form validates user information for error handling before submitting the data to the system for storage in the database.."},
-      {src: newBooksSR, alt: "Image SharedReading", subDescription:"The New Books module dynamically generates book cards from the BackEnd Mock. Each card includes structured data such as the book title, author, category, availability status, and information about the user who created the publication. The section also integrates a search function that filters results in real time based on book title, author, category, and availability, improving data searchability and accessibility."},
-      {src: favBooksSR, alt: "Image SharedReading", subDescription:"The Favorite Books section displays books saved by the user as favorites, providing quick and easy access."},
-      {src: contactUsSR, alt: "Image SharedReading", subDescription:"The Contact Us section provides users with information about Shared Reading and its purpose, as well as a contact in case of any problems with the platform."},
-      {src: profileSR, alt: "Image SharedReading", subDescription:"The Profile section provides users with access to their personal information. It includes a trade counter that shows how many book transactions they have made."},
-      {src: AdminUsersSR, alt: "Image SharedReading", subDescription:"The administration panel contains a user management table that retrieves and displays data for all users. It provides role-based permissions that allow the administrator to edit or delete user information, thus ensuring proper access control and system administration."},
-      {src: chartUsersSR, alt: "Image SharedReading", subDescription:"The administration panel contains a user chart that retrieves and displays data for all registered users. It provides a clearer and more organized view of the records."},
-      {src: AdminBooksSR, alt: "Image SharedReading", subDescription:"The administration panel contains a book management table that retrieves and displays data for all books. It provides role-based permissions that allow the administrator to edit or delete book information, thus ensuring control over publications and proper system administration."},
-      {src: chartsBooksSR, alt: "Image SharedReading", subDescription:"The administration panel contains book charts that retrieve and display data for all published books. It offers a clearer and more organized view of publications."}
-    ]
-  },
 
   //News CR
   {
@@ -132,6 +109,31 @@ const cardsProjects =[
       {src: AdminTasks, alt: "Image NumbAstro", subDescription:"The Administration section offers moderation and management tools for the entire website. It is divided into two main modules: Users and Tasks.In the Tasks module, administrators can access structured charts that show the daily record of task creation and a comparison of completed and incomplete tasks, facilitating efficient data management and tracking."}
     ]
   },
+
+  //Shared Reading
+  {
+    src:homeSR,
+    title:"Shared Reading",
+    description:"Shared Reading is a collaborative reading project that allows multiple users to share the experience of exchanging books. Its main objective is to facilitate the reuse of books, not only by reading and preserving them, but also by ensuring that the book reaches another person, thus promoting reading among different users.This web platform is developed with React as the frontend interface framework, and for the backend, I created a simulation using json-server and db.json.",
+    github:"https://github.com/JuanDiegoCC02/Shared-Reading.git",
+    languages:"HTML, CSS3 & JavaScript",
+    framework:"React, React Router, & ApexChart ",
+    back_end:"Json-Server, Node.js, ,DbJson, Local Storage & Cookies",
+    tools:"VS Code, GitHub, Trello, Slack & Figma",
+    imagesProjects: [
+      {src: homeSR, alt: "Image Home", subDescription:"The homepage of the shared reading website features a welcome message and a collection of book cards that display key information about each book available for exchange."},
+      {src: formSR, alt: "Image SharedReading", subDescription:"The book registration form allows users to submit new books to the system. It includes input fields for the book title, author, category, additional information, and an image upload function. The form validates user information for error handling before submitting the data to the system for storage in the database.."},
+      {src: newBooksSR, alt: "Image SharedReading", subDescription:"The New Books module dynamically generates book cards from the BackEnd Mock. Each card includes structured data such as the book title, author, category, availability status, and information about the user who created the publication. The section also integrates a search function that filters results in real time based on book title, author, category, and availability, improving data searchability and accessibility."},
+      {src: favBooksSR, alt: "Image SharedReading", subDescription:"The Favorite Books section displays books saved by the user as favorites, providing quick and easy access."},
+      {src: contactUsSR, alt: "Image SharedReading", subDescription:"The Contact Us section provides users with information about Shared Reading and its purpose, as well as a contact in case of any problems with the platform."},
+      {src: profileSR, alt: "Image SharedReading", subDescription:"The Profile section provides users with access to their personal information. It includes a trade counter that shows how many book transactions they have made."},
+      {src: AdminUsersSR, alt: "Image SharedReading", subDescription:"The administration panel contains a user management table that retrieves and displays data for all users. It provides role-based permissions that allow the administrator to edit or delete user information, thus ensuring proper access control and system administration."},
+      {src: chartUsersSR, alt: "Image SharedReading", subDescription:"The administration panel contains a user chart that retrieves and displays data for all registered users. It provides a clearer and more organized view of the records."},
+      {src: AdminBooksSR, alt: "Image SharedReading", subDescription:"The administration panel contains a book management table that retrieves and displays data for all books. It provides role-based permissions that allow the administrator to edit or delete book information, thus ensuring control over publications and proper system administration."},
+      {src: chartsBooksSR, alt: "Image SharedReading", subDescription:"The administration panel contains book charts that retrieve and display data for all published books. It offers a clearer and more organized view of publications."}
+    ]
+  },
+
 
   //Recipes ToDo-List 
     {

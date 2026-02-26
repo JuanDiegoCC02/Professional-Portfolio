@@ -1,4 +1,4 @@
-/* --- Contenedor Principal (Basado en tu estilo AllCarouselProjects) --- */
+/* Container Main */
 .projects-container {
     max-width: 1100px; 
     margin: 50px auto; 
@@ -20,7 +20,7 @@
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Título de Sección --- */
+/*  Title Projects  */
 .containerTitleProjectsCr {
     text-align: center;
     margin-bottom: 30px;
@@ -29,17 +29,17 @@
 }
 
 .titleProjectsCr {
-    font-size: 2.5em;
+    font-size: clamp(2rem, 3vw, 2.5rem);
     color: #d5ecff;
     text-shadow: 0 0 10px #7a00ff, 0 0 20px #1696ff;
     margin: 0;
 }
 
-/* --- Estructura del Carrusel (Grande) --- */
+/* Carousel */
 .custom-carousel {
     position: relative;
     max-width: 1000px; 
-    height: 600px; /* Tamaño aumentado */
+    height: 600px;
     margin: 0 auto; 
     overflow: hidden; 
     border-radius: 10px;
@@ -62,8 +62,9 @@
     transition: opacity 0.6s ease-in-out;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Empuja info al fondo */
+    justify-content: flex-end;
     box-sizing: border-box;
+    padding-bottom: 40px;
 }
 
 .carousel-item.active {
@@ -71,7 +72,7 @@
     visibility: visible;
 }
 
-/* --- Imagen de Fondo --- */
+/* IMG */
 .imgCarouselHome {
     position: absolute;
     top: 0;
@@ -80,57 +81,89 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    filter: brightness(0.5); /* Ajuste de brillo para legibilidad */
+    filter: brightness(0.75) contrast(1.1);
     transition: transform 0.5s ease;
     cursor: pointer;
 }
 
-/* --- Bloque de Información (HUD inferior) --- */
-.titleCarouselHome, .descriptionCarouselHome, .containerToolsCarouselHome {
+.carousel-item:hover .imgCarouselHome {
+    transform: scale(1.03);
+}
+
+/* Overlay - visibility  */
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.75) 35%,
+        rgba(0, 0, 0, 0.45) 65%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+    z-index: 1;
+}
+
+/* texts main */
+.titleCarouselHome,
+.descriptionCarouselHome,
+.containerToolsCarouselHome {
     position: relative;
-    z-index: 5; /* Por encima de la imagen */
+    z-index: 5;
     padding-left: 40px;
     padding-right: 40px;
     text-align: left;
 }
 
+/* Title */
 .titleCarouselHome {
-    font-size: 2.1em;
+    font-size: clamp(1.6rem, 2.3vw, 2rem);
+    font-weight: 600;
+    letter-spacing: 0.5px;
     color: #afdbff;
-    text-shadow: 0 0 10px #7a00ff, 0 0 20px #1696ff;
-    margin: 0 0 10px 0;
+    text-shadow: 0 0 8px #7a00ff, 0 0 15px #1696ff;
+    margin: 0 0 8px 0;
 }
 
+/* Description */
 .descriptionCarouselHome {
-    font-size: 1.05em;
+    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
     color: #93e9ff;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    max-width: 80%;
-    text-shadow: 0 2px 4px #000;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    max-width: 75%;
+    text-shadow: 0 2px 6px #000;
 }
 
+/* Tools */
 .containerToolsCarouselHome {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 50px; /* Margen extra para no chocar con los indicadores */
+    margin-bottom: 40px;
 }
 
 .infoToolCarouselHome {
-    font-size: 0.85em;
+    font-size: 0.75rem;
     color: #93e9ff;
-    background-color: rgb(4, 0, 24); 
-    padding: 6px 15px;
+    background: linear-gradient(145deg, #040018, #001a33);
+    padding: 6px 14px;
     border-radius: 20px;
     border: 1px solid #668aff;
     margin: 0;
+    transition: 0.3s ease;
 }
 
-/* --- Botones / Flechas (Separados de la info) --- */
+.infoToolCarouselHome:hover {
+    box-shadow: 0 0 12px #00e1ff;
+    transform: translateY(-2px);
+}
+
+/* --- btns prev & next --- */
 .control {
     position: absolute;
-    top: 40%; /* Subidos para separarlos del bloque de texto inferior */
+    top: 38%;
     transform: translateY(-50%);
     background-color: rgba(0, 162, 255, 0.3);
     color: #55c1ff; 
@@ -152,7 +185,7 @@
 .prev { left: 20px; }
 .next { right: 20px; }
 
-/* --- Indicadores --- */
+/* indicators */
 .carousel-indicators {
     position: absolute;
     bottom: 20px;
@@ -178,22 +211,60 @@
     box-shadow: 0 0 10px #6ed6ff;
 }
 
-/* --- RESPONSIVO --- */
+/*  Responsive  */
 @media (max-width: 900px) {
-    .projects-container { max-width: 90%; padding: 25px; }
-    .custom-carousel { height: 500px; }
-    .titleCarouselHome { font-size: 1.8em; }
-    .control { top: 35%; padding: 10px; } /* Ajuste de botones en tablet */
+
+    .projects-container { 
+        max-width: 90%; 
+        padding: 25px; 
+    }
+
+    .custom-carousel { 
+        height: 500px; 
+    }
+
+    .control { 
+        top: 35%; 
+        padding: 10px; 
+    }
+
+    .descriptionCarouselHome {
+        max-width: 90%;
+    }
 }
 
 @media (max-width: 600px) {
-    .custom-carousel { height: 550px; } /* Más alto para que quepa el texto */
-    .titleCarouselHome { font-size: 1.5em; padding-left: 20px; }
-    .descriptionCarouselHome { font-size: 0.9em; padding-left: 20px; max-width: 100%; }
-    .containerToolsCarouselHome { padding-left: 20px; }
-    
+
+    .custom-carousel { 
+        height: 580px;
+    }
+
+    .titleCarouselHome { 
+        font-size: 1.4rem;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .descriptionCarouselHome { 
+        font-size: 0.85rem;
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 100%;
+    }
+
+    .containerToolsCarouselHome { 
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 6px;
+    }
+
+    .infoToolCarouselHome {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+
     .control { 
-        top: 30%; /* Flechas más arriba en móvil */
+        top: 32%;
         font-size: 1.3em;
     }
 }
