@@ -165,7 +165,7 @@
 /* --- btns prev & next --- */
 .control {
     position: absolute;
-    top: 38%;
+    top: 34%;
     transform: translateY(-50%);
     background-color: rgba(0, 162, 255, 0.3);
     color: #55c1ff; 
@@ -176,6 +176,7 @@
     border-radius: 5px;
     z-index: 10;
     transition: 0.3s;
+    margin: 1%;
 }
 
 .control:hover {
@@ -266,7 +267,7 @@
     }
 
     .control { 
-        top: 32%;
+        top: 92%;
         font-size: 1.3em;
     }
 }

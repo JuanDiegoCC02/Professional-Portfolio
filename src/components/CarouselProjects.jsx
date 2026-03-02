@@ -233,11 +233,12 @@ function CarouselProjects({externalIndex, setExternalIndex}) {
       <div className='ContainerAllCardsCarousel'>
         <div className='ContainerImagesProject'>
           <img className='ImagesProjectCarousel' src={project.imagesProjects[secondaryIndex].src}   alt={project.imagesProjects[secondaryIndex].alt} />
-          <p className='descriptionImgCarousel'>{project.imagesProjects[secondaryIndex].subDescription}</p>
+          
            <button className='btnImgLeft' onClick={prevSecondarySlide}> ⬅️ </button>
            <button className='btnImgRight' onClick={nextSecondarySlide}> ➡️ </button>
-        </div>
+       <p className='descriptionImgCarousel'>{project.imagesProjects[secondaryIndex].subDescription}</p>
 
+        </div>
         <div className='ContainerHRCarouselrojects'><hr className='HRCarouselProjects'/></div>
 
         <div className='ContainerIMGandLinkCarouselProjects'>

@@ -1,3 +1,5 @@
+/* All container  */
+
 .AllCarouselProjects {
     max-width: 1100px;
     margin: 60px auto;
@@ -18,6 +20,8 @@
 .AllCarouselProjects:hover {
     box-shadow: 0 20px 55px rgba(0, 3, 151, 0.8), 0 0 0 4px rgba(5, 0, 22, 1);
 }
+
+/*title container y etiq title */
 
 .ContainerTitleCarousel {
     margin-bottom: 45px;
@@ -42,47 +46,40 @@
     text-shadow: 0 0 8px #000000, 0 0 18px #001aff;
 }
 
+
+
 .ContainerImagesProject {
-    position: relative;
     max-width: 850px;
     margin: 0 auto 35px auto;
-    overflow: hidden;
     border-radius: 12px;
     box-shadow: 0 15px 40px rgba(0, 3, 151, 0.6), 0 0 0 4px rgba(5, 0, 22, 0.9);
     border: 3px groove #001947;
-    height: 500px; 
     background-color: #050016;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .ImagesProjectCarousel {
     width: 100%;
-    height: 100%;
+    height: 500px;
     object-fit: cover;
     object-position: top;
     display: block;
     transition: transform 0.5s ease;
 }
 
-.descriptionImgCarousel {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 5, 15, 0.85);
-    color: #93e9ff;
-    padding: 20px;
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-top: 2px solid #00e1ff;
-    z-index: 5;
-    box-sizing: border-box;
+.ImagesProjectCarousel:hover {
+    transform: scale(1.02);
 }
-/* Btns CarouselHome*/
+
+/*btn on Img*/
+
 .btnImgLeft,
 .btnImgRight {
     position: absolute;
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0, 162, 255, 0.274);
     color: #55c1ff;
@@ -92,7 +89,7 @@
     cursor: pointer;
     border-radius: 8px;
     transition: all 0.3s ease;
-    z-index: 6;
+    z-index: 10;
     backdrop-filter: blur(4px);
 }
 
@@ -102,8 +99,25 @@
     color: #000000;
 }
 
-.btnImgLeft { left: 15px; }
-.btnImgRight { right: 15px; }
+.btnImgLeft { left: 20px; }
+.btnImgRight { right: 20px; }
+
+
+
+.descriptionImgCarousel {
+    width: 100%;
+    background-color: rgba(0, 5, 15, 0.95);
+    color: #93e9ff;
+    padding: 22px;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    border-top: 2px solid #00e1ff;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+
 
 .ContainerHRCarouselrojects {
     margin: 30px 0;
@@ -116,6 +130,9 @@
     width: 80%;
     margin: 0 auto;
 }
+
+
+/*link y btns project*/
 
 .ContainerIMGandLinkCarouselProjects {
     display: flex;
@@ -150,7 +167,6 @@
     flex-wrap: wrap;
 }
 
-/* Btns CarouselDescriptionProject */
 .btnLeft,
 .btnRight {
     padding: 14px 28px;
@@ -170,35 +186,52 @@
     color: #000000;
 }
 
-/* Responsive */
+
+/* responsive */
+
 
 @media (max-width: 900px) {
     .AllCarouselProjects {
         width: 95%;
         padding: 25px;
     }
-    .ContainerImagesProject {
+
+    .ImagesProjectCarousel {
         height: 400px;
     }
 }
 
 @media (max-width: 600px) {
-    .ContainerImagesProject {
-        height: 350px;
+    .ImagesProjectCarousel {
+        height: 300px;
     }
+
     .descriptionImgCarousel {
-        font-size: 0.85rem;
-        padding: 15px;
+        font-size: 0.9rem;
+        padding: 18px;
     }
+
+    .btnImgLeft,
+    .btnImgRight {
+        font-size: 1.1em;
+        padding: 10px 14px;
+    }
+
     .containerBtnCarouselProjects {
         flex-direction: column;
         align-items: center;
         gap: 15px;
     }
-    .btnLeft, .btnRight {
+
+    .btnLeft,
+    .btnRight {
         width: 100%;
     }
 }
+
+
+/* animation */
+
 
 @keyframes fadeInSlide {
     to {
