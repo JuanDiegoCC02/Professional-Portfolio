@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import "../styles/CarouselProjects.css"
 
   import homeSR from "../images/imgSharedReading/homeSR.png";
+  import registerSR from "../images/imgSharedReading/registerSR.png";
+  import logInSR from "../images/imgSharedReading/logInSR.png";
   import formSR from "../images/imgSharedReading/formSR.png";
   import newBooksSR from "../images/imgSharedReading/newBooksSR.png";
   import favBooksSR from "../images/imgSharedReading/favBooksSR.png";
@@ -41,11 +43,12 @@ import "../styles/CarouselProjects.css"
   import contactoNoticiasCR from "../images/imgNoticiasCR/contactoNoticiasCR.png";
   import formNoticiasCR from "../images/imgNoticiasCR/formNoticiasCR.png";
   import ultimasNoticiasCR from "../images/imgNoticiasCR/ultimasNoticiasCR.png";
+  import getUsuariosNoticiasCR from "../images/imgNoticiasCR/getUsuariosNoticiasCR.png";
   import perfilNoticiasCR from "../images/imgNoticiasCR/perfilNoticiasCR.png";
 
 
   import menuAdminNoticiasCR from "../images/imgNoticiasCR/menuAdminNoticiasCR.png";
-  import TNoticiasCR from "../images/imgNoticiasCR/TNoticiasCR.png";
+  import TAdminNoticiasCR from "../images/imgNoticiasCR/TAdminNoticiasCR.png";
   import TUsuariosNoticiasCR from "../images/imgNoticiasCR/TUsuariosNoticiasCR.png";
   import TContactosNoticiasCR from "../images/imgNoticiasCR/TContactosNoticiasCR.png";
   import graficoAdminNoticiasCR from "../images/imgNoticiasCR/graficoAdminNoticiasCR.png";
@@ -74,9 +77,10 @@ const cardsProjects =[
       {src: contactoNoticiasCR, alt: "Image NoticiasCR", subDescription:"The Contact section includes a form for submitting reports without registration. It also offers a dedicated information area where users can find direct contact information, such as email and phone number, for further assistance."},
       {src: formNoticiasCR, alt: "Image NoticiasCR", subDescription:"The Publications section offers a structured form where users can register new posts, specifying the title, description, post type (news or campaign), and geographic location via integrated geolocation. They can also upload images, which are managed through Cloudinary, ensuring secure cloud storage and optimized delivery."},
       {src: ultimasNoticiasCR, alt: "Image NoticiasCR", subDescription:"In the Publications section, there is a structured space called Recent Publications where users can find new posts approved by administrators, who validate and certify the accuracy of the information contained in the news articles or campaigns. This helps prevent misinformation on our website."},
+      {src: getUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:" updating "},
       {src: perfilNoticiasCR, alt: "Image NoticiasCR", subDescription:"In the upper right corner of the navigation menu, you'll find the My Account option, which displays profile and logout options. The profile section shows structured user data, such as profile picture, username, email address, number of posts, ratings of published news, and assigned role. It also includes an editing function that allows you to update profile information, such as your profile picture, improving account management and personalization. The Log Out option removes your token session from the JWT authentication process, thus ensuring stable security and privacy on the website."},      
       {src: menuAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"In the Administrators role, you will be able to access a drop-down menu in the administration area, where you will be able to access different sections such as a graphs section, a user table, publications and contact requests, where you will be able to manage the website information in a structured, organized and stable way."},
-      {src: TNoticiasCR, alt: "Image NoticiasCR", subDescription:"The Posts table section displays a structured list of all news articles and campaigns submitted by users. Administrators can review each pending submission and approve or reject it before publication. They can also edit or delete post details, ensuring content quality and accuracy."},
+      {src: TAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"The Posts table section displays a structured list of all news articles and campaigns submitted by users. Administrators can review each pending submission and approve or reject it before publication. They can also edit or delete post details, ensuring content quality and accuracy."},
       {src: TUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:"The User Table section displays a structured list of all user records. Administrators can edit or delete user information here if they violate the site's terms and conditions, ensuring structured, organized, and stable management of user data."},
       {src: TContactosNoticiasCR, alt: "Image NoticiasCR", subDescription:"The Contact Request Table section displays a structured list of all contact request records. Administrators can view and review requests, as well as edit or delete request information if it violates the site's terms and conditions, ensuring structured and organized management of contact data."},
       {src: graficoAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"The Comparative Chart section presents a visual analysis of publication types, comparing news and campaigns within the platform. This graphical representation allows administrators to quickly understand content distribution and activity trends on the platform in a structured and organized way."},
@@ -122,6 +126,8 @@ const cardsProjects =[
     tools:"VS Code, GitHub, Trello, Slack & Figma",
     imagesProjects: [
       {src: homeSR, alt: "Image Home", subDescription:"The homepage of the shared reading website features a welcome message and a collection of book cards that display key information about each book available for exchange."},
+      {src: registerSR, alt: "Image Home", subDescription:"The homepage of the shared reading website features a welcome message and a collection of book cards that display key information about each book available for exchange."},
+      {src: logInSR, alt: "Image Home", subDescription:"The homepage of the shared reading website features a welcome message and a collection of book cards that display key information about each book available for exchange."},
       {src: formSR, alt: "Image SharedReading", subDescription:"The book registration form allows users to submit new books to the system. It includes input fields for the book title, author, category, additional information, and an image upload function. The form validates user information for error handling before submitting the data to the system for storage in the database.."},
       {src: newBooksSR, alt: "Image SharedReading", subDescription:"The New Books module dynamically generates book cards from the BackEnd Mock. Each card includes structured data such as the book title, author, category, availability status, and information about the user who created the publication. The section also integrates a search function that filters results in real time based on book title, author, category, and availability, improving data searchability and accessibility."},
       {src: favBooksSR, alt: "Image SharedReading", subDescription:"The Favorite Books section displays books saved by the user as favorites, providing quick and easy access."},
@@ -167,11 +173,12 @@ function CarouselProjects({externalIndex, setExternalIndex}) {
   const [selectedProjectTitle, setSelectedProjectTitle] = useState(null)
   const mainIndex = externalIndex;
 
+  /* developing logical improvements for the future */
   const openModal = () => {
     setSelectedProjectTitle(cardsProjects[mainIndex].title);
     setModalOpen(true);
   }
-
+/* developing logical improvements for the future */
   const closeModal = () => {
     setModalOpen(false);
     setSelectedProjectTitle(null);
@@ -205,6 +212,7 @@ function CarouselProjects({externalIndex, setExternalIndex}) {
     ));
   }
 
+  /* developing logical improvements for the future */
   useEffect(() => {
     if (location.state && typeof location.state.projectIndex === "number") {
       const indexReceived = location.state.projectIndex;

@@ -49,6 +49,7 @@
 
 
 .ContainerImagesProject {
+    position: relative;
     max-width: 850px;
     margin: 0 auto 35px auto;
     border-radius: 12px;
@@ -79,8 +80,8 @@
 .btnImgLeft,
 .btnImgRight {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 40%;
+    transform: translate(0, -50%);
     background-color: rgba(0, 162, 255, 0.274);
     color: #55c1ff;
     border: none;
@@ -94,13 +95,13 @@
 }
 
 .btnImgLeft:hover,
-.btnImgRight:hover {
-    background-color: #7bb0ff;
+.btnImgRight:hover { 
+    background-color: rgba(0, 162, 255, 0.438);
     color: #000000;
 }
 
-.btnImgLeft { left: 20px; }
-.btnImgRight { right: 20px; }
+.btnImgLeft { left: 10px; }
+.btnImgRight { right: 10px; }
 
 
 
@@ -218,14 +219,18 @@
     }
 
     .containerBtnCarouselProjects {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
+        flex-direction: row;
+        justify-content:center ;
+        flex-wrap: nowrap;
+        gap: 10px;
     }
 
     .btnLeft,
     .btnRight {
-        width: 100%;
+        width: auto;
+        flex: 1;
+        padding: 10px 15px;
+        font-size: 0.9em;
     }
 }
 
