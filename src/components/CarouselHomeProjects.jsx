@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import gameT3 from "../images/imgTicTacToeGAME/gameT3.png";
 import homeNA from "../images/imgNumbAstro/homeNA.png";
 import homeSR from "../images/imgSharedReading/homeSR.png";
 import homeTL from "../images/imgTodoList/homeTL.png";
@@ -48,6 +49,15 @@ function CarouselHomeProjects({onImageClick}) {
         framework:"React & React Router",
         back_end:" Json-Server, DbJson, Node.js & Local Storage ",
         tools:"VS Code, GitHub, Trello, Slack & Figma"},
+
+   {  id: 5, 
+        img:gameT3,
+        title:"Tic Tac Toe GAME",
+        description:" description ",
+        languages:"HTML, CSS3 & JavaScript ",
+        framework:" --- ",
+        back_end:" Local Storage ",
+        tools:"VS Code, GitHub, Trello, Slack & Canva"},
 
   
   ];
