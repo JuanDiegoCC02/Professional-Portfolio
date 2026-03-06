@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import gameT3 from "../images/imgTicTacToeGAME/gameT3.png";
+import playGame from "../images/imgTicTacToeGAME/playGame.png";
 import homeNA from "../images/imgNumbAstro/homeNA.png";
 import homeSR from "../images/imgSharedReading/homeSR.png";
 import homeTL from "../images/imgTodoList/homeTL.png";
@@ -48,14 +48,14 @@ function CarouselHomeProjects({onImageClick}) {
         languages:"HTML, CSS3 & JavaScript ",
         framework:"React & React Router",
         back_end:" Json-Server, DbJson, Node.js & Local Storage ",
-        tools:"VS Code, GitHub, Trello, Slack & Figma"},
+        tools:"VS Code, GitHub, Trello, Slack & Canva"},
 
    {  id: 5, 
-        img:gameT3,
-        title:"Tic Tac Toe GAME",
-        description:" description ",
+        img:playGame,
+        title:"TIC TAC TOE GAME",
+        description:" This project is a web-based tic-tac-toe game developed using HTML, JavaScript, and CSS3. The application allows a player to compete against a computer on a classic 3x3 grid while tracking their progress with an integrated win counter. It also includes New Game and Reset buttons, allowing players to restart the game or reset their score. The project demonstrates fundamental concepts of game logic, structure, and interactive user interface design. ",
         languages:"HTML, CSS3 & JavaScript ",
-        framework:" --- ",
+        framework:" It does not use frameworks ",
         back_end:" Local Storage ",
         tools:"VS Code, GitHub, Trello, Slack & Canva"},
 

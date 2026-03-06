@@ -46,13 +46,19 @@ import "../styles/CarouselProjects.css"
   import getUsuariosNoticiasCR from "../images/imgNoticiasCR/getUsuariosNoticiasCR.png";
   import perfilNoticiasCR from "../images/imgNoticiasCR/perfilNoticiasCR.png";
 
-
   import menuAdminNoticiasCR from "../images/imgNoticiasCR/menuAdminNoticiasCR.png";
   import TAdminNoticiasCR from "../images/imgNoticiasCR/TAdminNoticiasCR.png";
   import TUsuariosNoticiasCR from "../images/imgNoticiasCR/TUsuariosNoticiasCR.png";
   import TContactosNoticiasCR from "../images/imgNoticiasCR/TContactosNoticiasCR.png";
   import graficoAdminNoticiasCR from "../images/imgNoticiasCR/graficoAdminNoticiasCR.png";
   import graficoUsuariosNoticiasCR from "../images/imgNoticiasCR/graficoUsuariosNoticiasCR.png";
+
+  import winGame from "../images/imgTicTacToeGAME/winGame.png";
+  import playGame from "../images/imgTicTacToeGAME/playGame.png";
+  import resetGame from "../images/imgTicTacToeGAME/resetGame.png";
+
+
+
 
 import CardProjectInfo from './CardProjectInfo';
 
@@ -161,6 +167,23 @@ const cardsProjects =[
       {src: newStepTL, alt: "Image NumbAstro", subDescription:"With the Add Steps button, which opens a compact form interface, users can record each recipe step by entering a description and selecting the priority level. The data is processed and stored using the simulated backend, making it easy to structure the steps within each recipe."},
       {src: editStepTL, alt: "Image NumbAstro", subDescription:"The Edit Steps feature allows users to update or delete individual steps in a recipe after they've been created. Each step can be modified separately, allowing for corrections to information or adjustments to priority as needed."},
   
+    ]
+  },
+
+    {
+    src:resetGame,
+    title:"TIC TAC TOE GAME",
+    description:" The Recipe To-Do List is an application developed with React on the frontend and Node.js, which uses a mock RESTful API powered by a JSON server on the backend. The application is designed to manage cooking recipes using a structured to-do list approach, allowing users to dynamically create, organize, update, and delete recipes. The system stores the data in a local db.json file, which acts as a mock database, enabling full CRUD (Create, Read, Update, Delete) operations via HTTP requests.",
+    github:"https://github.com/JuanDiegoCC02/Todo-List-React.git",
+    languages:"HTML, CSS and JavaScript ",
+    framework:" It does not use frameworks  ",
+    back_end:"Local Storage ",
+    tools:"VS Code, GitHub, Trello, Slack and Canva",
+     imagesProjects: [
+      {src: resetGame, alt: "Image Home", subDescription:" --- "},
+      {src: playGame, alt: "Image NumbAstro", subDescription:" --- "},
+      {src: winGame, alt: "Image NumbAstro", subDescription:" ---"},
+      
     ]
   },
 
