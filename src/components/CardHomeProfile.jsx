@@ -13,7 +13,7 @@
         </div>
 
         <div className='CardHomeInfoP'>
-          <h1 className='TitleNameHome'>Juan Diego Corella Camacho</h1>
+          <h1 className='TitleNameHome'>Juan Diego <br /> Corella Camacho</h1>
           <p className='InfoStudyHome'>Front-End & Back-End <br /> Web Developer</p>
           <p className='InfoIdeaHome'>Innovation, Connection & Creativity</p>
         </div>

@@ -6,8 +6,8 @@ function CardProfileMyInfo() {
 <div className='AllCardProfileMyInfo'>
 
         <div className='ContainerTitleCardPrfoile'>
-            <h1 className='TitleNameCardProfile'>Juan Diego Corella Camacho</h1>
-            <h2 className='subTitleWorkCardProfile'>Front-End & Back-End Developer</h2>
+            <h1 className='TitleNameCardProfile'>Juan Diego <br /> Corella Camacho</h1>
+            <h2 className='subTitleWorkCardProfile'>Front-End & Back-End <br /> Web Developer</h2>
         </div>
 
         <div className='ContainerMyInfoCardProfile'>
