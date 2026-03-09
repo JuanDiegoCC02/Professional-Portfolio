@@ -2,13 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home';
 
-
-
 function Routing() {
   return (
     <div>
-     
-      <Router >
+      <Router basename="/Professional-Portfolio/">
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
