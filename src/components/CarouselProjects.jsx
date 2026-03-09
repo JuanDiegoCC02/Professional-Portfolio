@@ -57,10 +57,10 @@ import "../styles/CarouselProjects.css"
   import playGame from "../images/imgTicTacToeGAME/playGame.png";
   import resetGame from "../images/imgTicTacToeGAME/resetGame.png";
 
-
-
-
 import CardProjectInfo from './CardProjectInfo';
+
+import newProjects from "../images/newProjects.png"
+
 
 
 const cardsProjects =[
@@ -169,13 +169,14 @@ const cardsProjects =[
   
     ]
   },
-
+     
+  // TIC TAC TOE GAME
     {
     src:resetGame,
     title:"TIC TAC TOE GAME",
     description:" This project is a tic-tac-toe game developed with HTML, JavaScript, and CSS3. It allows the user to play against the computer on a 3x3 grid, incorporating logic to control turns, evaluate victory conditions, and manage the game state. It includes New Game and Reset buttons for efficient game control, as well as a win counter that records the number of victories achieved by the player.",
     github:"https://github.com/JuanDiegoCC02/Todo-List-React.git",
-    languages:"HTML, CSS and JavaScript ",
+    languages:"HTML, CSS3 and JavaScript ",
     framework:" It does not use frameworks  ",
     back_end:"Local Storage ",
     tools:"VS Code, GitHub, Trello, Slack and Canva",
@@ -184,6 +185,22 @@ const cardsProjects =[
       {src: playGame, alt: "Image NumbAstro", subDescription:" The board is structured in HTML by creating a container element that holds nine individual cells, each represented by a <div> with a unique ID. These cells form the classic 3x3 grid used in the game.The visual design is implemented using CSS3 Grid, which organizes the cells into three rows and three columns. Each cell is designed to center the player's moves, apply hover effects, and maintain a uniform and structured size. "},
       {src: winGame, alt: "Image NumbAstro", subDescription:" The game logic is implemented in JavaScript to control player interactions, manage turns, and evaluate the game's outcome. This is based on a predefined matrix of winning combinations (winCombos). After each move, the system checks if any winning combinations have been completed by comparing the values ​​in the cells. The game also includes two control buttons to manage the game flow. The New Game button clears the board and restarts the current game, preserving any saved win statistics. Conversely, the Reset button completely resets the game, erasing all stored data and reloading the interface, allowing the player to start from scratch. "},
       
+    ]
+  },
+
+
+   // Working on upcoming projects
+    {
+    src:newProjects,
+    title:"Working on Upcoming Projects",
+    description:" Stay tuned for more information.",
+    github:"https://github.com/JuanDiegoCC02/Todo-List-React.git",
+    languages:"In Progress ",
+    framework:" In Progress ",
+    back_end:"In Progress",
+    tools:"In Progress",
+     imagesProjects: [
+      {src: newProjects, alt: "Image Home", subDescription:"In Progress..."},
     ]
   },
 

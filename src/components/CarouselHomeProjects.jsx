@@ -5,6 +5,7 @@ import homeNA from "../images/imgNumbAstro/homeNA.png";
 import homeSR from "../images/imgSharedReading/homeSR.png";
 import homeTL from "../images/imgTodoList/homeTL.png";
 import inicioNoticiasCR from "../images/imgNoticiasCR/inicioNoticiasCR.png";
+import newProjects from "../images/newProjects.png"
 import '../styles//CarouselHomeProjects.css'; 
 
 
@@ -58,6 +59,15 @@ function CarouselHomeProjects({onImageClick}) {
         framework:" It does not use frameworks ",
         back_end:" Local Storage ",
         tools:"VS Code, GitHub, Trello, Slack & Canva"},
+        
+   {  id: 6, 
+        img:newProjects,
+        title:"Working on Upcoming Projects",
+        description:" Stay tuned for more information. ",
+        languages:" In Progress  ",
+        framework:" In Progress  ",
+        back_end:" In Progress  ",
+        tools:" In Progress "},
 
   
   ];
