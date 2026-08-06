@@ -148,7 +148,7 @@
 
 .infoToolCarouselHome {
     font-size: 0.75rem;
-    color: #f7fcfdb9;
+    color: #bff8ffe0;
     background: linear-gradient(145deg, #040024, #040024);
     padding: 6px 14px;
     border-radius: 20px;
@@ -165,12 +165,12 @@
 /* --- btns prev & next --- */
 .control {
     position: absolute;
-    top: 34%;
+    top: 25%;
     transform: translateY(-50%);
-    background-color: rgba(0, 162, 255, 0.3);
-    color: #55c1ff; 
+    background-color: rgba(0, 7, 10, 0.377);
+    color: #95d8ff; 
     border: 1px solid #00e1ff;
-    padding: 15px 12px;
+    padding: 14px 11px;
     font-size: 1.8em;
     cursor: pointer;
     border-radius: 5px;
@@ -180,8 +180,8 @@
 }
 
 .control:hover {
-    background-color: #7bb0ff; 
-    color: #000;
+    background-color: #0015357a; 
+    color: #00f3fc;
     box-shadow: 0 0 15px #00e1ff;
 }
 
