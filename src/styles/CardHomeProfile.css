@@ -5,12 +5,12 @@
     margin: 5% auto; 
     padding: 30px;
     margin-top: 95px;
-    background-color: #09272c; 
+    background-color: #00172b; 
     color: #ecf0f1; 
     border-radius: 1%; 
     
     /* border shadow p */
-    box-shadow: 0 10px 20px rgb(70, 195, 253), 
+    box-shadow: 0 10px 20px rgb(158, 224, 255, 0.849), 
        /* border shadow color second*/
        0 0 0 5px rgb(1, 46, 66); 
     
@@ -37,7 +37,7 @@
 
 .FtProfileHome {
     border-radius: 50%; 
-    border: 5px solid #02241cfd;
+    border: 5px solid #000000fd;
     object-fit: cover; 
    box-shadow: 0 4px 15px rgb(0, 0, 0);
     transition: transform 0.3s ease;
@@ -57,7 +57,7 @@
 .TitleNameHome {
     font-size: 2.2em;
     margin-bottom: 5px;
-    color: #0ffde9;
+    color: #9ffcff;
     letter-spacing: 1px;
     text-shadow: 0 0 10px #7a00ff, 0 0 20px #c700ff;
 }

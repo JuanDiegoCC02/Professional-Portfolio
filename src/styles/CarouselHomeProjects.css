@@ -5,10 +5,10 @@
     padding: 40px;
     margin-top: -7px;
     margin-bottom: 120px;
-    background-color: #000000; 
+    background-color: #00172b; 
     color: #ecf0f1; 
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgb(0, 3, 151), 0 0 0 5px rgba(5, 0, 22, 0.89); 
+    box-shadow: 0 10px 25px rgba(158, 224, 255, 0.849), 0 0 0 5px rgb(5, 0, 22); 
     text-align: center;
     position: relative; 
     opacity: 0;
@@ -25,13 +25,13 @@
     text-align: center;
     margin-bottom: 30px;
     padding-bottom: 15px;
-    border-bottom: 2px solid #00e1ff; 
+    border-bottom: 2px solid #eefeff; 
 }
 
 .titleProjectsCr {
     font-size: clamp(2rem, 3vw, 2.5rem);
-    color: #d5ecff;
-    text-shadow: 0 0 10px #7a00ff, 0 0 20px #1696ff;
+    color: #9ffcff;
+    text-shadow: 0 0 10px #1900ff, 0 0 20px #30a9fa;
     margin: 0;
 }
 
@@ -43,9 +43,9 @@
     margin: 0 auto; 
     overflow: hidden; 
     border-radius: 10px;
-    box-shadow: 0 10px 25px rgb(0, 3, 151), 0 0 0 5px rgba(5, 0, 22, 0.89); 
-    border: 3px groove #001947;
-    background-color: #001620;
+    box-shadow: 0 10px 25px rgba(4, 238, 255, 0.616), 0 0 0 5px rgb(0, 0, 0); 
+    border: 3px groove #e3fcfc;
+    background-color: #000000;
 }
 
 .carousel-inner {
@@ -123,19 +123,19 @@
     font-size: clamp(1.6rem, 2.3vw, 2rem);
     font-weight: 600;
     letter-spacing: 0.5px;
-    color: #afdbff;
-    text-shadow: 0 0 8px #7a00ff, 0 0 15px #1696ff;
+    color: #08ffff;
+    text-shadow: 0 0 8px #7a00ff, 0 0 15px #028dff;
     margin: 0 0 8px 0;
 }
 
 /* Description */
 .descriptionCarouselHome {
     font-size: clamp(0.9rem, 1.2vw, 1.05rem);
-    color: #93e9ff;
+    color: #00cdd4;
     line-height: 1.6;
     margin-bottom: 18px;
     max-width: 75%;
-    text-shadow: 0 2px 6px #000;
+    text-shadow: 0 2px 6px #002227;
 }
 
 /* Tools */
@@ -148,11 +148,11 @@
 
 .infoToolCarouselHome {
     font-size: 0.75rem;
-    color: #93e9ff;
-    background: linear-gradient(145deg, #040018, #001a33);
+    color: #f7fcfdb9;
+    background: linear-gradient(145deg, #040024, #040024);
     padding: 6px 14px;
     border-radius: 20px;
-    border: 1px solid #668aff;
+    border: 1px solid #d0f0f8c5;
     margin: 0;
     transition: 0.3s ease;
 }
