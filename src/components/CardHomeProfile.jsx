@@ -4,7 +4,7 @@
 
 
 
-  function CardHomeProfile( {onNavigate, activeIndex} ) {
+  function CardHomeProfile( {onNavigate} ) {
     return (
       <div className='AllCardHomeProfile'>
     

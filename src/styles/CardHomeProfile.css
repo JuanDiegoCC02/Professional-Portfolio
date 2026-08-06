@@ -5,14 +5,14 @@
     margin: 5% auto; 
     padding: 30px;
     margin-top: 95px;
-    background-color: #000000; 
+    background-color: #09272c; 
     color: #ecf0f1; 
     border-radius: 1%; 
     
     /* border shadow p */
-    box-shadow: 0 10px 20px rgb(0, 16, 165), 
+    box-shadow: 0 10px 20px rgb(70, 195, 253), 
        /* border shadow color second*/
-       0 0 0 5px rgb(7, 7, 7); 
+       0 0 0 5px rgb(1, 46, 66); 
     
     display: flex;
     align-items: center;
@@ -37,16 +37,16 @@
 
 .FtProfileHome {
     border-radius: 50%; 
-    border: 5px solid #000000f5;
+    border: 5px solid #02241cfd;
     object-fit: cover; 
-   box-shadow: 0 4px 15px rgb(25, 0, 255);
+   box-shadow: 0 4px 15px rgb(0, 0, 0);
     transition: transform 0.3s ease;
     cursor: pointer;
 }
 
 .FtProfileHome:hover {
     transform: scale(1.05);
-    box-shadow:  0 4px 14px #c497ffda; 
+    box-shadow:  0 4px 14px #007e9ee1; 
 }
 
 
@@ -57,7 +57,7 @@
 .TitleNameHome {
     font-size: 2.2em;
     margin-bottom: 5px;
-    color: #d5ecff;
+    color: #0ffde9;
     letter-spacing: 1px;
     text-shadow: 0 0 10px #7a00ff, 0 0 20px #c700ff;
 }
@@ -66,16 +66,16 @@
 .InfoStudyHome {
     font-size: 1.3em;
     margin-bottom: 15px;
-    color: #cacaca; 
+    color: #00d7df; 
     font-weight: 500;
     text-transform: uppercase;
-      text-shadow: 0 0 10px #0011ff, 0 0 20px #2c7fc4;
+      text-shadow: 0 0 10px #000000, 0 0 20px #004880c4;
 }
 
 .InfoIdeaHome {
     font-size: 1em;
     font-style: italic;
-    color: #80cffd; 
+    color: #00dddd; 
     border-left: 2px groove #a5f2ff;
     padding-left: 10px;
 }
