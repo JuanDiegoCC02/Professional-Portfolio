@@ -26,11 +26,10 @@ const Home = () => {
     scrollToSection(2);
   };
 
-  // logic reading nav Section
+ // logic reading nav Section
   useEffect(() => {
     const observerOptions = {
       root: null,
-      //margin For avoid navigation reading errors
       rootMargin: '-20% 0px -70% 0px', 
       threshold: 0, 
     };
@@ -62,21 +61,29 @@ const Home = () => {
       <NavPortfolio onNavigate={scrollToSection} activeIndex={currentIndex} />
       
       <div className="portfolio-container">
-        <section ref={sectionRefs[0]} className="section-vignette">
-          <CardHomeProfile onNavigate={scrollToSection}/>
-          <CarouselHomeProjects onImageClick={handleProjectClick}/>
-        </section>
+
+      <section ref={sectionRefs[0]} className="section-vignette">
+          <div className="section-content">
+              <CardHomeProfile onNavigate={scrollToSection}/>
+              <CarouselHomeProjects onImageClick={handleProjectClick}/>
+          </div>
+      </section>
         
         <section ref={sectionRefs[1]} className="section-vignette">
+          <div className="section-content">
           <CardProfileMyInfo />
+          </div>
         </section>
         
         <section ref={sectionRefs[2]} className="section-vignette">
+          <div className="section-content">
           <CarouselProjects
             externalIndex={selectedProject} 
             setExternalIndex={setSelectedProject}
           />
+          </div>
         </section>
+
       </div>
 
       <footer>
