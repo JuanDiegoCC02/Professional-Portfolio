@@ -1,149 +1,313 @@
-import homeNA from "../images/imgNumbAstro/homeNA.png";
-import registerNA from "../images/imgNumbAstro/registerNA.png";
-import logInNA from "../images/imgNumbAstro/logInNA.png";
-import contactUsNA from "../images/imgNumbAstro/contactUsNA.png";
-import taskFormNA from "../images/imgNumbAstro/taskFormNA.png";
-import taskAgendaNA from "../images/imgNumbAstro/taskAgendaNA.png";
-import starMapNA from "../images/imgNumbAstro/starMapNA.png";
-import starLootNA from "../images/imgNumbAstro/starLootNA.png";
-import profileNA from "../images/imgNumbAstro/profileNA.png";
-import AdminUsersGet from "../images/imgNumbAstro/AdminUsersGet.png";
-import UsersChart from "../images/imgNumbAstro/UsersChart.png";
-import AdminTasks from "../images/imgNumbAstro/AdminTasks.png";
+import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
+import "../styles/CarouselProjects.css"
+
+  import homeSR from "../images/imgSharedReading/homeSR.png";
+  import registerSR from "../images/imgSharedReading/registerSR.png";
+  import logInSR from "../images/imgSharedReading/logInSR.png";
+  import formSR from "../images/imgSharedReading/formSR.png";
+  import newBooksSR from "../images/imgSharedReading/newBooksSR.png";
+  import favBooksSR from "../images/imgSharedReading/favBooksSR.png";
+  import contactUsSR from "../images/imgSharedReading/contactUsSR.png";
+  import profileSR from "../images/imgSharedReading/profileSR.png";
+  import AdminUsersSR from "../images/imgSharedReading/AdminUsersSR.png";
+  import chartUsersSR from "../images/imgSharedReading/chartUsersSR.png";
+  import AdminBooksSR from "../images/imgSharedReading/AdminBooksSR.png";
+  import chartsBooksSR from "../images/imgSharedReading/chartsBooksSR.png";
+
+  import homeNA from "../images/imgNumbAstro/homeNA.png";
+  import registerNA from "../images/imgNumbAstro/registerNA.png";
+  import logInNA from "../images/imgNumbAstro/logInNA.png";
+  import contactUsNA from "../images/imgNumbAstro/contactUsNA.png";
+  import taskFormNA from "../images/imgNumbAstro/taskFormNA.png";
+  import taskAgendaNA from "../images/imgNumbAstro/taskAgendaNA.png";
+  import starMapNA from "../images/imgNumbAstro/starMapNA.png";
+  import starLootNA from "../images/imgNumbAstro/starLootNA.png";
+  import profileNA from "../images/imgNumbAstro/profileNA.png";
+  import AdminUsersGet from "../images/imgNumbAstro/AdminUsersGet.png";
+  import UsersChart from "../images/imgNumbAstro/UsersChart.png";
+  import AdminTasks from "../images/imgNumbAstro/AdminTasks.png";
+
+  import homeTL from "../images/imgTodoList/homeTL.png";
+  import registerTL from "../images/imgTodoList/registerTL.png";
+  import logInTL from "../images/imgTodoList/logInTL.png";
+  import formTL from "../images/imgTodoList/formTL.png";
+  import listTL from "../images/imgTodoList/listTL.png";
+  import editListTL from "../images/imgTodoList/editListTL.png";
+  import newStepTL from "../images/imgTodoList/newStepTL.png";
+  import editStepTL from "../images/imgTodoList/editStepTL.png";
+
+  import inicioNoticiasCR from "../images/imgNoticiasCR/inicioNoticiasCR.png";
+  import registroNoticiasCR from "../images/imgNoticiasCR/registroNoticiasCR.png";
+  import inicioSesionNoticiasCR from "../images/imgNoticiasCR/inicioSesionNoticiasCR.png";
+  import contactoNoticiasCR from "../images/imgNoticiasCR/contactoNoticiasCR.png";
+  import formNoticiasCR from "../images/imgNoticiasCR/formNoticiasCR.png";
+  import ultimasNoticiasCR from "../images/imgNoticiasCR/ultimasNoticiasCR.png";
+  import getUsuariosNoticiasCR from "../images/imgNoticiasCR/getUsuariosNoticiasCR.png";
+  import perfilNoticiasCR from "../images/imgNoticiasCR/perfilNoticiasCR.png";
+
+  import menuAdminNoticiasCR from "../images/imgNoticiasCR/menuAdminNoticiasCR.png";
+  import TAdminNoticiasCR from "../images/imgNoticiasCR/TAdminNoticiasCR.png";
+  import TUsuariosNoticiasCR from "../images/imgNoticiasCR/TUsuariosNoticiasCR.png";
+  import TContactosNoticiasCR from "../images/imgNoticiasCR/TContactosNoticiasCR.png";
+  import graficoAdminNoticiasCR from "../images/imgNoticiasCR/graficoAdminNoticiasCR.png";
+  import graficoUsuariosNoticiasCR from "../images/imgNoticiasCR/graficoUsuariosNoticiasCR.png";
+
+  import winGame from "../images/imgTicTacToeGAME/winGame.png";
+  import playGame from "../images/imgTicTacToeGAME/playGame.png";
+  import resetGame from "../images/imgTicTacToeGAME/resetGame.png";
+
+import CardProjectInfo from './CardProjectInfo';
+
+import newProjects from "../images/newProjects.png"
 
 
-// Numb Astro 
-const numbAstro = {
 
-    thumbnail: homeNA,
+const cardsProjects =[
 
-    title: "Numb Astro",
 
-    description:
-        "Numb Astro is a habit-tracking and personal development platform inspired by space exploration. Users complete daily tasks to unlock stars, achievements, and titles while monitoring their progress through interactive dashboards. The application was developed with React and uses a JSON Server backend to simulate a complete CRUD environment.",
-
-    github:
-        "https://github.com/JuanDiegoCC02/Agenda-Numb-Astro.git",
-
-    technologies: {
-
-        languages: [
-            "HTML",
-            "CSS3",
-            "JavaScript"
-        ],
-
-        frontend: [
-            "React",
-            "React Router",
-            "ApexCharts"
-        ],
-
-        backend: [
-            "JSON Server",
-            "Node.js",
-            "Local Storage",
-            "Cookies"
-        ],
-
-        tools: [
-            "VS Code",
-            "GitHub",
-            "Trello",
-            "Slack",
-            "Canva"
-        ]
-
-    },
-
-    gallery: [
-
-        {
-            src: homeNA,
-            alt: "Home",
-            description:
-                "Landing page introducing Numb Astro and explaining the application's main features through an interactive carousel."
-        },
-
-        {
-            src: registerNA,
-            alt: "Register",
-            description:
-                "Registration page where users create an account after completing a validated form."
-        },
-
-        {
-            src: logInNA,
-            alt: "Login",
-            description:
-                "Authentication page that validates user credentials and stores the session using Local Storage and Cookies."
-        },
-
-        {
-            src: contactUsNA,
-            alt: "Contact",
-            description:
-                "Contact section presenting the project's mission, appreciation message, and contact information."
-        },
-
-        {
-            src: taskFormNA,
-            alt: "Task Form",
-            description:
-                "Form used to register new habits and tasks with validation before saving the information."
-        },
-
-        {
-            src: taskAgendaNA,
-            alt: "Task Agenda",
-            description:
-                "Task management interface where users can filter, edit, complete, and organize their habits."
-        },
-
-        {
-            src: starMapNA,
-            alt: "Star Map",
-            description:
-                "Interactive galaxy where every completed task generates a new randomly positioned star, encouraging long-term consistency."
-        },
-
-        {
-            src: starLootNA,
-            alt: "Star Memories",
-            description:
-                "Reward system that unlocks inspirational quotes and achievements as users complete more habits."
-        },
-
-        {
-            src: profileNA,
-            alt: "Profile",
-            description:
-                "Personal profile displaying account information, earned stars, achievement titles, and profile editing features."
-        },
-
-        {
-            src: AdminUsersGet,
-            alt: "Users Administration",
-            description:
-                "Administration panel for managing registered users through a structured data table."
-        },
-
-        {
-            src: UsersChart,
-            alt: "Users Analytics",
-            description:
-                "Interactive chart displaying user registration statistics and platform growth."
-        },
-
-        {
-            src: AdminTasks,
-            alt: "Tasks Administration",
-            description:
-                "Administrative dashboard with analytics showing created tasks and completion statistics."
-        }
-
+  //News CR
+  {
+    src:inicioNoticiasCR,
+    title:"Noticias Ambientales C.R.",
+    description:" Noticias Ambientales C.R. is a website developed primarily with React on the front end and Django/Django REST Framework on the back end. The website aims to promote environmental awareness and citizen participation in Costa Rica. The application allows users not only to stay informed about ecological events and environmental campaigns but also to actively contribute by publishing news, reporting incidents, and participating in comments. The platform combines secure authentication, role-based access control, geolocation and image storage features, content moderation, and graphical data visualization to offer a structured and scalable system for environmental information management.",
+    github:"https://github.com/JuanDiegoCC02/Pagina-Web-Noticias-Ambientales-C.R..git",
+    languages:"HTML, CSS3, JavaScript & Python ",
+    framework:"React, React Router, Native Fetch API, Leaflet & Apexchart",
+    back_end:"Django, Django REST Framework, Local Storage & Cookies",
+    tools:"VS Code, GitHub, Trello, Slack & Canva",
+     imagesProjects: [
+      {src: inicioNoticiasCR, alt: "Image NoticiasCR", subDescription:"The homepage of the Noticias Ambientales CR website includes a welcome message and presents the platform's purpose and commitment to environmental sustainability. It also features informational cards with thought-provoking environmental messages to raise awareness and inspire action for the environment."},
+      {src: registroNoticiasCR, alt: "Image NoticiasCR", subDescription:"A registration system based on Django and a MySQL database that provides a robust and secure user authentication process. It includes server-side validation to ensure data integrity and implements input validation to confirm that fields are completed, including the website's terms and conditions."},
+      {src: inicioSesionNoticiasCR, alt: "Image NoticiasCR", subDescription:"An integrated login system with a Django backend using JWT (JSON Web Token) authentication for secure user access. When users enter their credentials, the system validates the information on the server and generates a JWT token, which is used to authorize access to protected paths and maintain secure sessions."},
+      {src: contactoNoticiasCR, alt: "Image NoticiasCR", subDescription:"The Contact section includes a form for submitting reports without registration. It also offers a dedicated information area where users can find direct contact information, such as email and phone number, for further assistance."},
+      {src: formNoticiasCR, alt: "Image NoticiasCR", subDescription:"The Publications section offers a structured form where users can register new posts, specifying the title, description, post type (news or campaign), and geographic location via integrated geolocation. They can also upload images, which are managed through Cloudinary, ensuring secure cloud storage and optimized delivery."},
+      {src: ultimasNoticiasCR, alt: "Image NoticiasCR", subDescription:"In the Publications section, there is a structured space called Recent Publications where users can find new posts approved by administrators, who validate and certify the accuracy of the information contained in the news articles or campaigns. This helps prevent misinformation on our website."},
+      {src: getUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:" The News Details section allows users to access the full content of a selected post. It displays the image stored in Cloudinary, along with the event's geographic location using Leaflet for clearer visualization. Users can also interact with the news by rating it, reporting inappropriate content, and participating in discussions through comments and replies. This interactive design promotes engagement, transparency, and community participation within the platform. "},
+      {src: perfilNoticiasCR, alt: "Image NoticiasCR", subDescription:"In the upper right corner of the navigation menu, you'll find the My Account option, which displays profile and logout options. The profile section shows structured user data, such as profile picture, username, email address, number of posts, ratings of published news, and assigned role. It also includes an editing function that allows you to update profile information, such as your profile picture, improving account management and personalization. The Log Out option removes your token session from the JWT authentication process, thus ensuring stable security and privacy on the website."},      
+      {src: menuAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"In the Administrators role, you will be able to access a drop-down menu in the administration area, where you will be able to access different sections such as a graphs section, a user table, publications and contact requests, where you will be able to manage the website information in a structured, organized and stable way."},
+      {src: TAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"The Posts table section displays a structured list of all news articles and campaigns submitted by users. Administrators can review each pending submission and approve or reject it before publication. They can also edit or delete post details, ensuring content quality and accuracy."},
+      {src: TUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:"The User Table section displays a structured list of all user records. Administrators can edit or delete user information here if they violate the site's terms and conditions, ensuring structured, organized, and stable management of user data."},
+      {src: TContactosNoticiasCR, alt: "Image NoticiasCR", subDescription:"The Contact Request Table section displays a structured list of all contact request records. Administrators can view and review requests, as well as edit or delete request information if it violates the site's terms and conditions, ensuring structured and organized management of contact data."},
+      {src: graficoAdminNoticiasCR, alt: "Image NoticiasCR", subDescription:"The Comparative Chart section presents a visual analysis of publication types, comparing news and campaigns within the platform. This graphical representation allows administrators to quickly understand content distribution and activity trends on the platform in a structured and organized way."},
+      {src: graficoUsuariosNoticiasCR, alt: "Image NoticiasCR", subDescription:"The User Registration Chart displays the number of registered users over time, structured by registration date. This visualization helps administrators analyze user growth trends and monitor platform expansion."}
     ]
+  },
 
-};
+  //Numb Astro
+   {
+    src:homeNA,
+    title:"Numb Astro",
+    description:"Numb Astro is a personal development web application focused on creating and tracking new habits through an incentive system inspired by space travel. As part of this incentive system, users receive stars on a star map, unlock stellar memories, and earn titles at each level as they progress in their habits, promoting consistency and personal growth. Developed with React, it implements a complete CRUD system with admin tables for managing habits and users, as well as visualizing metrics through interactive charts, using ApexCharts for accessible analysis. It features a simulated backend with a JSON server and is structured in JSON format for data management. Furthermore, it integrates session validation and storage using LocalStorage /Cookies, ensuring privacy and structured control for users.",
+    github:"https://github.com/JuanDiegoCC02/Agenda-Numb-Astro.git",
+    languages:"HTML, CSS3 & JavaScript ",
+    framework:"React, React Router & Apexchart",
+    back_end:"DBJson, Node.js, Local Storage & Cookies",
+    tools:"VS Code, GitHub, Trello, Slack & Canva",
+     imagesProjects: [
+      {src: homeNA, alt: "Image Home", subDescription:"Numb Astro's homepage features a welcome message for users. It also includes an interactive carousel that explains the website's concept and provides guidance on how to navigate and use its main features, ensuring a clear and engaging user experience."},
+      {src: registerNA, alt: "Image register", subDescription:"In the registration section, users will be able to create their user account through a form where they must enter their personal information and accept the terms and conditions in order to access the website and enjoy its features and resources."},
+      {src: logInNA, alt: "Image logIn", subDescription:"In the Login section, users can validate their existing account with their personal data, where they must enter their username and password in a form to access the website and enjoy its features and resources."},
+      {src: contactUsNA, alt: "Image NumbAstro", subDescription:"The Contact section of Numb Astro is structured with three informational cards. The first card presents the mission of the platform, highlighting its purpose and vision. The second card expresses appreciation to users for visiting the website. The final card provides contact details, including email and phone number, allowing users to reach out for support or inquiries."},
+      {src: taskFormNA, alt: "Image NumbAstro", subDescription:"The Task Form module allows users to register new tasks or habits by submitting structured data, such as title, task type, description, and assigned day. Validation ensures that all fields are required and completed correctly before the data is processed and stored."},
+      {src: taskAgendaNA, alt: "Image NumbAstro", subDescription:"The New Tasks section retrieves and displays user-created tasks in an organized manner. It includes a filter option that allows users to sort tasks by type, making it easy to find specific activities. Users can edit task information or mark them as completed using a checkmark, facilitating efficient task management and progress tracking."},
+      {src: starMapNA, alt: "Image NumbAstro", subDescription:"The Star Map section visually represents the user's progress through an interactive, space-themed interface. A new star is generated on the map each time a task is completed, transforming productivity into a motivating experience. This feature is based on controlled random generation logic that dynamically positions the stars according to task completion, combined with CSS styles to create an immersive and visually appealing space environment."},
+      {src: starLootNA, alt: "Image NumbAstro", subDescription:"The Loot section features Star Memories, motivational quotes from famous figures designed to inspire users to keep improving. These memories are unlocked progressively as users earn more stars, reinforcing consistency and personal growth through a gamified reward system."},
+      {src: profileNA, alt: "Image NumbAstro", subDescription:"The Profile section is accessed via a drop-down menu in the upper right corner of the screen. From there, users can log out of their account or access their personal profile, where they can view and edit their account information. The profile also includes a star counter that tracks the total number of stars earned and an achievement title that reflects the user's current progress level on the platform."},
+      {src: AdminUsersGet, alt: "Image NumbAstro", subDescription:"The Administration section offers moderation and management tools for the entire website. It is divided into two main modules: Users and Tasks.In the Users module, administrators can access a structured table that displays all registered users along with their relevant information, facilitating efficient data management and account monitoring."},
+      {src: UsersChart, alt: "Image NumbAstro", subDescription:"Additionally, in the Users section, they can access a user registration chart that provides a more structured and intuitive view of account creation records."},
+      {src: AdminTasks, alt: "Image NumbAstro", subDescription:"The Administration section offers moderation and management tools for the entire website. It is divided into two main modules: Users and Tasks.In the Tasks module, administrators can access structured charts that show the daily record of task creation and a comparison of completed and incomplete tasks, facilitating efficient data management and tracking."}
+    ]
+  },
 
-export default numbAstro;
+  //Shared Reading
+  {
+    src:homeSR,
+    title:"Shared Reading",
+    description:"Shared Reading is a collaborative reading project that allows multiple users to share the experience of exchanging books. Its main objective is to facilitate the reuse of books, not only by reading and preserving them, but also by ensuring that the book reaches another person, thus promoting reading among different users.This web platform is developed with React as the frontend interface framework, and for the backend, I created a simulation using json-server and db.json.",
+    github:"https://github.com/JuanDiegoCC02/Shared-Reading.git",
+    languages:"HTML, CSS3 & JavaScript",
+    framework:"React, React Router, & ApexChart ",
+    back_end:"Json-Server, Node.js, ,DbJson, Local Storage & Cookies",
+    tools:"VS Code, GitHub, Trello, Slack & Figma",
+    imagesProjects: [
+      {src: homeSR, alt: "Image Home", subDescription:"The homepage of the shared reading website features a welcome message and a collection of book cards that display key information about each book available for exchange."},
+      {src: registerSR, alt: "Image Home", subDescription:"The Registration section of the Shared Reading website allows users to create an account using a structured form built with React. User data is stored in a db.json file in JSON format, supported by a mock backend using Node.js and json-server."},
+      {src: logInSR, alt: "Image Home", subDescription:"The login section validates user credentials using a simulated backend powered by Node.js and a json server. Once authenticated, the user's session data is stored using cookies and localStorage, allowing session state to be maintained across the platform. This approach simulates the real authentication flow while ensuring a smooth user experience during development."},
+      {src: formSR, alt: "Image SharedReading", subDescription:"The book registration form allows users to submit new books to the system. It includes input fields for the book title, author, category, additional information, and an image upload function. The form validates user information for error handling before submitting the data to the system for storage in the database.."},
+      {src: newBooksSR, alt: "Image SharedReading", subDescription:"The New Books module dynamically generates book cards from the BackEnd Mock. Each card includes structured data such as the book title, author, category, availability status, and information about the user who created the publication. The section also integrates a search function that filters results in real time based on book title, author, category, and availability, improving data searchability and accessibility."},
+      {src: favBooksSR, alt: "Image SharedReading", subDescription:"The Favorite Books section displays books saved by the user as favorites, providing quick and easy access."},
+      {src: contactUsSR, alt: "Image SharedReading", subDescription:"The Contact Us section provides users with information about Shared Reading and its purpose, as well as a contact in case of any problems with the platform."},
+      {src: profileSR, alt: "Image SharedReading", subDescription:"The Profile section provides users with access to their personal information. It includes a trade counter that shows how many book transactions they have made."},
+      {src: AdminUsersSR, alt: "Image SharedReading", subDescription:"The administration panel contains a user management table that retrieves and displays data for all users. It provides role-based permissions that allow the administrator to edit or delete user information, thus ensuring proper access control and system administration."},
+      {src: chartUsersSR, alt: "Image SharedReading", subDescription:"The administration panel contains a user chart that retrieves and displays data for all registered users. It provides a clearer and more organized view of the records."},
+      {src: AdminBooksSR, alt: "Image SharedReading", subDescription:"The administration panel contains a book management table that retrieves and displays data for all books. It provides role-based permissions that allow the administrator to edit or delete book information, thus ensuring control over publications and proper system administration."},
+      {src: chartsBooksSR, alt: "Image SharedReading", subDescription:"The administration panel contains book charts that retrieve and display data for all published books. It offers a clearer and more organized view of publications."}
+    ]
+  },
+
+
+  //Recipes ToDo-List 
+    {
+    src:homeTL,
+    title:"Recipes To-Do List",
+    description:" The Recipe To-Do List is an application developed with React on the frontend and Node.js, which uses a mock RESTful API powered by a JSON server on the backend. The application is designed to manage cooking recipes using a structured to-do list approach, allowing users to dynamically create, organize, update, and delete recipes. The system stores the data in a local db.json file, which acts as a mock database, enabling full CRUD (Create, Read, Update, Delete) operations via HTTP requests.",
+    github:"https://github.com/JuanDiegoCC02/Todo-List-React.git",
+    languages:"HTML, CSS and JavaScript ",
+    framework:"React, React Router, Next.js and Apexchart",
+    back_end:"DBJson, Node.js, Local Storage and Cookies",
+    tools:"VS Code, GitHub, Trello, Slack and Canva",
+     imagesProjects: [
+      {src: homeTL, alt: "Image Home", subDescription:"The Home section includes information cards that explain the purpose of the application and guide users on how to use its main features. This provides a clear overview of how to manage recipes, helping users understand the workflow intuitively and easily."},
+      {src: registerTL, alt: "Image NumbAstro", subDescription:"Registration allows users to create an account via a form connected to a simulated backend using JSON server technology. Data is stored in a db.json file, simulating database persistence and enabling basic authentication."},
+      {src: logInTL, alt: "Image NumbAstro", subDescription:"During login, the user's credentials are validated against the simulated backend, powered by a json-server. Once verified, users gain access to the platform through their registered account."},
+      {src: formTL, alt: "Image NumbAstro", subDescription:"The Recipe Form section, accessible from the navigation bar, allows you to create and submit recipes using a structured form. Users will be able to add the main recipe details (such as name, description, and ingredients)."},
+      {src: listTL, alt: "Image NumbAstro", subDescription:"In the List Cooking Recipes section, accessible from the navigation bar, you can view and read  the new recipes using structured cards. Users will also be able to see a counter of completed recipes."},
+      {src: editListTL, alt: "Image NumbAstro", subDescription:"Users can edit the main recipe data if they encounter errors during form submission, and even delete the recipe if necessary. This is thanks to the CRUD logic implemented in the simulated backend."},
+      {src: newStepTL, alt: "Image NumbAstro", subDescription:"With the Add Steps button, which opens a compact form interface, users can record each recipe step by entering a description and selecting the priority level. The data is processed and stored using the simulated backend, making it easy to structure the steps within each recipe."},
+      {src: editStepTL, alt: "Image NumbAstro", subDescription:"The Edit Steps feature allows users to update or delete individual steps in a recipe after they've been created. Each step can be modified separately, allowing for corrections to information or adjustments to priority as needed."},
+  
+    ]
+  },
+     
+  // TIC TAC TOE GAME
+    {
+    src:resetGame,
+    title:"TIC TAC TOE GAME",
+    description:" This project is a tic-tac-toe game developed with HTML, JavaScript, and CSS3. It allows the user to play against the computer on a 3x3 grid, incorporating logic to control turns, evaluate victory conditions, and manage the game state. It includes New Game and Reset buttons for efficient game control, as well as a win counter that records the number of victories achieved by the player.",
+    github:"https://github.com/JuanDiegoCC02/Todo-List-React.git",
+    languages:"HTML, CSS3 and JavaScript ",
+    framework:" It does not use frameworks  ",
+    back_end:"Local Storage ",
+    tools:"VS Code, GitHub, Trello, Slack and Canva",
+     imagesProjects: [
+      {src: resetGame, alt: "Image Home", subDescription:" The tic-tac-toe game starts directly on the game interface, allowing players to interact with the board immediately without an intermediate splash screen. All players need to do is mark the desired square with an X on the 3x3 grid. "},
+      {src: playGame, alt: "Image NumbAstro", subDescription:" The board is structured in HTML by creating a container element that holds nine individual cells, each represented by a <div> with a unique ID. These cells form the classic 3x3 grid used in the game.The visual design is implemented using CSS3 Grid, which organizes the cells into three rows and three columns. Each cell is designed to center the player's moves, apply hover effects, and maintain a uniform and structured size. "},
+      {src: winGame, alt: "Image NumbAstro", subDescription:" The game logic is implemented in JavaScript to control player interactions, manage turns, and evaluate the game's outcome. This is based on a predefined matrix of winning combinations (winCombos). After each move, the system checks if any winning combinations have been completed by comparing the values ​​in the cells. The game also includes two control buttons to manage the game flow. The New Game button clears the board and restarts the current game, preserving any saved win statistics. Conversely, the Reset button completely resets the game, erasing all stored data and reloading the interface, allowing the player to start from scratch. "},
+      
+    ]
+  },
+
+
+   // Working on upcoming projects
+    {
+    src:newProjects,
+    title:"Working on Upcoming Projects",
+    description:" Stay tuned for more information.",
+    github:"https://github.com/JuanDiegoCC02/Todo-List-React.git",
+    languages:"In Progress ",
+    framework:" In Progress ",
+    back_end:"In Progress",
+    tools:"In Progress",
+     imagesProjects: [
+      {src: newProjects, alt: "Image Home", subDescription:"In Progress..."},
+    ]
+  },
+
+]
+
+function CarouselProjects({externalIndex, setExternalIndex}) {
+  const location = useLocation ();
+  const [secondaryIndex, setSecondaryIndex] = useState(0)
+  const [modalOpen, setModalOpen] = useState(false)
+  const [selectedProjectTitle, setSelectedProjectTitle] = useState(null)
+  const mainIndex = externalIndex;
+
+  /* developing logical improvements for the future */
+  const openModal = () => {
+    setSelectedProjectTitle(cardsProjects[mainIndex].title);
+    setModalOpen(true);
+  }
+/* developing logical improvements for the future */
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedProjectTitle(null);
+  }
+
+  const nextMainSlide = () => {
+    setExternalIndex((prevIndex) => (
+    prevIndex === cardsProjects.length - 1 ? 0 : prevIndex + 1
+    ));
+    setSecondaryIndex(0); 
+  }
+
+  const prevMainSlide = () => {
+    setExternalIndex((prevIndex) => (
+    prevIndex === 0 ? cardsProjects.length - 1 : prevIndex - 1
+    ));
+    setSecondaryIndex(0);
+  }
+
+  const project = cardsProjects[mainIndex]
+
+  const nextSecondarySlide = () => {
+    setSecondaryIndex((prevIndex) => (
+    prevIndex === project.imagesProjects.length - 1 ? 0 : prevIndex + 1
+    ));
+  }
+
+  const prevSecondarySlide = () => {
+    setSecondaryIndex((prevIndex) => (
+    prevIndex === 0 ? project.imagesProjects.length - 1 : prevIndex - 1
+    ));
+  }
+
+  /* developing logical improvements for the future */
+  useEffect(() => {
+    if (location.state && typeof location.state.projectIndex === "number") {
+      const indexReceived = location.state.projectIndex;
+      if (indexReceived < cardsProjects.length) {
+        setMainIndex(indexReceived)
+      }
+    }
+  }, [location])
+
+  //Reset secondaryIndex, if !mainIndex
+  useEffect(() => {
+    setSecondaryIndex(0);
+  }, [mainIndex]);
+
+  return (
+
+    <div className='AllCarouselProjects'>
+
+      <div className='ContainerTitleCarousel'>
+        <h1 className='TitleNameProject'>{project.title}</h1>
+        <p className='DescriptionProject'>{project.description}</p>
+      </div>
+
+    
+
+      <div className='ContainerAllCardsCarousel'>
+        <div className='ContainerImagesProject'>
+          <img className='ImagesProjectCarousel' src={project.imagesProjects[secondaryIndex].src}   alt={project.imagesProjects[secondaryIndex].alt} />
+          
+           <button className='btnImgLeft' onClick={prevSecondarySlide}> ⬅️ </button>
+           <button className='btnImgRight' onClick={nextSecondarySlide}> ➡️ </button>
+       <p className='descriptionImgCarousel'>{project.imagesProjects[secondaryIndex].subDescription}</p>
+
+        </div>
+        <div className='ContainerHRCarouselrojects'><hr className='HRCarouselProjects'/></div>
+
+        <div className='ContainerIMGandLinkCarouselProjects'>
+           <div className='containerBtnCarouselProjects'>
+          <button className='btnLeft' onClick={prevMainSlide}> ⬅️ Proyecto Anterior </button>
+          <button className='btnRight' onClick={nextMainSlide}> Proyecto Siguiente ➡️ </button>
+          </div>
+          <div className='ContainerImgCarouselProjects'>
+            <a  className='LinkGithubCarouselProjects' target='blank'  href={project.github} >GitHub</a>
+          </div><br />
+
+          
+        </div>
+
+        {modalOpen && selectedProjectTitle && (
+          <CardProjectInfo projectTitle={selectedProjectTitle} onClose={closeModal}/>
+        )}
+
+      </div>
+    </div>
+  )
+}
+
+export default CarouselProjects
