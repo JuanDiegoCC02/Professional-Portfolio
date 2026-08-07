@@ -4,7 +4,7 @@
 
 
 // tic tac toe vs computer
-const tictactoe = {
+const ticTacToe = {
 
     thumbnail: playGame,
 
@@ -68,4 +68,4 @@ gallery: [
 ]
 };
 
-export default tictactoe;
+export default ticTacToe;
