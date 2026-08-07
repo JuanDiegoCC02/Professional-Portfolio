@@ -1,87 +1,143 @@
-import React from 'react'
+import React from "react";
 import "../styles/CardProfileMyInfo.css";
 
 function CardProfileMyInfo() {
   return (
-<div className='AllCardProfileMyInfo'>
+    <div className="AllCardProfileMyInfo">
 
-        <div className='ContainerTitleCardPrfoile'>
-            <h1 className='TitleNameCardProfile'>Juan Diego <br /> Corella Camacho</h1>
-            <h2 className='subTitleWorkCardProfile'>Front-End & Back-End <br /> Web Developer</h2>
+      {/* header */}
+      <div className="ContainerTitleCardPrfoile">
+
+        <span className="ProfileBadge">
+          Full Stack Developer
+        </span>
+
+        <h1 className="TitleNameCardProfile">
+          Juan Diego Corella Camacho
+        </h1>
+
+        <h2 className="subTitleWorkCardProfile">
+          Front-End • Back-End • AI Integration
+        </h2>
+
+      </div>
+
+      {/* about me */}
+
+      <section className="ContainerMyInfoCardProfile">
+
+        <h3 className="AboutMeTitleCardProfile">
+          About Me
+        </h3>
+
+        <p className="DescriptionCardProfile">
+          I'm a Full Stack Developer specialized in building modern web
+          applications using React, Django, REST APIs and MySQL.
+          I enjoy creating scalable, maintainable and user-focused solutions
+          while continuously learning new technologies.
+        </p>
+
+        <p className="DescriptionCardProfile">
+          I am passionate about software development, artificial intelligence
+          and problem solving. I value clean code, teamwork and continuous
+          improvement, always aiming to deliver high-quality applications.
+        </p>
+
+      </section>
+
+      {/* skills */}
+
+      <div className="AllContainerStudiesCardProfile">
+
+        {/* front-end */}
+
+        <div className="subContainerStudyCardProfile">
+
+          <h4 className="TitleStudyCardProfile">
+            Front-End
+          </h4>
+
+          <ul className="UlCardProfile">
+            <li className="LiCardProfile">HTML5</li>
+            <li className="LiCardProfile">CSS3</li>
+            <li className="LiCardProfile">JavaScript</li>
+            <li className="LiCardProfile">React</li>
+            <li className="LiCardProfile">WordPress</li>
+            <li className="LiCardProfile">Tailwind CSS</li>
+            <li className="LiCardProfile">Bootstrap</li>
+            <li className="LiCardProfile">ApexCharts</li>
+            <li className="LiCardProfile">Leaflet</li>
+          </ul>
+
         </div>
 
-        <div className='ContainerMyInfoCardProfile'>
-            <h3 className='AboutMeTitleCardProfile'>About me</h3>
-            <p className='DescriptionCardProfile'> 
-                I'm a Front-End and Back-End developer with a strong foundation in React and Django. 
-                I also have experience in other areas such as GitHub, MySQL, and WordPress.
-            </p>
-            
-             <p className='DescriptionCardProfile'>
-                I consider myself a passionate person, eager to learn constantly, seeking more experience, and I enjoy being supportive and helpful. 
-                I'm also detail-oriented, focused on quality, and reliable, capable of working effectively both under pressure and as part of a team.
-             </p>
+        {/* back-end */}
+
+        <div className="subContainerStudyCardProfile">
+
+          <h4 className="TitleStudyCardProfile">
+            Back-End
+          </h4>
+
+          <ul className="UlCardProfile">
+            <li className="LiCardProfile">Python</li>
+            <li className="LiCardProfile">Django</li>
+            <li className="LiCardProfile">Django REST Framework</li>
+            <li className="LiCardProfile">REST APIs</li>
+            <li className="LiCardProfile">JWT Authentication</li>
+            <li className="LiCardProfile">AI Services</li>
+            <li className="LiCardProfile">(MCP) Model Context Protocol</li>
+            <li className="LiCardProfile">(NPL) Natural Language Processing </li>
+          </ul>
+
         </div>
 
-    <div className='AllContainerStudiesCardProfile'>
-        <div className='subContainerStudyCardProfile'>
-            <h5 className='TitleStudyCardProfile'>Web Development Languages</h5>
-            <ul className='UlCardProfile'>
-                <li className='LiCardProfile'>HTML</li>
-                <li className='LiCardProfile'>CSS</li>
-                <li className='LiCardProfile'>JavaScript</li>
-                <li className='LiCardProfile'>Python</li>
-                <li className='LiCardProfile'>C++</li>
-            </ul>
-        </div>
-        
-       
-        <div className='subContainerStudyCardProfile'>
-            <h5 className='TitleStudyCardProfile'>Frameworks and Libraries</h5>
-            <ul className='UlCardProfile'>
-                <li className='LiCardProfile'>React</li>
-                <li className='LiCardProfile'>React Router</li>
-                <li className='LiCardProfile'>Native Fetch API</li>
-                <li className='LiCardProfile'>Bootstrap</li>
-                <li className='LiCardProfile'>Tailwin</li>
-                <li className='LiCardProfile'>ApexCharts</li>
-                <li className='LiCardProfile'>Leaflet</li>
-            </ul>
+        {/* databases */}
+
+        <div className="subContainerStudyCardProfile">
+
+          <h4 className="TitleStudyCardProfile">
+            Database & Cloud
+          </h4>
+
+          <ul className="UlCardProfile">
+            <li className="LiCardprofile">Cookies</li>
+            <li className="LiCardProfile">MySQL</li>
+            <li className="LiCardProfile">PostgreSQL</li>
+            <li className="LiCardProfile">AWS</li>
+            <li className="LiCardProfile">Cloudinary</li>
+            <li className="LiCardProfile">GitHub Pages</li>
+            <li className="LiCardProfile">Vercel</li>
+          </ul>
+
         </div>
 
-        <div className='subContainerStudyCardProfile'>
-            <h5 className='TitleStudyCardProfile'>Back-End and DataBases</h5>
-            <ul className='UlCardProfile'>
-                <li className='LiCardProfile'>DJango</li>
-                <li className='LiCardProfile'>DJango REST Framework</li>
-                <li className='LiCardProfile'>JWT-Json Web Tokens</li>
-                <li className='LiCardProfile'>MySQL</li>
-                <li className='LiCardProfile'>Node.js</li>
-                <li className='LiCardProfile'>Cookies</li>
-                <li className='LiCardProfile'>AWS-Amazon Web Services</li>
-                <li className='LiCardProfile'>Cloudinary</li>
-                <li className='LiCardProfile'>Integration of AI services to Model Context Protocol</li>
-            </ul>
+        {/* tools */}
+
+        <div className="subContainerStudyCardProfile">
+
+          <h4 className="TitleStudyCardProfile">
+            Development Tools
+          </h4>
+
+          <ul className="UlCardProfile">
+            <li className="LiCardProfile">VS Code</li>
+            <li className="LiCardProfile">GitHub</li>
+            <li className="LiCardProfile">Postman</li>
+            <li className="LiCardProfile">Figma</li>
+            <li className="LiCardProfile">Trello</li>
+            <li className="LiCardProfile">Slack</li>
+            <li className="LiCardProfile">Teams</li>
+            <li className="LiCardProfile">Discord</li>
+            <li className="LiCardProfile">Canva</li>
+          </ul>
+
         </div>
 
-        
-        <div className='subContainerStudyCardProfile'>
-            <h5 className='TitleStudyCardProfile'>Tools</h5>
-            <ul className='UlCardProfile'>
-                <li className='LiCardProfile'>VS Code</li>
-                <li className='LiCardProfile'>GitHub</li>
-                <li className='LiCardProfile'>Figma</li>
-                <li className='LiCardProfile'>Trello</li>
-                <li className='LiCardProfile'>Slack</li>
-                <li className='LiCardProfile'>Discord</li>
-                <li className='LiCardProfile'>Canva</li>
-                <li className='LiCardProfile'>Postman</li>
-            </ul>
-        </div>
+      </div>
+
     </div>
-
-</div>
-  )
+  );
 }
 
-export default CardProfileMyInfo
+export default CardProfileMyInfo;
