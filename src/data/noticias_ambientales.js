@@ -15,7 +15,7 @@
   import graficoUsuariosNoticiasCR from "../images/imgNoticiasCR/graficoUsuariosNoticiasCR.png";
 
 
-// Numb Astro 
+// Noticias Ambientales CR
 const noticiasAmbientalesCR = {
 
     thumbnail: inicioNoticiasCR,
