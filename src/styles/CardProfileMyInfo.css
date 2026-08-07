@@ -1,179 +1,359 @@
-/* Paleta de Colores
-   - Fondo Base: #000000
-   - Acento Luminoso/Eléctrico: rgb(0, 14, 141)
-   - Acento Vivo (Rol/Detalle): #3498db
-   - Fondo Secundario: #1a1a1a
-   - Texto Principal: #ecf0f1
-   Prueba de cambio
-   - Acento Luminoso/Eléctrico: rgb(0, 22, 121)
-   - Acento Vivo (Rol/Detalle): #2443db
-   - Fondo Secundario: #adadad07
-*/
+/* fullCard */
+.AllCardProfileMyInfo{
 
+    width:100%;
+    max-width:1400px;
 
-.AllCardProfileMyInfo {
-    max-width: 900px; 
-    margin: 50px auto; 
-    padding: 40px;
-    margin-bottom: 120px;
+    margin:auto;
+    padding:45px;
 
-    
-    background-color: #000000; 
-    color: #ecf0f1; 
-    border-radius: 12px; 
-    border: 2px groove rgb(1, 0, 12);
-    
-   
-    box-shadow: 
-        0 10px 25px rgb(0, 3, 151), 
-        0 0 0 5px rgba(5, 0, 22, 0.89); 
-    
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInSlide 0.8s ease-out forwards;
+    background:
+        linear-gradient(
+            160deg,
+            rgba(0,23,43,.96),
+            rgba(0,13,26,.98)
+        );
+
+    border:1px solid rgba(110,220,255,.12);
+
+    border-radius:24px;
+
+    color:#ecf0f1;
+
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.02),
+        0 18px 40px rgba(0,0,0,.45),
+        0 0 40px rgba(0,153,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    animation:fadeInSlide .8s ease forwards;
 }
 
-@keyframes fadeInSlide {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+/* header */
+
+.ContainerTitleCardPrfoile{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    text-align:center;
+
+    padding-bottom:35px;
+    margin-bottom:40px;
+
+    border-bottom:1px solid rgba(110,220,255,.12);
+}
+
+.ProfileBadge{
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:rgba(0,200,255,.08);
+
+    border:1px solid rgba(110,220,255,.18);
+
+    color:#8feeff;
+
+    font-size:.82rem;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+
+    margin-bottom:20px;
+}
+
+.TitleNameCardProfile{
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    color:#ecfbff;
+
+    margin-bottom:12px;
+
+    text-shadow:
+        0 0 25px rgba(0,200,255,.15);
+}
+
+.subTitleWorkCardProfile{
+
+    font-size:1.2rem;
+
+    font-weight:400;
+
+    color:#8feeff;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+
+/* about me */
+
+.ContainerMyInfoCardProfile{
+
+    padding:35px;
+
+    margin-bottom:45px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.03),
+            rgba(255,255,255,.015)
+        );
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:18px;
+}
+
+.AboutMeTitleCardProfile{
+
+    font-size:1.6rem;
+
+    margin-bottom:18px;
+
+    color:#ffffff;
+}
+
+.DescriptionCardProfile{
+
+    color:#c7d9e3;
+
+    line-height:1.9;
+
+    font-size:1.02rem;
+
+    text-align:justify;
+
+    margin-bottom:18px;
+}
+
+
+/* order for the grid */
+
+.AllContainerStudiesCardProfile{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(300px,1fr));
+
+    gap:28px;
+}
+
+
+/* card */
+
+.subContainerStudyCardProfile{
+
+    padding:28px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.035),
+            rgba(255,255,255,.015)
+        );
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.subContainerStudyCardProfile:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(110,220,255,.28);
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(0,174,255,.15);
+}
+
+
+/* title */
+
+.TitleStudyCardProfile{
+
+    font-size:1.25rem;
+
+    color:#ffffff;
+
+    margin-bottom:22px;
+
+    padding-bottom:12px;
+
+    border-bottom:1px solid rgba(110,220,255,.12);
+}
+
+
+/* Ul and Li */
+
+.UlCardProfile{
+
+    list-style:none;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    padding:0;
+
+    margin:0;
+}
+
+
+/* chip */
+
+.LiCardProfile{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:10px 16px;
+
+    border-radius:50px;
+
+    background:
+        rgba(0,173,255,.06);
+
+    border:1px solid rgba(110,220,255,.10);
+
+    color:#d8f7ff;
+
+    font-size:.9rem;
+
+    transition:
+        all .3s ease;
+
+    cursor:default;
+}
+
+.LiCardProfile:hover{
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(0,174,255,.18);
+
+    border-color:
+        rgba(110,220,255,.45);
+
+    color:#ffffff;
+
+    box-shadow:
+        0 8px 18px
+        rgba(0,174,255,.18);
+}
+
+
+/* animation */
+
+@keyframes fadeInSlide{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(25px);
     }
-}
 
+    to{
 
+        opacity:1;
 
-.ContainerTitleCardPrfoile {
-    text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #00e1ff; 
-}
-
-.TitleNameCardProfile {
-    font-size: 2.5em;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-    color:#d5ecff ;
-    text-shadow: 0 0 10px #7a00ff, 0 0 20px #1696ff;
-}
-
-.subTitleWorkCardProfile {
-    font-size: 1.4em;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #cacaca; 
-     text-shadow: 0 0 10px #0011ff, 0 0 20px #777777;
-}
-
-
-.ContainerMyInfoCardProfile {
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: #001620; 
-    border-radius: 8px;
-    
-}
-
-.AboutMeTitleCardProfile {
-    font-size: 1.5em;
-    color: #ffffff;
-    margin-bottom: 15px;
-    text-shadow: 0 0 10px #000000, 0 0 20px #001aff;
-}
-
-.DescriptionCardProfile {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #93e9ff; 
-    margin-bottom: 15px;
-    text-align: justify;
-}
-
-
-
-.AllContainerStudiesCardProfile {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px; 
-}
-
-.subContainerStudyCardProfile {
-    background-color: #001620; 
-    padding: 20px;
-    border-radius: 8px;
-   
-    border: 1px solid #668aff; 
-    transition: transform 0.3s ease;
-}
-
-.subContainerStudyCardProfile:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgb(0, 3, 161);
-}
-
-.TitleStudyCardProfile {
-    font-size: 1.2em;
-    color: #ffffff; 
-    text-shadow: 0 0 10px #000000, 0 0 20px #001aff;
-    margin-bottom: 15px;
-    border-bottom: 1px solid rgb(110, 221, 255);
-    padding-bottom: 8px;
-}
-
-.UlCardProfile {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 8px;
-}
-
-.LiCardProfile {
-    font-size: 0.95em;
-    color: #93e9ff;
-    background-color: rgb(4, 0, 24); 
-    padding: 5px 10px;
-    border-radius: 5px;
-    white-space: nowrap; 
-    overflow: hidden;
-    text-overflow: ellipsis; 
-    border: 1px solid transparent;
-    transition: background-color 0.2s;
-}
-
-.LiCardProfile:hover {
-    background-color: rgba(117, 234, 255, 0.925);
-    border: 1px solid #000baa;
-    color: #000000;
-    box-shadow: inset 0 5px 15px rgba(0, 4, 255, 0.459);
-}
-
-
-@media (max-width: 950px) {
-    .AllCardProfileMyInfo {
-        max-width: 90%;
-        padding: 30px;
+        transform:
+            translateY(0);
     }
 
-    .AllContainerStudiesCardProfile {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    }
 }
 
-@media (max-width: 600px) {
-    .AllCardProfileMyInfo {
-        padding: 20px;
-    }
-    .TitleNameCardProfile {
-        font-size: 2em;
+
+/* responsive */
+
+@media(max-width:992px){
+
+    .AllCardProfileMyInfo{
+
+        padding:35px;
     }
 
-    .subTitleWorkCardProfile {
-        font-size: 1.2em;
+}
+
+
+@media(max-width:768px){
+
+    .AllCardProfileMyInfo{
+
+        padding:28px;
     }
-    
-    .UlCardProfile {
-        grid-template-columns: 1fr; 
+
+    .ContainerMyInfoCardProfile{
+
+        padding:25px;
     }
+
+    .TitleNameCardProfile{
+
+        font-size:2.4rem;
+    }
+
+    .subTitleWorkCardProfile{
+
+        font-size:1rem;
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .AllCardProfileMyInfo{
+
+        padding:20px;
+    }
+
+    .ContainerMyInfoCardProfile{
+
+        padding:18px;
+    }
+
+    .TitleNameCardProfile{
+
+        font-size:2rem;
+    }
+
+    .DescriptionCardProfile{
+
+        text-align:left;
+    }
+
 }

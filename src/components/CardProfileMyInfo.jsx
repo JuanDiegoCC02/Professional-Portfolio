@@ -40,7 +40,7 @@ function CardProfileMyInfo() {
         <p className="DescriptionCardProfile">
           I am passionate about software development, artificial intelligence
           and problem solving. I value clean code, teamwork and continuous
-          improvement, always aiming to deliver high-quality applications.
+          improvement, always aiming to deliver quality applications.
         </p>
 
       </section>
@@ -101,13 +101,13 @@ function CardProfileMyInfo() {
           </h4>
 
           <ul className="UlCardProfile">
-            <li className="LiCardprofile">Cookies</li>
             <li className="LiCardProfile">MySQL</li>
             <li className="LiCardProfile">PostgreSQL</li>
             <li className="LiCardProfile">AWS</li>
             <li className="LiCardProfile">Cloudinary</li>
             <li className="LiCardProfile">GitHub Pages</li>
             <li className="LiCardProfile">Vercel</li>
+            <li className="LiCardProfile">Cookies</li>
           </ul>
 
         </div>
