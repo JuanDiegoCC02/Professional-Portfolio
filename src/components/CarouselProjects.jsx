@@ -376,9 +376,6 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
                     </div>
 
 
-
-                    {/* Image Stage */}
-
                     <div className="ImageStage">
 
 

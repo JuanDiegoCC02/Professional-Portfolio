@@ -10,7 +10,7 @@ import '../styles//CarouselHomeProjects.css';
 
 
 function CarouselHomeProjects({onImageClick}) {
-  // state slide
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // List projects home
@@ -76,7 +76,6 @@ function CarouselHomeProjects({onImageClick}) {
   // change slide
   const moveSlide = (step) => {
     const totalSlides = projects.length;
-    // return start
     setCurrentSlide((prev) => (prev + step + totalSlides) % totalSlides);
   };
 

@@ -5,6 +5,7 @@ function CardProfileMyInfo() {
   return (
     <div className="AllCardProfileMyInfo">
 
+
       {/* header */}
       <div className="ContainerTitleCardPrfoile">
 
@@ -22,8 +23,8 @@ function CardProfileMyInfo() {
 
       </div>
 
-      {/* about me */}
 
+      {/* about me */}
       <section className="ContainerMyInfoCardProfile">
 
         <h3 className="AboutMeTitleCardProfile">
@@ -45,12 +46,11 @@ function CardProfileMyInfo() {
 
       </section>
 
-      {/* skills */}
 
+      {/* skills */}
       <div className="AllContainerStudiesCardProfile">
 
         {/* front-end */}
-
         <div className="subContainerStudyCardProfile">
 
           <h4 className="TitleStudyCardProfile">
@@ -71,8 +71,8 @@ function CardProfileMyInfo() {
 
         </div>
 
-        {/* back-end */}
 
+        {/* back-end */}
         <div className="subContainerStudyCardProfile">
 
           <h4 className="TitleStudyCardProfile">
@@ -92,8 +92,8 @@ function CardProfileMyInfo() {
 
         </div>
 
-        {/* databases */}
 
+        {/* databases */}
         <div className="subContainerStudyCardProfile">
 
           <h4 className="TitleStudyCardProfile">
@@ -112,8 +112,8 @@ function CardProfileMyInfo() {
 
         </div>
 
-        {/* tools */}
 
+        {/* tools */}
         <div className="subContainerStudyCardProfile">
 
           <h4 className="TitleStudyCardProfile">

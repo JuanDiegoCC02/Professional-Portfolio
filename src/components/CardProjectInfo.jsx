@@ -43,12 +43,12 @@ import "../styles/CardProjectInfo.css"
     return (
         <div className='zoomModalOverlay' onClick={onClose}>
             <div className='zoomModalContent'>
-                {/* La imagen ampliada, previene el cierre si se hace clic en ella */}
+
                 <img 
                     src={imgSrc} 
                     alt="Zoomed Project Detail" 
                     className='zoomedImage'
-                    // Evita que el clic en la imagen cierre el modal
+          
                     onClick={(e) => e.stopPropagation()} 
                 />
                 <button className='zoomCloseBtn' onClick={onClose}>X</button>

@@ -1,15 +1,15 @@
 
 :root {
     
-    --accent-blue-light: #afdbff; /* Azul Claro Principal */
-    --accent-blue-deep: #00e1ff; /* Azul Cian para bordes */
-    --accent-purple: #7a00ff; /* Morado para sombras de brillo */
-    --background-deep: #000000; /* Negro Puro Base */
-    --background-card: #040024; /* Azul oscuro/Negro para tarjetas (Basado en LiCarouselProjects) */
-    --text-primary: #ecf0f1; /* Texto principal */
-    --text-subtle: #daf9ff; /* Gris/Azul muy claro para descripciones */
-    --shadow-main: rgb(0, 3, 151); /* Azul oscuro fuerte para box-shadow */
-    --border-main: #668aff; /* Azul para bordes de contenedores */
+    --accent-blue-light: #afdbff; 
+    --accent-blue-deep: #00e1ff; 
+    --accent-purple: #7a00ff; 
+    --background-deep: #000000; 
+    --background-card: #040024; 
+    --text-primary: #ecf0f1; 
+    --text-subtle: #daf9ff; 
+    --shadow-main: rgb(0, 3, 151); 
+    --border-main: #668aff; 
 }
 
 
@@ -34,8 +34,8 @@
     border-radius: 16px;
     padding: 50px; 
     box-shadow: 
-        0 0 50px var(--shadow-main), /* Gran sombra exterior azul/morado */
-        0 0 0 3px var(--border-main); /* Borde sutil del contenedor */
+        0 0 50px var(--shadow-main), 
+        0 0 0 3px var(--border-main); 
     
     overflow-y: auto;
     display: flex;
@@ -86,7 +86,6 @@
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); 
 }
 
-/* Imagen Principal como Mockup */
 .containerImgPCardProjectInfo {
     flex-shrink: 0;
     width: 250px; 
@@ -294,8 +293,7 @@
     .containerImgPCardProjectInfo {
         width: 150px;
     }
-    
-    /* Partes del proyecto: la imagen se apila sobre el texto */
+
     .subContainerPartsCardProjectInfo {
         flex-direction: column;
         align-items: center;

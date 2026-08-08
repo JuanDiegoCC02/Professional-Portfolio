@@ -12,7 +12,7 @@ const Home = () => {
   const [selectedProject, setSelectedProject] = useState(0);
   const sectionRefs = [useRef(null), useRef(null), useRef(null)];
 
-  // scroll manual
+  // scroll my own
   const scrollToSection = (index) => {
     setCurrentIndex(index);
     sectionRefs[index].current?.scrollIntoView({
@@ -26,7 +26,7 @@ const Home = () => {
     scrollToSection(2);
   };
 
- // logic reading nav Section
+ // logic reading nav sections
   useEffect(() => {
     const observerOptions = {
       root: null,

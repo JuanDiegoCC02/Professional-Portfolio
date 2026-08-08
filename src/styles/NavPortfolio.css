@@ -21,6 +21,7 @@
     padding: 0 25px;
 }
 
+
 /* UL nav */
 .UlNavPortfolio {
     list-style: none;
@@ -36,6 +37,7 @@
     align-items: center;
     justify-content: center;
 }
+
 
 /* btn LI */
 .LiNavPortfolio button {
@@ -53,11 +55,13 @@
     transition: all 0.3s ease;
 }
 
+
 /* hover */
 .LiNavPortfolio button:hover {
     color: #00d9ff;
     text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
 }
+
 
 /* active */
 .LiNavPortfolio button.active {
@@ -79,6 +83,7 @@
     border-radius: 50%;
     box-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
 }
+
 
 /* resonsive */
 @media (max-width: 600px) {

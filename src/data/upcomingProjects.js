@@ -1,5 +1,6 @@
 import newProjects from "../images/newProjects.png";
 
+// Upcoming Projects
 const upcomingProjects = {
     id: "upcoming-projects",
 
