@@ -54,29 +54,27 @@ body{
             MAIN CONTAINER
 ==================================================*/
 
-.portfolio-container{
+.portfolio-container {
+    position: relative;
 
-    position:relative;
+    width: 100%;
 
-    width:100%;
+    min-height: 100vh;
 
-    min-height:100vh;
+    isolation: isolate;
 
-    isolation:isolate;
+    scroll-snap-type: y proximity;
 
-    scroll-snap-type:y mandatory;
-
-    overflow-x:hidden;
+    overflow-x: hidden;
 
     background:
-    radial-gradient(
-    ellipse at center,
-    #163a6b 0%,
-    #0b1b33 30%,
-    #05080f 60%,
-    #010101 100%
-    );
-
+        radial-gradient(
+            ellipse at center,
+            #163a6b 0%,
+            #0b1b33 30%,
+            #05080f 60%,
+            #010101 100%
+        );
 }
 
 /*==================================================
@@ -159,54 +157,48 @@ body{
                 SECTION
 ==================================================*/
 
-.section-vignette{
+.section-vignette {
+    position: relative;
 
-    position:relative;
+    width: 100%;
 
-    width:100%;
+    min-height: 100vh;
 
-    min-height:100vh;
-
-    height:100vh;
+    height: auto;
 
     padding:
-
         100px
+        clamp(24px, 5vw, 80px)
+        100px;
 
-        clamp(24px,5vw,80px)
+    display: flex;
 
-        60px;
+    justify-content: center;
 
-    display:flex;
+    align-items: flex-start;
 
-    justify-content:center;
+    overflow: visible;
 
-    align-items:center;
-
-    scroll-snap-align:start;
-
-    overflow:hidden;
+    scroll-snap-align: start;
 
     transition:
-
         background .4s ease,
-
         transform .4s ease;
-
 }
-
 /*==================================================
             CONTENT
 ==================================================*/
 
-.section-content{
+.section-content {
+    position: relative;
 
-    width:100%;
+    z-index: 1;
 
-    max-width:1700px;
+    width: 100%;
 
-    margin:auto;
+    max-width: 1700px;
 
+    margin: 0 auto;
 }
 
 /*==================================================
@@ -234,6 +226,8 @@ body{
     inset:0;
 
     pointer-events:none;
+    
+    z-index: 0;
 
     opacity:.015;
 
