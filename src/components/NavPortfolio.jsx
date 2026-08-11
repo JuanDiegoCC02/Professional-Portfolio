@@ -1,30 +1,66 @@
-import React from 'react'
+import React from "react";
 import "../styles/NavPortfolio.css";
 
 function NavPortfolio({ onNavigate, activeIndex }) {
-  return (
-    <nav className='TotalNavPortfolio'>
-        <ul className='UlNavPortfolio'>
-            <li className='LiNavPortfolio'> 
-              <button 
-                onClick={() => onNavigate(0)} 
-                className={activeIndex === 0 ? "active" : ""}
-              >Home</button> 
-            </li>
-            <li className='LiNavPortfolio'> 
-              <button 
-                onClick={() => onNavigate(1)} 
-                className={activeIndex === 1 ? "active" : ""}
-              >Profile</button> 
-            </li>
-            <li className='LiNavPortfolio'> 
-              <button 
-                onClick={() => onNavigate(2)} 
-                className={activeIndex === 2 ? "active" : ""}
-              >Projects</button> 
-            </li>
-        </ul>
-    </nav>
-  )
+
+    const navigationItems = [
+        {
+            id: 0,
+            label: "Home",
+            ariaLabel: "Go to Home section",
+        },
+
+        {
+            id: 1,
+            label: "Profile",
+            ariaLabel: "Go to Profile section",
+        },
+
+        {
+            id: 2,
+            label: "Projects",
+            ariaLabel: "Go to Projects section",
+        },
+    ];
+
+return (
+  <nav className="TotalNavPortfolio" aria-label="Portfolio navigation">
+      
+      <div className="NavPortfolioInner">
+
+          <ul className="UlNavPortfolio">
+              {navigationItems.map((item) => (
+                <li className="LiNavPortfolio"key={item.id}>
+
+                  <button type="button" className={
+                                activeIndex === item.id
+                                ? "NavPortfolioButton active"
+                                : "NavPortfolioButton"
+                               }
+                         onClick={
+                              () => onNavigate(item.id)}
+                                aria-label={item.ariaLabel}
+                                aria-current={
+                                  activeIndex === item.id
+                                    ? "page"
+                                    : undefined
+                              }>
+
+                            <span className="NavButtonIndicator" />
+
+                            <span className="NavButtonText">
+                                {item.label}
+                            </span>
+
+                  </button>
+                </li>
+              ))}
+            </ul>
+
+      </div>
+  </nav>
+  );
 }
-export default NavPortfolio
+
+export default NavPortfolio;
+
