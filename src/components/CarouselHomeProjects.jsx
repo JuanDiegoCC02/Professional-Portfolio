@@ -100,12 +100,6 @@ function CarouselHomeProjects({onImageClick}) {
               <h3 className='titleCarouselHome'>{project.title}</h3>
               <p className='descriptionCarouselHome'>{project.description}</p>
 
-              <div className='containerToolsCarouselHome'>
-              <p className='infoToolCarouselHome'>{project.languages}</p>
-              <p className='infoToolCarouselHome'>{project.framework}</p>
-              <p className='infoToolCarouselHome'>{project.back_end}</p>
-              <p className='infoToolCarouselHome'>{project.tools}</p>
-              </div>
             </div>
           ))}
         </div>
