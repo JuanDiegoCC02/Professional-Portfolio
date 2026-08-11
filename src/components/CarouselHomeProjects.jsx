@@ -13,7 +13,7 @@ function CarouselHomeProjects({onImageClick}) {
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // List projects home
+  // list projects home
   const projects = [
     {  id: 1, 
         img:inicioNoticiasCR,
