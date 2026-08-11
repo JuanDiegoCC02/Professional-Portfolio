@@ -1,119 +1,261 @@
+/* full portfolio nav */
 .TotalNavPortfolio {
     position: fixed;
+
     top: 20px;
     left: 50%;
+
     transform: translateX(-50%);
-    width: auto;
-    min-width: 400px;
-    height: 60px; 
-    z-index: 2000;
-    
-    background: rgba(10, 10, 10, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 217, 255, 0.2);
-    border-radius: 40px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 217, 255, 0.1);
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 25px;
+
+    width: min(92%, 650px);
+
+    height: auto;
+
+    z-index: 1000;
+
+    pointer-events: none;
 }
 
 
-/* UL nav */
+/* nav inner */
+.NavPortfolioInner {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 7px;
+
+    background: rgba(2, 8, 18, 0.82);
+
+    border: 1px solid rgba(0, 217, 255, 0.18);
+
+    border-radius: 16px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(0, 217, 255, 0.05);
+
+    overflow: hidden;
+
+    pointer-events: auto;
+}
+
+
+/* ul item */
 .UlNavPortfolio {
+    width: 100%;
+
     list-style: none;
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    padding: 0;
+
     margin: 0;
-}
+    padding: 0;
 
-.LiNavPortfolio {
     display: flex;
-    align-items: center;
+
     justify-content: center;
+    align-items: center;
+
+    gap: 6px;
 }
 
 
-/* btn LI */
-.LiNavPortfolio button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif; /* O tu fuente preferida */
-    color: #999999;
-    font-size: 0.7rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
+/* li item */
+.LiNavPortfolio {
+    flex: 1;
+
+    min-width: 0;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* bttn */
+.NavPortfolioButton {
     position: relative;
-    padding: 7px 7px;
-    transition: all 0.3s ease;
+
+    width: 100%;
+
+    min-height: 42px;
+
+    padding: 0 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 9px;
+
+    border: 1px solid transparent;
+
+    border-radius: 11px;
+
+    background: transparent;
+
+    color: #8d99a8;
+
+    font-family: inherit;
+
+    font-size: 0.82rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
 
 
 /* hover */
-.LiNavPortfolio button:hover {
-    color: #00d9ff;
-    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+.NavPortfolioButton:hover {
+    color: #eafcff;
+
+    background: rgba(0, 217, 255, 0.06);
+
+    border-color: rgba(0, 217, 255, 0.12);
+
+    transform: translateY(-1px);
 }
 
 
 /* active */
-.LiNavPortfolio button.active {
-    color: #00d9ff !important;
-    font-weight: 700;
+.NavPortfolioButton.active {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 217, 255, 0.12),
+            rgba(52, 120, 255, 0.08)
+        );
+
+    border-color: rgba(0, 217, 255, 0.25);
+
+    box-shadow:
+        inset 0 0 20px rgba(0, 217, 255, 0.04),
+        0 0 15px rgba(0, 217, 255, 0.06);
 }
 
 
-
-.LiNavPortfolio button.active::after {
-    content: '';
-    position: absolute;
-    bottom: -2px; 
-    left: 50%;
-    transform: translateX(-50%);
+/* active indicator */
+.NavButtonIndicator {
     width: 5px;
     height: 5px;
-    background-color: #00d9ff;
+
+    flex-shrink: 0;
+
     border-radius: 50%;
-    box-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+
+    background: #536171;
+
+    box-shadow: none;
+
+    transition:
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
 }
 
 
-/* resonsive */
-@media (max-width: 600px) {
+.NavPortfolioButton.active .NavButtonIndicator {
+    background: #00d9ff;
+
+    box-shadow:
+        0 0 7px #00d9ff,
+        0 0 14px rgba(0, 217, 255, 0.6);
+
+    transform: scale(1.2);
+}
+
+
+/* text */
+.NavButtonText {
+    display: block;
+
+    line-height: 1;
+}
+
+
+/* focus */
+.NavPortfolioButton:focus-visible {
+    outline: 2px solid rgba(0, 217, 255, 0.8);
+
+    outline-offset: 2px;
+}
+
+
+/* mobile */
+@media (max-width: 480px) {
+
     .TotalNavPortfolio {
-        position: fixed;
-        top: 15px; 
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;          
-        min-width: 0;        
-        height: 45px;        
-        padding: 0 15px;
-        border-radius: 25px; 
-    }
-    
-    .UlNavPortfolio {
-        gap: 12px;         
-        justify-content: center;
-        width: 100%;
+        top: 10px;
+
+        width: calc(100% - 24px);
     }
 
-    .LiNavPortfolio button {
-        font-size: 0.65rem;  
-        letter-spacing: 0.5px;
+
+    .NavPortfolioInner {
         padding: 5px;
+
+        border-radius: 12px;
     }
 
-    .LiNavPortfolio button.active::after {
+
+    .UlNavPortfolio {
+        gap: 3px;
+    }
+
+
+    .NavPortfolioButton {
+        min-height: 38px;
+
+        padding: 0 8px;
+
+        gap: 6px;
+
+        font-size: 0.68rem;
+
+        letter-spacing: 0.04em;
+    }
+
+
+    .NavButtonIndicator {
         width: 4px;
         height: 4px;
-        bottom: -4px;
     }
+
 }
+
+
+/* very small */
+@media (max-width: 350px) {
+
+    .NavPortfolioButton {
+        padding: 0 5px;
+
+        font-size: 0.62rem;
+    }
+
+
+    .NavButtonIndicator {
+        display: none;
+    }
+
+}
+
