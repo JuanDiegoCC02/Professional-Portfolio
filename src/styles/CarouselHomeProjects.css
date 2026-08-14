@@ -1,273 +1,370 @@
-/* container main */
-.projects-container {
-    max-width: 1100px; 
-    margin: 50px auto; 
-    padding: 40px;
-    margin-top: -7px;
-    margin-bottom: 120px;
-    background-color: #00172b; 
-    color: #ecf0f1; 
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(158, 224, 255, 0.849), 0 0 0 5px rgb(5, 0, 22); 
-    text-align: center;
-    position: relative; 
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInSlide 0.8s ease-out forwards;
-}
+/* full Home Projects */
 
-@keyframes fadeInSlide {
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/*  title projects  */
-.containerTitleProjectsCr {
-    text-align: center;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid #eefeff; 
-}
-
-.titleProjectsCr {
-    font-size: clamp(2rem, 3vw, 2.5rem);
-    color: #9ffcff;
-    text-shadow: 0 0 10px #1900ff, 0 0 20px #30a9fa;
-    margin: 0;
-}
-
-/* carousel */
-.custom-carousel {
-    position: relative;
-    max-width: 1000px; 
-    height: 600px;
-    margin: 0 auto; 
-    overflow: hidden; 
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(4, 238, 255, 0.616), 0 0 0 5px rgb(0, 0, 0); 
-    border: 3px groove #e3fcfc;
-    background-color: #000000;
-}
-
-.carousel-inner {
-    position: relative;
+.HomeProjects {
     width: 100%;
-    height: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 40px 0 80px;
+    color: var(--text);
 }
 
-.carousel-item {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.6s ease-in-out;
+
+/* header */
+
+.HomeProjectsHeader {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    box-sizing: border-box;
-    padding-bottom: 40px;
-    
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 0 5px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
-.carousel-item.active {
-    opacity: 1;
-    visibility: visible;
+.HomeProjectsHeader div {
+    color: var(--cyan);
+    font-size: 13px;
 }
+
+
+/* card */
+
+.HomeProjectCard {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    min-height: 520px;
+    background: rgba(7, 9, 13, .8);
+    border: 1px solid rgba(0, 217, 255, .12);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, .45),
+        0 0 40px rgba(0, 217, 255, .04);
+}
+
 
 /* img */
-.imgCarouselHome {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    filter: brightness(0.75) contrast(1.1);
-    transition: transform 0.5s ease;
-    cursor: pointer;
+
+.HomeProjectImage {
+    position: relative;
+    min-height: 520px;
+    overflow: hidden;
+    background: #020202;
 }
 
-.carousel-item:hover .imgCarouselHome {
-    transform: scale(1.03);
-}
-
-/* overlay  visibility  */
-.carousel-item::after {
+.HomeProjectImage::after {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.9) 0%,
-        rgba(0, 0, 0, 0.75) 35%,
-        rgba(0, 0, 0, 0.45) 65%,
-        rgba(0, 0, 0, 0.15) 100%
+        90deg,
+        transparent 60%,
+        rgba(2, 2, 2, .8)
     );
-    z-index: 1;
     pointer-events: none;
 }
 
-/* texts main */
-.titleCarouselHome,
-.descriptionCarouselHome,
-.containerToolsCarouselHome {
-    position: relative;
-    z-index: 5;
-    padding-left: 40px;
-    padding-right: 40px;
-    text-align: left;
+.HomeProjectImage img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .5s ease;
 }
 
-/* title */
-.titleCarouselHome {
-    font-size: clamp(1.6rem, 2.3vw, 2rem);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: #08ffff;
-    text-shadow: 0 0 8px #7a00ff, 0 0 15px #028dff;
-    margin: 0 0 8px 0;
+.HomeProjectCard:hover .HomeProjectImage img {
+    transform: scale(1.04);
 }
 
-/* description */
-.descriptionCarouselHome {
-    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
-    color: #00cdd4;
-    line-height: 1.6;
-    margin-bottom: 18px;
-    max-width: 75%;
-    text-shadow: 0 2px 6px #002227;
+
+/* bttn  */
+
+.HomeProjectImageButton {
+    position: absolute;
+    z-index: 2;
+    left: 24px;
+    bottom: 24px;
+
+    padding: 11px 18px;
+
+    border: 1px solid rgba(0, 217, 255, .5);
+    border-radius: 30px;
+
+    background: rgba(2, 2, 2, .75);
+    backdrop-filter: blur(10px);
+
+    color: var(--text);
+    cursor: pointer;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: .3s ease;
 }
 
-/* tools */
-.containerToolsCarouselHome {
+.HomeProjectImageButton:hover {
+    background: var(--cyan);
+    color: #020202;
+    box-shadow: 0 0 25px rgba(0, 217, 255, .35);
+}
+
+
+/* info */
+
+.HomeProjectInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: clamp(30px, 5vw, 65px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 17, 23, .95),
+            rgba(2, 2, 2, .95)
+        );
+}
+
+.HomeProjectLabel {
+    margin-bottom: 14px;
+
+    color: var(--cyan);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.HomeProjectInfo h2 {
+    margin: 0 0 20px;
+
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+}
+
+.HomeProjectInfo p {
+    max-width: 600px;
+    margin: 0 0 28px;
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* technologies */
+
+.HomeProjectTechnologies {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 40px;
-}
-
-.infoToolCarouselHome {
-    font-size: 0.75rem;
-    color: #bff8ffe0;
-    background: linear-gradient(145deg, #040024, #040024);
-    padding: 6px 14px;
-    border-radius: 20px;
-    border: 1px solid #d0f0f8c5;
-    margin: 0;
-    transition: 0.3s ease;
-}
-
-.infoToolCarouselHome:hover {
-    box-shadow: 0 0 12px #00e1ff;
-    transform: translateY(-2px);
-}
-
-/* --- btns prev & next --- */
-.control {
-    position: absolute;
-    top: 25%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 7, 10, 0.377);
-    color: #95d8ff; 
-    border: 1px solid #00e1ff;
-    padding: 14px 11px;
-    font-size: 1.8em;
-    cursor: pointer;
-    border-radius: 5px;
-    z-index: 10;
-    transition: 0.3s;
-    margin: 1%;
-}
-
-.control:hover {
-    background-color: #0015357a; 
-    color: #00f3fc;
-    box-shadow: 0 0 15px #00e1ff;
-}
-
-.prev { left: 20px; }
-.next { right: 20px; }
-
-/* indicators */
-.carousel-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
     gap: 8px;
-    z-index: 10;
+    margin-bottom: 35px;
 }
 
-.dot {
-    width: 20px;
-    height: 4px;
-    background-color: rgba(4, 0, 24, 0.8);
-    border: 1px solid #6ed6ff;
+.HomeProjectTechnologies span {
+    padding: 7px 11px;
+
+    border: 1px solid rgba(52, 120, 255, .25);
+    border-radius: 5px;
+
+    background: rgba(52, 120, 255, .06);
+
+    color: #c8d2df;
+
+    font-size: 11px;
+}
+
+
+/* nav */
+
+.HomeProjectNavigation {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: auto;
+}
+
+.HomeProjectNavigation button {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .03);
+
+    color: var(--text);
+
     cursor: pointer;
-    transition: 0.3s;
+    font-size: 18px;
+
+    transition: .3s ease;
 }
 
-.dot.active {
-    background-color: #6ed6ff;
-    width: 40px;
-    box-shadow: 0 0 10px #6ed6ff;
+.HomeProjectNavigation button:hover {
+    border-color: var(--cyan);
+    color: var(--cyan);
+    box-shadow: 0 0 18px rgba(0, 217, 255, .2);
 }
 
-/*  responsive  */
-@media (max-width: 900px) {
 
-    .projects-container { 
-        max-width: 90%; 
-        padding: 25px; 
-    }
+/* progress */
 
-    .custom-carousel { 
-        height: 500px; 
-    }
+.HomeProjectProgress {
+    flex: 1;
+    height: 2px;
 
-    .control { 
-        top: 35%; 
-        padding: 10px; 
-    }
+    overflow: hidden;
 
-    .descriptionCarouselHome {
-        max-width: 90%;
-    }
+    background: rgba(255, 255, 255, .1);
 }
 
-@media (max-width: 600px) {
+.HomeProjectProgress span {
+    display: block;
+    height: 100%;
 
-    .custom-carousel { 
-        height: 580px;
+    background: linear-gradient(
+        90deg,
+        var(--cyan),
+        var(--blue),
+        var(--purple)
+    );
+
+    transition: width .4s ease;
+}
+
+
+/* list */
+
+.HomeProjectList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.HomeProjectList button {
+    flex: 1;
+
+    min-width: 130px;
+
+    padding: 12px 14px;
+
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, .025);
+
+    color: var(--text-secondary);
+
+    cursor: pointer;
+
+    text-align: left;
+    font-size: 11px;
+
+    transition: .3s ease;
+}
+
+.HomeProjectList button span {
+    margin-right: 8px;
+    color: var(--cyan);
+    font-weight: 700;
+}
+
+.HomeProjectList button:hover,
+.HomeProjectList button.active {
+    border-color: rgba(0, 217, 255, .35);
+    background: rgba(0, 217, 255, .07);
+    color: var(--text);
+}
+
+.HomeProjectList button.active {
+    box-shadow: inset 3px 0 var(--cyan);
+}
+
+
+/* mobile */
+
+@media (max-width: 700px) {
+
+    .HomeProjects {
+        padding: 30px 0 60px;
     }
 
-    .titleCarouselHome { 
-        font-size: 1.4rem;
-        padding-left: 20px;
-        padding-right: 20px;
+    .HomeProjectCard {
+        grid-template-columns: 1fr;
     }
 
-    .descriptionCarouselHome { 
-        font-size: 0.85rem;
-        padding-left: 20px;
-        padding-right: 20px;
-        max-width: 100%;
+    .HomeProjectImage {
+        min-height: 280px;
     }
 
-    .containerToolsCarouselHome { 
-        padding-left: 20px;
-        padding-right: 20px;
-        gap: 6px;
+    .HomeProjectInfo {
+        padding: 28px 22px;
     }
 
-    .infoToolCarouselHome {
-        font-size: 0.7rem;
-        padding: 5px 10px;
+    .HomeProjectInfo h2 {
+        font-size: 30px;
     }
 
-    .control { 
-        top: 92%;
-        font-size: 1.3em;
+    .HomeProjectInfo p {
+        font-size: 13px;
+        line-height: 1.7;
     }
+
+    .HomeProjectList {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .HomeProjectList button {
+        min-width: 0;
+    }
+
+}
+
+
+/* small mobile */
+
+@media (max-width: 420px) {
+
+    .HomeProjectsHeader {
+        font-size: 10px;
+    }
+
+    .HomeProjectImage {
+        min-height: 220px;
+    }
+
+    .HomeProjectImageButton {
+        left: 15px;
+        bottom: 15px;
+    }
+
+    .HomeProjectInfo {
+        padding: 24px 18px;
+    }
+
+    .HomeProjectInfo h2 {
+        font-size: 26px;
+    }
+
+    .HomeProjectTechnologies span {
+        font-size: 10px;
+    }
+
+    .HomeProjectList {
+        grid-template-columns: 1fr;
+    }
+
 }
