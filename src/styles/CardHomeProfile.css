@@ -1,111 +1,259 @@
-
-
+/* full CardProfile */
 .AllCardHomeProfile {
-    max-width: 600px; 
-    margin: 5% auto; 
-    padding: 30px;
-    margin-top: 95px;
-    background-color: #00172b; 
-    color: #ecf0f1; 
-    border-radius: 1%; 
-    
-    /* border shadow p */
-    box-shadow: 0 10px 20px rgb(158, 224, 255, 0.849), 
-       /* border shadow color second*/
-       0 0 0 5px rgb(1, 46, 66); 
-    
+    width: min(900px, 92%);
+    margin: 40px auto;
+    padding: 35px;
+
     display: flex;
     align-items: center;
-    gap: 12%; 
-    
-    /* Animation entrance */
+    gap: 45px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(13, 17, 23, 0.96),
+            rgba(3, 16, 30, 0.96)
+        );
+
+    color: var(--text);
+
+    border: 1px solid rgba(0, 217, 255, 0.18);
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(0, 217, 255, 0.05);
+
+    position: relative;
+    overflow: hidden;
+
     opacity: 0;
     transform: translateY(20px);
+
     animation: fadeInSlide 0.8s ease-out forwards;
 }
+
+
+/*  light card */
+.AllCardHomeProfile::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cyan),
+            var(--blue),
+            transparent
+        );
+
+    opacity: 0.8;
+}
+
+
+/* animation */
 @keyframes fadeInSlide {
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
 
+/* card */
 .CardFtProfileHome {
-    flex-shrink: 0; 
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
 }
 
+
+/* img */
 .FtProfileHome {
-    border-radius: 50%; 
-    border: 5px solid #000000fd;
-    object-fit: cover; 
-   box-shadow: 0 4px 15px rgb(0, 0, 0);
-    transition: transform 0.3s ease;
+    width: 155px;
+    height: 155px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid rgba(0, 217, 255, 0.65);
+
+    background: #020202;
+
+    box-shadow:
+        0 0 0 6px rgba(0, 217, 255, 0.04),
+        0 10px 30px rgba(0, 0, 0, 0.6);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
     cursor: pointer;
 }
 
 .FtProfileHome:hover {
-    transform: scale(1.05);
-    box-shadow:  0 4px 14px #007e9ee1; 
+    transform: scale(1.04);
+
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 0 0 7px rgba(0, 217, 255, 0.06),
+        0 0 30px rgba(0, 217, 255, 0.25),
+        0 15px 35px rgba(0, 0, 0, 0.7);
 }
 
 
+/* info */
 .CardHomeInfoP {
+    flex: 1;
+
     text-align: left;
+
+    min-width: 0;
 }
 
+
+/* full name */
 .TitleNameHome {
-    font-size: 2.2em;
-    margin-bottom: 5px;
-    color: #9ffcff;
-    letter-spacing: 1px;
-    text-shadow: 0 0 10px #7a00ff, 0 0 20px #c700ff;
+    margin: 0 0 8px;
+
+    color: var(--text);
+
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    line-height: 1.1;
+}
+
+.TitleNameHome::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 3px;
+
+    margin-top: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--blue)
+        );
+
+    border-radius: 10px;
 }
 
 
+/* study */
 .InfoStudyHome {
-    font-size: 1.3em;
-    margin-bottom: 15px;
-    color: #00d7df; 
-    font-weight: 500;
+    margin: 18px 0 12px;
+
+    color: var(--cyan);
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.5;
+
     text-transform: uppercase;
-      text-shadow: 0 0 10px #000000, 0 0 20px #004880c4;
 }
 
+
+/* description */
 .InfoIdeaHome {
-    font-size: 1em;
-    font-style: italic;
-    color: #00dddd; 
-    border-left: 2px groove #a5f2ff;
-    padding-left: 10px;
+    margin: 0;
+
+    padding-left: 15px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+
+    font-style: normal;
+
+    border-left: 2px solid rgba(0, 217, 255, 0.45);
 }
 
+
+/* mobile */
 @media (max-width: 650px) {
+
     .AllCardHomeProfile {
+        width: calc(100% - 30px);
+
+        margin: 25px auto;
+
+        padding: 28px 20px;
+
         flex-direction: column;
-        text-align: center; 
-        max-width: 90%;
-        margin: 30px auto;
-        padding: 20px;
-        gap: 20px;
+
+        gap: 24px;
+
+        text-align: center;
+
+        border-radius: 16px;
     }
-    
+
+
     .CardHomeInfoP {
         text-align: center;
     }
 
-    .TitleNameHome {
-        font-size: 1.8em;
+
+    .FtProfileHome {
+        width: 125px;
+        height: 125px;
     }
+
+
+    .TitleNameHome {
+        font-size: 1.8rem;
+    }
+
+
+    .TitleNameHome::after {
+        margin: 12px auto 0;
+    }
+
 
     .InfoStudyHome {
-        font-size: 1.1em;
+        font-size: 0.85rem;
+
+        letter-spacing: 1px;
     }
 
+
     .InfoIdeaHome {
-        border-left: none; 
-        padding-left: 0;
-        padding-top: 10px;
-        border-top: 2px solid #3498db; 
+        padding: 12px 0 0;
+
+        border-left: none;
+
+        border-top: 1px solid rgba(0, 217, 255, 0.35);
     }
+
 }
