@@ -1,64 +1,115 @@
-
+/* full footer */
 .TotalFooterPortfolio {
-    width: 100%;
-    padding: 15px 0;
-    background-color: #0a0a0a; 
-    border-top: 5px groove #001625; 
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.9), 0 -1px 15px rgb(0, 14, 141); 
-    
-    text-align: center;
-    height: 6%;
     position: fixed;
     bottom: 0;
     left: 0;
     z-index: 900;
-}
 
-.UlFooterPortfolio {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    width: 100%;
+    height: 70px;
+
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 40px;
+
+    background: rgba(2, 2, 2, 0.92);
+    border-top: 1px solid rgba(0, 217, 255, 0.25);
+
+    box-shadow:
+        0 -8px 25px rgba(0, 0, 0, 0.65),
+        0 -1px 12px rgba(0, 217, 255, 0.08);
+
+    backdrop-filter: blur(12px);
 }
 
+
+/* ul and li */
+.UlFooterPortfolio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 32px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* item */
 .LiFooterPortfolio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     cursor: pointer;
-    line-height: 0;
+
     transition: transform 0.3s ease;
 }
 
 
+/* icon */
 .LiFooterPortfolio img {
-    border-radius: 20%;
-    filter: grayscale(100%) brightness(0.7) sepia(50%) hue-rotate(180deg) saturate(200%);
-    width: 40px;
-    height: 40px;
-    transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    width: 38px;
+    height: 38px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    opacity: 0.65;
+
+    filter:
+        grayscale(100%)
+        brightness(0.75);
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        filter 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* hover aniamtion */
+.LiFooterPortfolio:hover {
+    transform: translateY(-4px);
 }
 
 .LiFooterPortfolio:hover img {
-    filter: none; 
-    transform: scale(1.2); 
-    box-shadow: 0 0 18px 4px #3498db; 
-    
-    border: 1px solid rgba(52, 152, 219, 0.5); 
+    opacity: 1;
+
+    filter:
+        grayscale(0%)
+        brightness(1);
+
+    transform: scale(1.12);
+
+    box-shadow:
+        0 0 10px rgba(0, 217, 255, 0.45),
+        0 0 25px rgba(52, 120, 255, 0.2);
 }
 
 
+/* mobile */
 @media (max-width: 600px) {
+
     .TotalFooterPortfolio {
-        padding: 10px 0;
+        height: 60px;
     }
+
     .UlFooterPortfolio {
-        gap: 25px;
+        gap: 22px;
     }
+
     .LiFooterPortfolio img {
-        width: 32px; 
-        height: 32px;
+        width: 31px;
+        height: 31px;
     }
+
     .LiFooterPortfolio:hover img {
-        box-shadow: 0 0 15px 3px #3498db; 
+        transform: scale(1.08);
     }
 }
