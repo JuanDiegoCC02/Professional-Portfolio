@@ -1,128 +1,139 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import "../styles/CarouselHomeProjects.css";
 
-import playGame from "../images/imgTicTacToeGAME/playGame.png";
-import homeNA from "../images/imgNumbAstro/homeNA.png";
-import homeSR from "../images/imgSharedReading/homeSR.png";
-import homeTL from "../images/imgTodoList/homeTL.png";
-import inicioNoticiasCR from "../images/imgNoticiasCR/inicioNoticiasCR.png";
-import newProjects from "../images/newProjects.png"
-import '../styles//CarouselHomeProjects.css'; 
+import projects from "../data/projects";
 
 
-function CarouselHomeProjects({onImageClick}) {
+function CarouselHomeProjects({ onImageClick }) {
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0);
 
-  // list projects home
-  const projects = [
-    {  id: 1, 
-        img:inicioNoticiasCR,
-        title:"Noticias Ambientales C.R.",
-        description:" Noticias Ambientales C.R. is a website developed with a Front-End using React and Back-end using DJango and MySQL along with LocalStorage/Cookies, focused on the creation and monitoring of environmental news and campaigns, promoting citizen participation, with an authentication system based on JWT and role management for users and administrators. ",
-        languages:"HTML, CSS3, JavaScript & Python ",
-        framework:"React, React Router, Native Fetch API, Apexchart & Leaflet",
-        back_end:"Django, Django REST Framework, Django Admin, MySQL, Simple JWT, Cloudinary, Local Storage & Cookies",
-        tools:"VS Code, GitHub, Trello, Slack & Figma"},
+    const project = projects[currentSlide];
 
-    {  id: 2, 
-        img:homeNA,
-        title:"Numb Astro",
-        description:" Numb Astro is a personal web app built with React, focused on creating and tracking habits through a space-based reward system. It features a CRUD interface with admin tables and displays user and habit metrics, as well as a mock backend with a JSON server and session management using LocalStorage/Cookies for data privacy and management.",
-        languages:"HTML, CSS3 & JavaScript ",
-        framework:"React, React Router & Apexchart",
-        back_end:"Node.JS, JSON-Server DbJson, Local Storage & Cookies",
-        tools:"VS Code, GitHub, Trello, Slack & Figma"},
+    const image = project?.gallery?.[0];
 
-    {  id: 3,
-       img:homeSR,
-       title:"Shared Reading",
-       description:" Shared Reading is a web site for literary exchange designed to promote reading and social interaction. Developed with React, it features a complete CRUD system with administration tables, a mock backend in JSON server format, validation via LocalStorage/Cookies, and charts for data analysis using ApexCharts.",
-       languages:"HTML, CSS3 & JavaScript",
-       framework:"React, React Router, & ApexChart ",
-       back_end:"Node.JS, JSON-Server, DbJson, Local Storage & Cookies",
-       tools:"VS Code, GitHub, Trello, Slack & Figma"},
-
-    {  id: 4, 
-        img:homeTL,
-        title:"Recipe To-Do List",
-        description:" The Recipe To-Do List is an application developed with React on the frontend and Node.js with a json server to simulate a RESTful API. It stores data in a db.json file, enabling CRUD operations to manage recipes. With state management, API consumption, and a structured component design, it reflects fundamental web development principles. ",
-        languages:"HTML, CSS3 & JavaScript ",
-        framework:"React & React Router",
-        back_end:" Json-Server, DbJson, Node.js & Local Storage ",
-        tools:"VS Code, GitHub, Trello, Slack & Canva"},
-
-   {  id: 5, 
-        img:playGame,
-        title:"TIC TAC TOE GAME",
-        description:" This project is a web-based tic-tac-toe game developed using HTML, JavaScript, and CSS3. The application allows a player to compete against a computer on a classic 3x3 grid while tracking their progress with an integrated win counter. It also includes New Game and Reset buttons, allowing players to restart the game or reset their score. The project demonstrates fundamental concepts of game logic, structure, and interactive user interface design. ",
-        languages:"HTML, CSS3 & JavaScript ",
-        framework:" It does not use frameworks ",
-        back_end:" Local Storage ",
-        tools:"VS Code, GitHub, Trello, Slack & Canva"},
-        
-   {  id: 6, 
-        img:newProjects,
-        title:"Working on Upcoming Projects",
-        description:" Stay tuned for more information. ",
-        languages:" In Progress  ",
-        framework:" In Progress  ",
-        back_end:" In Progress  ",
-        tools:" In Progress "},
-
-  
-  ];
+    const technologies = project?.technologies
+        ? Object.values(project.technologies)
+            .flat()
+            .slice(0, 5)
+        : [];
 
 
-  // change slide
-  const moveSlide = (step) => {
-    const totalSlides = projects.length;
-    setCurrentSlide((prev) => (prev + step + totalSlides) % totalSlides);
-  };
+    const changeProject = (direction) => {
+        setCurrentSlide((current) =>
+            (current + direction + projects.length) %
+            projects.length
+        );
+    };
 
-  const currentSlideTo = (index) => {
-    setCurrentSlide(index);
-  };
+    if (!project) {
+        return null;
+    }
 
-  return (
-    <div className="projects-container">
-      <div className='containerTitleProjectsCr'>
-        <h2 className='titleProjectsCr'>Projects</h2>
-      </div>
 
-      <div className="custom-carousel">
-        <div className="carousel-inner">
-          {projects.map((project, index) => (
-            <div
-              key={project.id}
-              className={`carousel-item ${index === currentSlide ? 'active' : ''}`}
-            >
-             <img className='imgCarouselHome' src={project.img} alt={project.alt} onClick={() => onImageClick(currentSlide)}/>
-              <h3 className='titleCarouselHome'>{project.title}</h3>
-              <p className='descriptionCarouselHome'>{project.description}</p>
+    return (
 
+        <section className="HomeProjects">
+
+            {/* header */}
+            <div className="HomeProjectsHeader">
+
+                <span>SELECTED PROJECTS</span>
+
+                <div>
+                    {String(currentSlide + 1).padStart(2, "0")}
+                    {" / "}
+                    {String(projects.length).padStart(2, "0")}
+                </div>
             </div>
-          ))}
-        </div>
 
-        <button className="control prev" onClick={() => moveSlide(-1)} aria-label="Anterior">
-          &#10094;
-        </button>
-        <button className="control next" onClick={() => moveSlide(1)} aria-label="Siguiente">
-          &#10095;
-        </button>
 
-        <div className="carousel-indicators">
-          {projects.map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${index === currentSlide ? 'active' : ''}`}
-              onClick={() => currentSlideTo(index)}
-            ></span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+            {/* project */}
+            <article className="HomeProjectCard">
+
+                {/* img */}
+                <div className="HomeProjectImage">
+                    <img src={image?.src} alt={image?.alt || project.title}/>
+
+                    <button className="HomeProjectImageButton" 
+                        onClick={() => 
+                        onImageClick?.(currentSlide)}>
+                        View Project ↗
+                    </button>
+                </div>
+
+
+                {/* info */}
+                <div className="HomeProjectInfo">
+
+                    <span className="HomeProjectLabel"> 
+                      Project {String(currentSlide + 1).padStart(2, "0")}
+                    </span>
+
+                    <h2>{project.title}</h2>
+
+                    <p>{project.description}</p>
+
+
+                    {/* technologies */}
+                    {technologies.length > 0 && (
+                        <div className="HomeProjectTechnologies">
+                            {technologies.map((technology) => (
+                                <span key={technology}>{technology}</span>
+                            ))}
+                        </div>
+                    )}
+
+
+                    {/* nav */}
+                    <div className="HomeProjectNavigation">
+                        <button onClick={() => changeProject(-1)}aria-label="Previous project">
+                            ←
+                        </button>
+
+                        <div className="HomeProjectProgress">
+                            <span style={{
+                                    width: `${(
+                                        (currentSlide + 1) /
+                                        projects.length
+                                    ) * 100}%`
+                                }}
+                            />
+                        </div>
+
+                        <button onClick={() => changeProject(1)} aria-label="Next project">
+                            →
+                        </button>
+                    </div>
+                </div>
+            </article>
+
+
+            {/* list */}
+
+            <div className="HomeProjectList">
+                {projects.map((item, index) => (
+
+                    <button key={item.id || index}
+                        className={
+                            index === currentSlide
+                                ? "active"
+                                : ""
+                        }
+                        onClick={() => setCurrentSlide(index)}
+                    >
+
+                        <span>{String(index + 1).padStart(2, "0")}</span>
+
+                        {item.title}
+
+                    </button>
+                ))}
+            </div>
+        </section>
+
+    );
 }
+
 
 export default CarouselHomeProjects;
