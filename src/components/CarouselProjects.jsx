@@ -259,7 +259,7 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
                     <div className="ProjectSectionHeader">
 
                         <span className="ProjectSectionNumber">
-                            01
+                            →
                         </span>
 
                         <h2 className="ProjectSectionTitle">
@@ -323,7 +323,7 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
                 <div className="ProjectSectionHeader">
 
                     <span className="ProjectSectionNumber">
-                        02
+                        →
                     </span>
 
                     <h2 className="ProjectSectionTitle">
@@ -397,7 +397,7 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
                             <div className="GalleryEmpty">
 
                                 <span className="GalleryEmptyIcon">
-                                    —
+                                    →
                                 </span>
 
                                 <span className="GalleryEmptyText">
@@ -513,7 +513,7 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
                 <div className="ProjectSectionHeader">
 
                     <span className="ProjectSectionNumber">
-                        03
+                        →
                     </span>
 
                     <h2 className="ProjectSectionTitle">
@@ -611,7 +611,7 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
                 <div className="ProjectActionInformation">
 
                     <span className="ProjectActionNumber">
-                        04
+                        -
                     </span>
 
                     <div className="ProjectActionText">
