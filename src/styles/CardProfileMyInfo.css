@@ -1,359 +1,395 @@
-/* fullCard */
-.AllCardProfileMyInfo{
+/* my profile full card */
+.AllCardProfileMyInfo {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 45px;
 
-    width:100%;
-    max-width:1400px;
+    color: var(--text);
 
-    margin:auto;
-    padding:45px;
-
-    background:
-        linear-gradient(
-            160deg,
-            rgba(0,23,43,.96),
-            rgba(0,13,26,.98)
+    background:linear-gradient(
+            145deg,
+            rgba(13, 20, 30, .98),
+            rgba(5, 11, 18, .98)
         );
 
-    border:1px solid rgba(110,220,255,.12);
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 20px;
 
-    border-radius:24px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, .38),
+        inset 0 1px 0 rgba(255, 255, 255, .035);
 
-    color:#ecf0f1;
+    position: relative;
+    overflow: hidden;
 
-    box-shadow:
-        0 0 0 1px rgba(255,255,255,.02),
-        0 18px 40px rgba(0,0,0,.45),
-        0 0 40px rgba(0,153,255,.12);
+    animation: fadeInSlide .7s ease forwards;
+}
 
-    backdrop-filter:blur(12px);
 
-    animation:fadeInSlide .8s ease forwards;
+/* subtle top accent */
+.AllCardProfileMyInfo::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background:linear-gradient(
+            90deg,
+            transparent,
+            rgba(0, 217, 255, .7),
+            rgba(52, 120, 255, .7),
+            transparent
+        );
+}
+
+
+/* subtle side accent */
+.AllCardProfileMyInfo::after {
+    content: "";
+
+    position: absolute;
+    top: 30px;
+    left: 0;
+
+    width: 2px;
+    height: 90px;
+
+    background:linear-gradient(
+            transparent,
+            var(--cyan),
+            transparent
+        );
+
+    opacity: .5;
 }
 
 
 /* header */
+.ContainerTitleCardPrfoile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-.ContainerTitleCardPrfoile{
+    padding-bottom: 32px;
+    margin-bottom: 35px;
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    text-align: center;
 
-    text-align:center;
-
-    padding-bottom:35px;
-    margin-bottom:40px;
-
-    border-bottom:1px solid rgba(110,220,255,.12);
-}
-
-.ProfileBadge{
-
-    padding:8px 18px;
-
-    border-radius:50px;
-
-    background:rgba(0,200,255,.08);
-
-    border:1px solid rgba(110,220,255,.18);
-
-    color:#8feeff;
-
-    font-size:.82rem;
-
-    letter-spacing:.15em;
-
-    text-transform:uppercase;
-
-    margin-bottom:20px;
-}
-
-.TitleNameCardProfile{
-
-    font-size:clamp(2.5rem,5vw,4rem);
-
-    font-weight:700;
-
-    letter-spacing:1px;
-
-    color:#ecfbff;
-
-    margin-bottom:12px;
-
-    text-shadow:
-        0 0 25px rgba(0,200,255,.15);
-}
-
-.subTitleWorkCardProfile{
-
-    font-size:1.2rem;
-
-    font-weight:400;
-
-    color:#8feeff;
-
-    letter-spacing:.12em;
-
-    text-transform:uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, .07);
 }
 
 
-/* about me */
+/* badge */
+.ProfileBadge {
+    margin-bottom: 18px;
+    padding: 7px 15px;
 
-.ContainerMyInfoCardProfile{
+    color: #b8c9d8;
 
-    padding:35px;
+    background: rgba(255, 255, 255, .025);
 
-    margin-bottom:45px;
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: 6px;
 
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.03),
-            rgba(255,255,255,.015)
-        );
+    font-size: .7rem;
+    font-weight: 600;
 
-    border:1px solid rgba(255,255,255,.05);
-
-    border-radius:18px;
-}
-
-.AboutMeTitleCardProfile{
-
-    font-size:1.6rem;
-
-    margin-bottom:18px;
-
-    color:#ffffff;
-}
-
-.DescriptionCardProfile{
-
-    color:#c7d9e3;
-
-    line-height:1.9;
-
-    font-size:1.02rem;
-
-    text-align:justify;
-
-    margin-bottom:18px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
 }
 
 
-/* order for the grid */
+/* name */
 
-.AllContainerStudiesCardProfile{
+.TitleNameCardProfile {
+    margin: 0 0 10px;
 
-    display:grid;
+    color: #f4f7fa;
 
-    grid-template-columns:
-        repeat(auto-fit,minmax(300px,1fr));
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    font-weight: 700;
 
-    gap:28px;
+    line-height: 1.05;
+    letter-spacing: -.035em;
+}
+
+.TitleNameCardProfile::after {
+    content: "";
+
+    display: block;
+
+    width: 45px;
+    height: 2px;
+
+    margin: 14px auto 0;
+
+    background: var(--cyan);
+    border-radius: 2px;
+
+    opacity: .8;
 }
 
 
-/* card */
+/* subtitle */
+.subTitleWorkCardProfile {
+    margin: 0;
 
-.subContainerStudyCardProfile{
+    color: #8f9eac;
 
-    padding:28px;
+    font-size: .9rem;
+    font-weight: 500;
 
-    border-radius:18px;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(255,255,255,.035),
-            rgba(255,255,255,.015)
-        );
-
-    border:1px solid rgba(255,255,255,.05);
-
-    transition:
-        transform .35s ease,
-        border-color .35s ease,
-        box-shadow .35s ease;
+    letter-spacing: .12em;
+    text-transform: uppercase;
 }
 
-.subContainerStudyCardProfile:hover{
 
-    transform:
-        translateY(-8px);
+/* about */
+.ContainerMyInfoCardProfile {
+    margin-bottom: 40px;
+    padding: 30px;
 
-    border-color:
-        rgba(110,220,255,.28);
+    background: rgba(255, 255, 255, .018);
 
-    box-shadow:
-
-        0 12px 30px
-        rgba(0,174,255,.15);
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: 14px;
 }
 
 
 /* title */
+.AboutMeTitleCardProfile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-.TitleStudyCardProfile{
+    margin: 0 0 18px;
 
-    font-size:1.25rem;
+    color: #f2f5f7;
 
-    color:#ffffff;
-
-    margin-bottom:22px;
-
-    padding-bottom:12px;
-
-    border-bottom:1px solid rgba(110,220,255,.12);
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
 
-/* Ul and Li */
+.AboutMeTitleCardProfile::before {
+    content: "";
 
-.UlCardProfile{
+    width: 3px;
+    height: 20px;
 
-    list-style:none;
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:12px;
-
-    padding:0;
-
-    margin:0;
+    background: var(--cyan);
+    border-radius: 2px;
 }
 
 
-/* chip */
+/* description */
+.DescriptionCardProfile {
+    max-width: 1100px;
 
-.LiCardProfile{
+    margin: 0 0 14px;
 
-    display:flex;
+    color: #aeb9c5;
 
-    align-items:center;
-
-    justify-content:center;
-
-    padding:10px 16px;
-
-    border-radius:50px;
-
-    background:
-        rgba(0,173,255,.06);
-
-    border:1px solid rgba(110,220,255,.10);
-
-    color:#d8f7ff;
-
-    font-size:.9rem;
-
-    transition:
-        all .3s ease;
-
-    cursor:default;
+    font-size: .94rem;
+    line-height: 1.8;
 }
 
-.LiCardProfile:hover{
 
-    transform:
-        translateY(-3px);
+.DescriptionCardProfile:last-child {
+    margin-bottom: 0;
+}
 
-    background:
-        rgba(0,174,255,.18);
+
+/* skills grid */
+.AllContainerStudiesCardProfile {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 18px;
+}
+
+
+/*  skills card */
+.subContainerStudyCardProfile {
+    padding: 24px;
+
+    background:linear-gradient(
+            145deg,
+            rgba(255, 255, 255, .025),
+            rgba(255, 255, 255, .01)
+        );
+
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: 14px;
+
+    transition: border-color .25s ease,
+        background .25s ease,
+        transform .25s ease;
+}
+
+
+.subContainerStudyCardProfile:hover {
+    transform: translateY(-3px);
 
     border-color:
-        rgba(110,220,255,.45);
+        rgba(0, 217, 255, .22);
 
-    color:#ffffff;
+    background:
+        rgba(0, 217, 255, .025);
+}
 
-    box-shadow:
-        0 8px 18px
-        rgba(0,174,255,.18);
+
+/* skill title */
+.TitleStudyCardProfile {
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+
+    color: #e9eef2;
+
+    font-size: .9rem;
+    font-weight: 600;
+
+    letter-spacing: .08em;
+    text-transform: uppercase;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, .06);
+}
+
+
+/* ul skills */
+.UlCardProfile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+
+/* li skills */
+.LiCardProfile {
+    padding: 6px 10px;
+
+    color: #aebbc7;
+
+    background: rgba(255, 255, 255, .025);
+
+    border: 1px solid rgba(255, 255, 255, .07);
+    border-radius: 5px;
+
+    font-size: .72rem;
+
+    transition:color .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+}
+
+
+.LiCardProfile:hover {
+    color: #dffaff;
+
+    background: rgba(0, 217, 255, .05);
+
+    border-color: rgba(0, 217, 255, .25);
 }
 
 
 /* animation */
+@keyframes fadeInSlide {
 
-@keyframes fadeInSlide{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(25px);
+    from {
+        opacity: 0;
+        transform: translateY(18px);
     }
 
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
 }
 
 
-/* responsive */
+/* mobile */
+@media (max-width: 650px) {
 
-@media(max-width:992px){
+    .AllCardProfileMyInfo {
+        width: calc(100% - 24px);
+        padding: 25px 18px;
 
-    .AllCardProfileMyInfo{
-
-        padding:35px;
+        border-radius: 16px;
     }
 
-}
 
-
-@media(max-width:768px){
-
-    .AllCardProfileMyInfo{
-
-        padding:28px;
+    .ContainerTitleCardPrfoile {
+        padding-bottom: 25px;
+        margin-bottom: 25px;
     }
 
-    .ContainerMyInfoCardProfile{
 
-        padding:25px;
+    .ProfileBadge {
+        font-size: .62rem;
     }
 
-    .TitleNameCardProfile{
 
-        font-size:2.4rem;
+    .TitleNameCardProfile {
+        font-size: 2rem;
+        line-height: 1.1;
     }
 
-    .subTitleWorkCardProfile{
 
-        font-size:1rem;
+    .subTitleWorkCardProfile {
+        font-size: .72rem;
+        line-height: 1.6;
+        letter-spacing: .08em;
     }
 
-}
 
-
-@media(max-width:480px){
-
-    .AllCardProfileMyInfo{
-
-        padding:20px;
+    .ContainerMyInfoCardProfile {
+        padding: 20px;
+        margin-bottom: 25px;
     }
 
-    .ContainerMyInfoCardProfile{
 
-        padding:18px;
+    .AboutMeTitleCardProfile {
+        font-size: 1.1rem;
     }
 
-    .TitleNameCardProfile{
 
-        font-size:2rem;
+    .DescriptionCardProfile {
+        font-size: .85rem;
+        line-height: 1.7;
     }
 
-    .DescriptionCardProfile{
 
-        text-align:left;
+    .AllContainerStudiesCardProfile {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+
+    .subContainerStudyCardProfile {
+        padding: 20px;
+    }
+
+
+    .TitleStudyCardProfile {
+        font-size: .8rem;
+    }
+
+
+    .LiCardProfile {
+        font-size: .68rem;
+        padding: 6px 9px;
     }
 
 }
