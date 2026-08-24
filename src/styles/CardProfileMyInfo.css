@@ -1,74 +1,93 @@
-/* my profile full card */
+/* =========================================================
+   PROFILE / MAIN CARD
+========================================================= */
+
 .AllCardProfileMyInfo {
+    --cyan: #00d9ff;
+    --blue: #3478ff;
+    --purple: #7c5cff;
+    --text: #f5f7fa;
+    --muted: #9da9b7;
+    --border: rgba(255,255,255,.07);
+
     width: 100%;
     max-width: 1400px;
     margin: auto;
     padding: 45px;
 
-    color: var(--text);
-
-    background:linear-gradient(
-            145deg,
-            rgba(13, 20, 30, .98),
-            rgba(5, 11, 18, .98)
-        );
-
-    border: 1px solid rgba(255, 255, 255, .07);
-    border-radius: 20px;
-
-    box-shadow: 0 20px 45px rgba(0, 0, 0, .38),
-        inset 0 1px 0 rgba(255, 255, 255, .035);
-
     position: relative;
     overflow: hidden;
+
+    color: var(--text);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13,20,30,.98),
+            rgba(4,10,17,.98)
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.42),
+        inset 0 1px 0 rgba(255,255,255,.035);
 
     animation: fadeInSlide .7s ease forwards;
 }
 
 
-/* subtle top accent */
+/* top accent */
+
 .AllCardProfileMyInfo::before {
     content: "";
 
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0 15% auto 15%;
 
-    width: 100%;
-    height: 2px;
+    height: 1px;
 
-    background:linear-gradient(
+    background:
+        linear-gradient(
             90deg,
             transparent,
-            rgba(0, 217, 255, .7),
-            rgba(52, 120, 255, .7),
+            var(--cyan),
+            var(--blue),
             transparent
         );
+
+    opacity: .8;
 }
 
 
-/* subtle side accent */
+/* subtle ambient light */
+
 .AllCardProfileMyInfo::after {
     content: "";
 
     position: absolute;
-    top: 30px;
-    left: 0;
 
-    width: 2px;
-    height: 90px;
+    width: 300px;
+    height: 300px;
 
-    background:linear-gradient(
-            transparent,
-            var(--cyan),
-            transparent
-        );
+    top: -180px;
+    right: -120px;
 
-    opacity: .5;
+    background: rgba(0,217,255,.055);
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    pointer-events: none;
 }
 
 
-/* header */
+/* =========================================================
+   HEADER
+========================================================= */
+
 .ContainerTitleCardPrfoile {
     display: flex;
     flex-direction: column;
@@ -79,27 +98,32 @@
 
     text-align: center;
 
-    border-bottom: 1px solid rgba(255, 255, 255, .07);
+    border-bottom: 1px solid rgba(255,255,255,.07);
 }
 
 
 /* badge */
+
 .ProfileBadge {
     margin-bottom: 18px;
     padding: 7px 15px;
 
-    color: #b8c9d8;
+    color: #b9c7d4;
 
-    background: rgba(255, 255, 255, .025);
+    background: rgba(0,217,255,.035);
 
-    border: 1px solid rgba(255, 255, 255, .08);
+    border: 1px solid rgba(0,217,255,.16);
+
     border-radius: 6px;
 
-    font-size: .7rem;
-    font-weight: 600;
+    font-size: .68rem;
+    font-weight: 700;
 
-    letter-spacing: .14em;
+    letter-spacing: .16em;
     text-transform: uppercase;
+
+    box-shadow:
+        0 0 20px rgba(0,217,255,.035);
 }
 
 
@@ -108,59 +132,89 @@
 .TitleNameCardProfile {
     margin: 0 0 10px;
 
-    color: #f4f7fa;
+    color: #f7fafc;
 
-    font-size: clamp(2.3rem, 5vw, 3.8rem);
-    font-weight: 700;
+    font-size: clamp(2.3rem,5vw,3.8rem);
+    font-weight: 750;
 
     line-height: 1.05;
-    letter-spacing: -.035em;
+    letter-spacing: -.045em;
+
+    text-shadow:
+        0 4px 25px rgba(0,0,0,.4);
 }
+
+
+/* name accent */
 
 .TitleNameCardProfile::after {
     content: "";
 
     display: block;
 
-    width: 45px;
+    width: 55px;
     height: 2px;
 
-    margin: 14px auto 0;
+    margin: 15px auto 0;
 
-    background: var(--cyan);
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--blue)
+        );
+
     border-radius: 2px;
 
-    opacity: .8;
+    box-shadow:
+        0 0 12px rgba(0,217,255,.35);
 }
 
 
 /* subtitle */
+
 .subTitleWorkCardProfile {
     margin: 0;
 
-    color: #8f9eac;
+    color: #8291a0;
 
-    font-size: .9rem;
-    font-weight: 500;
+    font-size: .82rem;
+    font-weight: 600;
 
-    letter-spacing: .12em;
+    letter-spacing: .13em;
+    line-height: 1.6;
+
     text-transform: uppercase;
 }
 
 
-/* about */
+/* =========================================================
+   ABOUT
+========================================================= */
+
 .ContainerMyInfoCardProfile {
+    position: relative;
+
     margin-bottom: 40px;
-    padding: 30px;
+    padding: 28px 30px;
 
-    background: rgba(255, 255, 255, .018);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.025),
+            rgba(255,255,255,.008)
+        );
 
-    border: 1px solid rgba(255, 255, 255, .06);
-    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.055);
+    border-radius: 16px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.025);
 }
 
 
-/* title */
+/* about title */
+
 .AboutMeTitleCardProfile {
     display: flex;
     align-items: center;
@@ -168,104 +222,172 @@
 
     margin: 0 0 18px;
 
-    color: #f2f5f7;
+    color: #f2f6f9;
 
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.15rem;
+    font-weight: 650;
 }
 
+
+/* title indicator */
 
 .AboutMeTitleCardProfile::before {
     content: "";
 
     width: 3px;
-    height: 20px;
+    height: 19px;
 
-    background: var(--cyan);
-    border-radius: 2px;
+    background:
+        linear-gradient(
+            var(--cyan),
+            var(--blue)
+        );
+
+    border-radius: 3px;
+
+    box-shadow:
+        0 0 10px rgba(0,217,255,.3);
 }
 
 
 /* description */
+
 .DescriptionCardProfile {
     max-width: 1100px;
 
-    margin: 0 0 14px;
+    margin: 0 0 13px;
 
-    color: #aeb9c5;
+    color: var(--muted);
 
-    font-size: .94rem;
-    line-height: 1.8;
+    font-size: .93rem;
+    line-height: 1.85;
 }
-
 
 .DescriptionCardProfile:last-child {
     margin-bottom: 0;
 }
 
 
-/* skills grid */
+/* =========================================================
+   SKILLS GRID
+========================================================= */
+
 .AllContainerStudiesCardProfile {
     display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
 
     gap: 18px;
 }
 
 
-/*  skills card */
+/* =========================================================
+   SKILL CARD
+========================================================= */
+
 .subContainerStudyCardProfile {
-    padding: 24px;
+    position: relative;
 
-    background:linear-gradient(
-            145deg,
-            rgba(255, 255, 255, .025),
-            rgba(255, 255, 255, .01)
-        );
-
-    border: 1px solid rgba(255, 255, 255, .06);
-    border-radius: 14px;
-
-    transition: border-color .25s ease,
-        background .25s ease,
-        transform .25s ease;
-}
-
-
-.subContainerStudyCardProfile:hover {
-    transform: translateY(-3px);
-
-    border-color:
-        rgba(0, 217, 255, .22);
+    padding: 23px;
 
     background:
-        rgba(0, 217, 255, .025);
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.028),
+            rgba(255,255,255,.008)
+        );
+
+    border: 1px solid rgba(255,255,255,.06);
+
+    border-radius: 15px;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
 }
 
 
-/* skill title */
+/* small card accent */
+
+.subContainerStudyCardProfile::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 22px;
+
+    width: 35px;
+    height: 1px;
+
+    background: var(--cyan);
+
+    opacity: .6;
+
+    transition:
+        width .25s ease,
+        opacity .25s ease;
+}
+
+
+/* hover */
+
+.subContainerStudyCardProfile:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(0,217,255,.2);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,217,255,.035),
+            rgba(255,255,255,.01)
+        );
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.22);
+}
+
+.subContainerStudyCardProfile:hover::before {
+    width: 60px;
+    opacity: 1;
+}
+
+
+/* =========================================================
+   SKILL TITLE
+========================================================= */
+
 .TitleStudyCardProfile {
-    margin: 0 0 18px;
-    padding-bottom: 12px;
+    margin: 0 0 17px;
+    padding-bottom: 11px;
 
     color: #e9eef2;
 
-    font-size: .9rem;
-    font-weight: 600;
+    font-size: .82rem;
+    font-weight: 700;
 
-    letter-spacing: .08em;
+    letter-spacing: .1em;
+
     text-transform: uppercase;
 
     border-bottom:
-        1px solid rgba(255, 255, 255, .06);
+        1px solid rgba(255,255,255,.055);
 }
 
 
-/* ul skills */
+/* =========================================================
+   SKILLS
+========================================================= */
+
 .UlCardProfile {
     display: flex;
     flex-wrap: wrap;
+
     gap: 7px;
 
     padding: 0;
@@ -275,35 +397,50 @@
 }
 
 
-/* li skills */
+/* skill chip */
+
 .LiCardProfile {
     padding: 6px 10px;
 
-    color: #aebbc7;
+    color: #9eacba;
 
-    background: rgba(255, 255, 255, .025);
+    background:
+        rgba(255,255,255,.025);
 
-    border: 1px solid rgba(255, 255, 255, .07);
+    border:
+        1px solid rgba(255,255,255,.065);
+
     border-radius: 5px;
 
-    font-size: .72rem;
+    font-size: .7rem;
 
-    transition:color .2s ease,
+    transition:
+        color .2s ease,
         border-color .2s ease,
-        background .2s ease;
+        background .2s ease,
+        transform .2s ease;
 }
 
+
+/* skill hover */
 
 .LiCardProfile:hover {
-    color: #dffaff;
+    transform: translateY(-1px);
 
-    background: rgba(0, 217, 255, .05);
+    color: #e1faff;
 
-    border-color: rgba(0, 217, 255, .25);
+    background:
+        rgba(0,217,255,.055);
+
+    border-color:
+        rgba(0,217,255,.25);
 }
 
 
-/* animation */
+/* =========================================================
+   ANIMATION
+========================================================= */
+
 @keyframes fadeInSlide {
 
     from {
@@ -319,14 +456,18 @@
 }
 
 
-/* mobile */
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 650px) {
 
     .AllCardProfileMyInfo {
         width: calc(100% - 24px);
+
         padding: 25px 18px;
 
-        border-radius: 16px;
+        border-radius: 17px;
     }
 
 
@@ -337,20 +478,31 @@
 
 
     .ProfileBadge {
-        font-size: .62rem;
+        margin-bottom: 15px;
+
+        padding: 6px 11px;
+
+        font-size: .6rem;
+        letter-spacing: .13em;
     }
 
 
     .TitleNameCardProfile {
         font-size: 2rem;
-        line-height: 1.1;
+        line-height: 1.08;
+    }
+
+
+    .TitleNameCardProfile::after {
+        width: 45px;
+        margin-top: 12px;
     }
 
 
     .subTitleWorkCardProfile {
-        font-size: .72rem;
-        line-height: 1.6;
+        font-size: .68rem;
         letter-spacing: .08em;
+        line-height: 1.7;
     }
 
 
@@ -361,13 +513,13 @@
 
 
     .AboutMeTitleCardProfile {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
 
 
     .DescriptionCardProfile {
-        font-size: .85rem;
-        line-height: 1.7;
+        font-size: .84rem;
+        line-height: 1.75;
     }
 
 
@@ -378,18 +530,18 @@
 
 
     .subContainerStudyCardProfile {
-        padding: 20px;
+        padding: 19px;
     }
 
 
     .TitleStudyCardProfile {
-        font-size: .8rem;
+        font-size: .76rem;
     }
 
 
     .LiCardProfile {
-        font-size: .68rem;
         padding: 6px 9px;
+        font-size: .67rem;
     }
 
 }
