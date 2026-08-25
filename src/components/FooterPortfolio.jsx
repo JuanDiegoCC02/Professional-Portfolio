@@ -30,9 +30,19 @@ function FooterPortfolio() {
                 <img src={gmail} width={40} height={40} alt="GmailIcon" />
             </li>
 
-              <li className='LiFooterPortfolio'><a href="/CV JDiego.pdf" target='blank'rel="noopener noreferrer">
-                <img src={Cv} width={40} height={40} alt="CvIcon" />
-            </a></li>
+            <li className="LiFooterPortfolio">
+             <a href={`${import.meta.env.BASE_URL}CV_JDiego.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+             >
+              <img
+               src={Cv}
+               width={40}
+               height={40}
+               alt="CV"
+             />
+             </a>
+            </li>
         </ul>
   </footer>
   )
