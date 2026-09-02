@@ -1,3 +1,4 @@
+
 import inicioNetworks from "../images/imgNetworksTelecommunications/inicioNetworks.png";
 import loginNetworks from "../images/imgNetworksTelecommunications/loginNetworks.png";
 import dashboardNetworks from "../images/imgNetworksTelecommunications/dashboardNetworks.png";
@@ -6,7 +7,6 @@ import routersNetworks from "../images/imgNetworksTelecommunications/routersNetw
 import mapNetworks from "../images/imgNetworksTelecommunications/mapNetworks.png";
 import maintenanceNetworks from "../images/imgNetworksTelecommunications/maintenanceNetworks.png";
 import usersNetworks from "../images/imgNetworksTelecommunications/usersNetworks.png";
-
 
 // Networks Telecommunications
 const networksTelecommunications = {
@@ -21,10 +21,6 @@ const networksTelecommunications = {
     github:
         "https://github.com/JuanDiegoCC02/Networks-Telecommunications.git",
 
-
-    // =====================================================
-    // TECHNOLOGIES
-    // =====================================================
 
     technologies: {
 
@@ -59,7 +55,6 @@ const networksTelecommunications = {
             "Session Persistence"
         ],
 
-        services: [],
 
         tools: [
             "Git",
@@ -77,9 +72,6 @@ const networksTelecommunications = {
     },
 
 
-    // =====================================================
-    // GALLERY
-    // =====================================================
 
     gallery: [
 
