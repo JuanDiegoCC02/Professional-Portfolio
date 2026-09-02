@@ -1,10 +1,11 @@
+import NTHome from "../images/imgNetworksTelecommunications/NTHome.png";
 
 
 
 // Networks Telecommunications
 const networksTelecommunications = {
 
-    //thumbnail: ,
+    thumbnail: NTHome,
 
     title: "Networks Telecommunications",
 
