@@ -1,17 +1,9 @@
 
-import inicioNetworks from "../images/imgNetworksTelecommunications/inicioNetworks.png";
-import loginNetworks from "../images/imgNetworksTelecommunications/loginNetworks.png";
-import dashboardNetworks from "../images/imgNetworksTelecommunications/dashboardNetworks.png";
-import camerasNetworks from "../images/imgNetworksTelecommunications/camerasNetworks.png";
-import routersNetworks from "../images/imgNetworksTelecommunications/routersNetworks.png";
-import mapNetworks from "../images/imgNetworksTelecommunications/mapNetworks.png";
-import maintenanceNetworks from "../images/imgNetworksTelecommunications/maintenanceNetworks.png";
-import usersNetworks from "../images/imgNetworksTelecommunications/usersNetworks.png";
 
 // Networks Telecommunications
 const networksTelecommunications = {
 
-    thumbnail: inicioNetworks,
+    //thumbnail: ,
 
     title: "Networks Telecommunications",
 
@@ -76,56 +68,56 @@ const networksTelecommunications = {
     gallery: [
 
         {
-            src: inicioNetworks,
+            //src: ,
             alt: "Home",
             description:
                 "Main platform interface providing an overview of the telecommunications infrastructure and quick access to the system's primary management modules."
         },
 
         {
-            src: loginNetworks,
+            //src: ,
             alt: "Login",
             description:
                 "Authentication interface providing secure access to the platform for administrators and authorized users."
         },
 
         {
-            src: dashboardNetworks,
+            //src: ,
             alt: "Infrastructure Dashboard",
             description:
                 "Centralized dashboard providing an overview of network infrastructure, device status, and operational information."
         },
 
         {
-            src: camerasNetworks,
+            //src: ,
             alt: "Camera Management",
             description:
                 "Camera administration module allowing users to register, manage, monitor, and review information associated with surveillance devices."
         },
 
         {
-            src: routersNetworks,
+            //src: ,
             alt: "Router Management",
             description:
                 "Router management interface designed to administer network equipment, monitor operational status, and maintain detailed infrastructure information."
         },
 
         {
-            src: mapNetworks,
+            //src: ,
             alt: "Infrastructure Map",
             description:
                 "Interactive Leaflet map providing geographic visualization of cameras and routers using latitude and longitude data."
         },
 
         {
-            src: maintenanceNetworks,
+            //src: ,
             alt: "Maintenance Management",
             description:
                 "Maintenance management module for registering maintenance activities, tracking maintenance history, and monitoring the lifecycle of network infrastructure."
         },
 
         {
-            src: usersNetworks,
+            //src: ,
             alt: "User Management",
             description:
                 "User management interface supporting account administration, profile management, authentication, and controlled access to platform resources."
