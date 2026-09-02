@@ -1,5 +1,6 @@
 
 
+
 // Networks Telecommunications
 const networksTelecommunications = {
 
@@ -8,7 +9,7 @@ const networksTelecommunications = {
     title: "Networks Telecommunications",
 
     description:
-        "Networks Telecommunications is a full-stack web platform designed to simulate the administration and monitoring of telecommunications infrastructure in a centralized environment. The system allows administrators and authorized users to manage network assets such as cameras and routers, monitor their operational status, visualize infrastructure through interactive maps, manage maintenance records, and access detailed device information.",
+        "Networks Telecommunications is a full-stack infrastructure management platform built with React and Django REST Framework. The project simulates a centralized telecommunications operations environment where administrators can manage network assets, monitor device status, visualize infrastructure geographically, and track maintenance activities. It integrates camera and router management, interactive geolocation with Leaflet, multimedia visualization, user access control, and a RESTful API backed by MySQL, demonstrating the development of a modular system for managing distributed telecommunications infrastructure.",
 
     github:
         "https://github.com/JuanDiegoCC02/Networks-Telecommunications.git",
@@ -28,7 +29,7 @@ const networksTelecommunications = {
             "React Router",
             "Bootstrap",
             "Leaflet",
-            "Native Fetch API"
+            "Fetch API"
         ],
 
         backend: [
@@ -47,7 +48,6 @@ const networksTelecommunications = {
             "Session Persistence"
         ],
 
-
         tools: [
             "Git",
             "GitHub",
@@ -64,63 +64,62 @@ const networksTelecommunications = {
     },
 
 
-
     gallery: [
 
         {
             //src: ,
             alt: "Home",
             description:
-                "Main platform interface providing an overview of the telecommunications infrastructure and quick access to the system's primary management modules."
+                "Centralized landing interface presenting the telecommunications platform and providing access to the main infrastructure management modules."
         },
 
         {
             //src: ,
             alt: "Login",
             description:
-                "Authentication interface providing secure access to the platform for administrators and authorized users."
+                "Authentication interface designed to control access to the platform and protect infrastructure management resources."
         },
 
         {
             //src: ,
             alt: "Infrastructure Dashboard",
             description:
-                "Centralized dashboard providing an overview of network infrastructure, device status, and operational information."
+                "Centralized monitoring interface providing an operational overview of network assets, device availability, and infrastructure management activities."
         },
 
         {
             //src: ,
             alt: "Camera Management",
             description:
-                "Camera administration module allowing users to register, manage, monitor, and review information associated with surveillance devices."
+                "Camera management module for registering surveillance devices, updating their information, monitoring operational status, viewing images and managing associated recordings."
         },
 
         {
             //src: ,
             alt: "Router Management",
             description:
-                "Router management interface designed to administer network equipment, monitor operational status, and maintain detailed infrastructure information."
+                "Router administration module for managing network equipment, monitoring device status, maintaining infrastructure information, and accessing detailed device records."
         },
 
         {
             //src: ,
             alt: "Infrastructure Map",
             description:
-                "Interactive Leaflet map providing geographic visualization of cameras and routers using latitude and longitude data."
+                "Interactive Leaflet-based map that visualizes cameras and routers geographically using latitude and longitude data, providing a centralized view of distributed infrastructure."
         },
 
         {
             //src: ,
             alt: "Maintenance Management",
             description:
-                "Maintenance management module for registering maintenance activities, tracking maintenance history, and monitoring the lifecycle of network infrastructure."
+                "Infrastructure maintenance module for registering service activities, maintaining historical records, monitoring device maintenance, and supporting equipment lifecycle management."
         },
 
         {
             //src: ,
             alt: "User Management",
             description:
-                "User management interface supporting account administration, profile management, authentication, and controlled access to platform resources."
+                "User administration module supporting account management, profile information, authentication, protected access, and session persistence across the platform."
         }
 
     ]
