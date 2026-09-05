@@ -1,8 +1,12 @@
 import React from "react";
 import "../styles/CardProfileMyInfo.css";
 
+
+
 function CardProfileMyInfo() {
+
   return (
+
     <div className="AllCardProfileMyInfo">
 
 

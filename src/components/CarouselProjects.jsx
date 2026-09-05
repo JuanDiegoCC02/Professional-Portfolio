@@ -5,6 +5,7 @@ import "../styles/CarouselProjects.css";
 import projects from "../data/projects";
 
 
+
 function CarouselProjects({ externalIndex, setExternalIndex }) {
 
     const location = useLocation();
@@ -28,33 +29,27 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
 
 
     const nextMainSlide = () => {
-
         setExternalIndex((prevIndex) =>
             prevIndex === projects.length - 1
                 ? 0
                 : prevIndex + 1
         );
-
         setSecondaryIndex(0);
     };
 
 
     const prevMainSlide = () => {
-
         setExternalIndex((prevIndex) =>
             prevIndex === 0
                 ? projects.length - 1
                 : prevIndex - 1
         );
-
         setSecondaryIndex(0);
     };
 
 
     const nextSecondarySlide = () => {
-
         if (gallery.length <= 1) return;
-
         setSecondaryIndex((prevIndex) =>
             prevIndex === gallery.length - 1
                 ? 0
@@ -64,9 +59,7 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
 
 
     const prevSecondarySlide = () => {
-
         if (gallery.length <= 1) return;
-
         setSecondaryIndex((prevIndex) =>
             prevIndex === 0
                 ? gallery.length - 1
@@ -77,7 +70,6 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
 
 
     useEffect(() => {
-
         const requestedIndex = location.state?.projectIndex;
 
         if (
@@ -87,7 +79,6 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
         ) {
 
             setExternalIndex(requestedIndex);
-
             setSecondaryIndex(0);
         }
 
@@ -95,14 +86,11 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
 
 
     useEffect(() => {
-
         setSecondaryIndex(0);
-
     }, [mainIndex]);
 
 
     useEffect(() => {
-
         const handleKeyDown = (event) => {
 
             switch (event.key) {
@@ -137,14 +125,12 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
 
 
         return () => {
-
             window.removeEventListener(
                 "keydown",
                 handleKeyDown
             );
 
         };
-
     }, [mainIndex, gallery.length]);
 
 
