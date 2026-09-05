@@ -1,9 +1,10 @@
 import React from "react";
 import "../styles/NavPortfolio.css";
 
-function NavPortfolio({ onNavigate, activeIndex }) {
 
+function NavPortfolio({ onNavigate, activeIndex }) {
     const navigationItems = [
+
         {
             id: 0,
             label: "Home",
@@ -24,12 +25,13 @@ function NavPortfolio({ onNavigate, activeIndex }) {
     ];
 
 return (
+
   <nav className="TotalNavPortfolio" aria-label="Portfolio navigation">
       
       <div className="NavPortfolioInner">
 
-          <ul className="UlNavPortfolio">
-              {navigationItems.map((item) => (
+          <ul className="UlNavPortfolio"> {navigationItems.map((item) => (
+
                 <li className="LiNavPortfolio"key={item.id}>
 
                   <button type="button" className={
@@ -37,8 +39,7 @@ return (
                                 ? "NavPortfolioButton active"
                                 : "NavPortfolioButton"
                                }
-                         onClick={
-                              () => onNavigate(item.id)}
+                         onClick={() => onNavigate(item.id)}
                                 aria-label={item.ariaLabel}
                                 aria-current={
                                   activeIndex === item.id
@@ -53,11 +54,14 @@ return (
                             </span>
 
                   </button>
+
                 </li>
               ))}
+
             </ul>
 
       </div>
+      
   </nav>
   );
 }
