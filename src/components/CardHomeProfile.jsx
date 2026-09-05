@@ -2,7 +2,10 @@ import React from "react";
 import "../styles/CardHomeProfile.css";
 import photoProfile from "../images/photoProfile.png";
 
+
+
 function CardHomeProfile({ onNavigate }) {
+
     return (
         <div className="profile-card">
 
@@ -23,6 +26,7 @@ function CardHomeProfile({ onNavigate }) {
                 </span>
 
             </div>
+
 
             <div className="profile-content">
 
@@ -53,6 +57,7 @@ function CardHomeProfile({ onNavigate }) {
 
                 </div>
             </div>
+
 
             <div className="profile-footer">
 
