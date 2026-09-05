@@ -9,13 +9,19 @@ import networksTelecommunications from "./networks_telecommunications";
 
 
 const projects = [
-
+    
     networksTelecommunications,
+
     noticiasCR,
+
     numbAstro,
+
     sharedReading,
+
     todoList,
+
     ticTacToe,
+
     upcomingProjects
 
 ];
