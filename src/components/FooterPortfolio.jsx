@@ -14,36 +14,38 @@ function FooterPortfolio() {
         const gmailUrl  = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${encodeURIComponent(subject)}&message=${encodeURIComponent(message)}`;
         window.open(gmailUrl, "_blank");
     }
+
     
   return (
-  <footer className='TotalFooterPortfolio'>
-        <ul className='UlFooterPortfolio'> 
-            <li className='LiFooterPortfolio'><a href="https://www.linkedin.com/in/juan-diego-corella-camacho-a543ba1a9/" target='blank'rel="noopener noreferrer">
-                <img src={linkedin} width={40} height={40} alt="LinkedinIcon" />
-            </a></li>
 
-              <li className='LiFooterPortfolio'><a href="https://github.com/JuanDiegoCC02" target='blank'rel="noopener noreferrer">
+  <footer className='TotalFooterPortfolio'>
+
+        <ul className='UlFooterPortfolio'> 
+
+              <li className='LiFooterPortfolio'>
+                <a href="https://www.linkedin.com/in/juan-diego-corella-camacho-a543ba1a9/" target='blank'rel="noopener noreferrer">
+                  <img src={linkedin} width={40} height={40} alt="LinkedinIcon" />
+                </a>
+              </li>
+
+              <li className='LiFooterPortfolio'>
+                <a href="https://github.com/JuanDiegoCC02" target='blank'rel="noopener noreferrer">
                 <img src={github} width={40} height={40} alt="GithubIcon" />
-            </a></li>
+                </a>
+              </li>
 
               <li className='LiFooterPortfolio' onClick={generateEmail}>
                 <img src={gmail} width={40} height={40} alt="GmailIcon" />
-            </li>
+              </li>
 
-            <li className="LiFooterPortfolio">
-             <a href={`${import.meta.env.BASE_URL}CV_JDiego.pdf`}
-              target="_blank"
-              rel="noopener noreferrer"
-             >
-              <img
-               src={Cv}
-               width={40}
-               height={40}
-               alt="CV"
-             />
-             </a>
-            </li>
+              <li className="LiFooterPortfolio">
+              <a href={`${import.meta.env.BASE_URL}CV_JDiego.pdf`} target="_blank" rel="noopener noreferrer">
+                <img src={Cv} width={40} height={40}alt="CV"/>
+              </a>
+              </li>
+
         </ul>
+
   </footer>
   )
 }
