@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 
 import "../styles/CarouselProjects.css";
@@ -28,45 +28,84 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
             : null;
 
 
-    const nextMainSlide = () => {
+    const nextMainSlide = useCallback(() => {
         setExternalIndex((prevIndex) =>
-            prevIndex === projects.length - 1
-                ? 0
-                : prevIndex + 1
-        );
+            prevIndex === projects.length - 1 ? 0 : prevIndex + 1 );
         setSecondaryIndex(0);
-    };
+    }, [setExternalIndex]);
 
 
-    const prevMainSlide = () => {
+    const prevMainSlide = useCallback(() => {
         setExternalIndex((prevIndex) =>
             prevIndex === 0
                 ? projects.length - 1
                 : prevIndex - 1
         );
         setSecondaryIndex(0);
-    };
+    }, [setExternalIndex]);
 
 
-    const nextSecondarySlide = () => {
+    const nextSecondarySlide = useCallback (() => {
         if (gallery.length <= 1) return;
         setSecondaryIndex((prevIndex) =>
             prevIndex === gallery.length - 1
                 ? 0
                 : prevIndex + 1
         );
-    };
+    }, [gallery.length]);
 
 
-    const prevSecondarySlide = () => {
+    const prevSecondarySlide = useCallback (() => {
         if (gallery.length <= 1) return;
         setSecondaryIndex((prevIndex) =>
             prevIndex === 0
                 ? gallery.length - 1
                 : prevIndex - 1
         );
-    };
+    }, [gallery.length]);
 
+
+    useEffect (() => {
+        setSecondaryIndex(0);
+    }, [mainIndex]);
+
+
+    useEffect(() => {
+        if (!projects || projects.length === 0) return;
+
+        const nextMainIndex = (mainIndex +1) % projects.length;
+        const prevMainIndex = (mainIndex -1 + projects.length) % projects.length;
+
+        const mainImagesToPreload = [
+            projects[nextMainIndex]?.image,
+            projects[prevMainIndex]?.image,
+        ];
+
+        mainImagesToPreload.forEach((src) => {
+            if (src) {
+                const img = new Image();
+                img.src = src;
+            }
+        });
+
+        if (gallery.length > 1) {
+
+            const nextSecIndex = (secondaryIndex + 1) % gallery.length;
+            const prevSecIndex = (secondaryIndex - 1 + gallery.length) % gallery.length;
+
+            const galleryImagesToPreload = [
+                gallery[nextSecIndex]?.src,
+                gallery[prevSecIndex]?.src,
+            ];
+
+            galleryImagesToPreload.forEach((src) => {
+                if (src) {
+                    const img = new Image();
+                    img.src = src;
+                }
+            });
+        }
+    }, [mainIndex, secondaryIndex, gallery]);
 
 
     useEffect(() => {
@@ -74,581 +113,289 @@ function CarouselProjects({ externalIndex, setExternalIndex }) {
 
         if (
             typeof requestedIndex === "number" &&
-            requestedIndex >= 0 &&
-            requestedIndex < projects.length
+             requestedIndex >= 0 && 
+             requestedIndex < projects.length
         ) {
-
             setExternalIndex(requestedIndex);
             setSecondaryIndex(0);
         }
-
     }, [location.state, setExternalIndex]);
 
 
-    useEffect(() => {
-        setSecondaryIndex(0);
-    }, [mainIndex]);
-
-
-    useEffect(() => {
+    useEffect(() =>{
         const handleKeyDown = (event) => {
-
             switch (event.key) {
-
                 case "ArrowLeft":
                     prevMainSlide();
                     break;
-
                 case "ArrowRight":
                     nextMainSlide();
                     break;
-
                 case "ArrowUp":
                     prevSecondarySlide();
                     break;
-
                 case "ArrowDown":
                     nextSecondarySlide();
                     break;
-
                 default:
                     break;
             }
-
         };
-
-
-        window.addEventListener(
-            "keydown",
-            handleKeyDown
-        );
-
-
+        window.addEventListener("keydown", handleKeyDown);
         return () => {
-            window.removeEventListener(
-                "keydown",
-                handleKeyDown
-            );
-
+            window.removeEventListener("keydown", handleKeyDown);
         };
-    }, [mainIndex, gallery.length]);
-
-
-    if (!project) {
-
-        return (
-
-            <section
-                className="AllCarouselProjects"
-                aria-label="Portfolio projects carousel"
-            >
-
-                <div className="CarouselEmptyState">
-
-                    <div className="CarouselEmptyStateContent">
-
-                        <span className="CarouselEmptyStateLabel">
-                            Portfolio
-                        </span>
-
-                        <h2 className="CarouselEmptyStateTitle">
-                            No projects available
-                        </h2>
-
-                        <p className="CarouselEmptyStateDescription">
-                            There are currently no projects
-                            available to display.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-        );
-    }
-
-
+    }, [nextMainSlide, prevMainSlide, nextSecondarySlide, prevSecondarySlide]);
+if (!project) {
     return (
+      <section
+        className="AllCarouselProjects"
+        aria-label="Portfolio projects carousel"
+      >
+        <div className="CarouselEmptyState">
+          <div className="CarouselEmptyStateContent">
+            <span className="CarouselEmptyStateLabel">Portfolio</span>
+            <h2 className="CarouselEmptyStateTitle">No projects available</h2>
+            <p className="CarouselEmptyStateDescription">
+              There are currently no projects available to display.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
+  return (
+    <section
+      className="AllCarouselProjects"
+      aria-label="Portfolio projects carousel"
+    >
+      <header className="CarouselProjectHeader">
+        <div className="CarouselProjectHeaderTop">
+          <div className="CarouselProjectMeta">
+            <span className="ProjectCounterLabel">PROJECT</span>
+            <span className="ProjectCounterCurrent">
+              {String(mainIndex + 1).padStart(2, "0")}
+            </span>
+            <span className="ProjectCounterSeparator">/</span>
+            <span className="ProjectCounterTotal">
+              {String(projects.length).padStart(2, "0")}
+            </span>
+          </div>
+
+          <span className="ProjectHeaderStatus">Featured Project</span>
+        </div>
+
+        <div className="ProjectHeaderContent">
+          <span className="ProjectLabel">Selected Work</span>
+          <h1 className="TitleNameProject">{project.title}</h1>
+          <div className="ProjectTitleLine">
+            <span />
+          </div>
+          <p className="DescriptionProject">{project.description}</p>
+        </div>
+      </header>
+
+      {project.technologies && (
         <section
-            className="AllCarouselProjects"
-            aria-label="Portfolio projects carousel"
+          className="ProjectTechnologiesSection"
+          aria-label="Project technologies"
         >
+          <div className="ProjectSectionHeader">
+            <span className="ProjectSectionNumber">→</span>
+            <h2 className="ProjectSectionTitle">Technologies</h2>
+          </div>
 
-            <header className="CarouselProjectHeader">
+          <div className="ProjectTechnologies">
+            {Object.entries(project.technologies).map(
+              ([category, technologies]) => (
+                <article className="TechnologyGroup" key={category}>
+                  <h3 className="TechnologyCategory">{category}</h3>
+                  <div className="TechnologyList">
+                    {technologies.map((technology) => (
+                      <span className="TechnologyTag" key={technology}>
+                        {technology}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              )
+            )}
+          </div>
+        </section>
+      )}
 
+      <section
+        className="ProjectGallerySection"
+        aria-label="Project gallery"
+      >
+        <div className="ProjectSectionHeader">
+          <span className="ProjectSectionNumber">→</span>
+          <h2 className="ProjectSectionTitle">Project Preview</h2>
+        </div>
 
-                <div className="CarouselProjectHeaderTop">
+        <div className="ContainerImagesProject">
+          <div className="GalleryTopBar">
+            <div className="GalleryTitleGroup">
+              <span className="GalleryStatusIndicator" />
+              <span className="GalleryLabel">Interface Preview</span>
+            </div>
 
-                    <div className="CarouselProjectMeta">
+            {gallery.length > 0 && (
+              <span className="GalleryCounter">
+                <span className="GalleryCounterCurrent">
+                  {String(secondaryIndex + 1).padStart(2, "0")}
+                </span>
+                <span className="GalleryCounterSeparator">/</span>
+                <span className="GalleryCounterTotal">
+                  {String(gallery.length).padStart(2, "0")}
+                </span>
+              </span>
+            )}
+          </div>
 
-                        <span className="ProjectCounterLabel">
-                            PROJECT
-                        </span>
-
-                        <span className="ProjectCounterCurrent">
-                            {String(mainIndex + 1).padStart(2, "0")}
-                        </span>
-
-                        <span className="ProjectCounterSeparator">
-                            /
-                        </span>
-
-                        <span className="ProjectCounterTotal">
-                            {String(projects.length).padStart(2, "0")}
-                        </span>
-
-                    </div>
-
-
-                    <span className="ProjectHeaderStatus">
-                        Featured Project
-                    </span>
-
-                </div>
-
-
-                <div className="ProjectHeaderContent">
-
-                    <span className="ProjectLabel">
-                        Selected Work
-                    </span>
-
-
-                    <h1 className="TitleNameProject">
-                        {project.title}
-                    </h1>
-
-
-                    <div className="ProjectTitleLine">
-                        <span />
-                    </div>
-
-
-                    <p className="DescriptionProject">
-                        {project.description}
-                    </p>
-
-                </div>
-
-            </header>
-
-            {project.technologies && (
-
-                <section
-                    className="ProjectTechnologiesSection"
-                    aria-label="Project technologies"
-                >
-
-                    <div className="ProjectSectionHeader">
-
-                        <span className="ProjectSectionNumber">
-                            →
-                        </span>
-
-                        <h2 className="ProjectSectionTitle">
-                            Technologies
-                        </h2>
-
-                    </div>
-
-
-                    <div className="ProjectTechnologies">
-
-                        {Object.entries(
-                            project.technologies
-                        ).map(
-                            ([category, technologies]) => (
-
-                                <article
-                                    className="TechnologyGroup"
-                                    key={category}
-                                >
-
-                                    <h3 className="TechnologyCategory">
-                                        {category}
-                                    </h3>
-
-
-                                    <div className="TechnologyList">
-
-                                        {technologies.map(
-                                            (technology) => (
-
-                                                <span
-                                                    className="TechnologyTag"
-                                                    key={technology}
-                                                >
-                                                    {technology}
-                                                </span>
-
-                                            )
-                                        )}
-
-                                    </div>
-
-                                </article>
-
-                            )
-                        )}
-
-                    </div>
-
-                </section>
-
+          <div className="ImageStage">
+            {currentImage ? (
+              <div className="ProjectImageWrapper">
+                <img
+                  className="ImagesProjectCarousel"
+                  src={currentImage.src}
+                  alt={currentImage.alt}
+                  /* Mantenemos fetchPriority si es la imagen principal o alta prioridad */
+                  fetchPriority="high"
+                />
+              </div>
+            ) : (
+              <div className="GalleryEmpty">
+                <span className="GalleryEmptyIcon">→</span>
+                <span className="GalleryEmptyText">
+                  No preview available
+                </span>
+              </div>
             )}
 
-            <section
-                className="ProjectGallerySection"
-                aria-label="Project gallery"
-            >
-
-
-                <div className="ProjectSectionHeader">
-
-                    <span className="ProjectSectionNumber">
-                        →
-                    </span>
-
-                    <h2 className="ProjectSectionTitle">
-                        Project Preview
-                    </h2>
-
-                </div>
-
-
-
-                <div className="ContainerImagesProject">
-
-                    <div className="GalleryTopBar">
-
-                        <div className="GalleryTitleGroup">
-
-                            <span className="GalleryStatusIndicator" />
-
-                            <span className="GalleryLabel">
-                                Interface Preview
-                            </span>
-
-                        </div>
-
-
-                        {gallery.length > 0 && (
-
-                            <span className="GalleryCounter">
-
-                                <span className="GalleryCounterCurrent">
-                                    {String(
-                                        secondaryIndex + 1
-                                    ).padStart(2, "0")}
-                                </span>
-
-                                <span className="GalleryCounterSeparator">
-                                    /
-                                </span>
-
-                                <span className="GalleryCounterTotal">
-                                    {String(
-                                        gallery.length
-                                    ).padStart(2, "0")}
-                                </span>
-
-                            </span>
-
-                        )}
-
-                    </div>
-
-
-                    <div className="ImageStage">
-
-
-                        {currentImage ? (
-
-                            <div className="ProjectImageWrapper">
-
-                                <img
-                                    className="ImagesProjectCarousel"
-                                    src={currentImage.src}
-                                    alt={currentImage.alt}
-                                    loading="lazy"
-                                />
-
-                            </div>
-
-                        ) : (
-
-                            <div className="GalleryEmpty">
-
-                                <span className="GalleryEmptyIcon">
-                                    →
-                                </span>
-
-                                <span className="GalleryEmptyText">
-                                    No preview available
-                                </span>
-
-                            </div>
-
-                        )}
-
-
-                        {gallery.length > 1 && (
-
-                            <div className="GalleryControls">
-
-
-                                <button
-                                    type="button"
-                                    className="GalleryControlButton GalleryControlPrevious"
-                                    onClick={
-                                        prevSecondarySlide
-                                    }
-                                    aria-label="Previous project image"
-                                >
-
-                                    <span className="GalleryControlArrow">
-                                        ←
-                                    </span>
-
-                                    <span className="GalleryControlText">
-                                        Previous
-                                    </span>
-
-                                </button>
-
-
-
-                                <div className="GalleryControlDivider" />
-
-
-
-                                <button
-                                    type="button"
-                                    className="GalleryControlButton GalleryControlNext"
-                                    onClick={
-                                        nextSecondarySlide
-                                    }
-                                    aria-label="Next project image"
-                                >
-
-                                    <span className="GalleryControlText">
-                                        Next
-                                    </span>
-
-                                    <span className="GalleryControlArrow">
-                                        →
-                                    </span>
-
-                                </button>
-
-
-                            </div>
-
-                        )}
-
-                    </div>
-
-
-                    {currentImage?.description && (
-
-                        <div className="GalleryDescription">
-
-
-                            <div className="GalleryDescriptionIndex">
-
-                                <span>
-                                    {String(
-                                        secondaryIndex + 1
-                                    ).padStart(2, "0")}
-                                </span>
-
-                            </div>
-
-
-                            <div className="GalleryDescriptionContent">
-
-                                <span className="GalleryDescriptionLabel">
-                                    Preview Description
-                                </span>
-
-                                <p className="descriptionImgCarousel">
-                                    {currentImage.description}
-                                </p>
-
-                            </div>
-
-
-                        </div>
-
-                    )}
-
-                </div>
-
-            </section>
-
-
-            <section
-                className="ProjectNavigationSection"
-                aria-label="Project navigation"
-            >
-
-
-                <div className="ProjectSectionHeader">
-
-                    <span className="ProjectSectionNumber">
-                        →
-                    </span>
-
-                    <h2 className="ProjectSectionTitle">
-                        Explore Projects
-                    </h2>
-
-                </div>
-
-
-
-                <div className="ProjectNavigation">
-
-
-                    <button
-                        type="button"
-                        className="ProjectNavigationButton ProjectNavigationPrevious"
-                        onClick={prevMainSlide}
-                        aria-label="Previous project"
-                    >
-
-                        <span className="ProjectNavigationArrow">
-                            ←
-                        </span>
-
-                        <span className="ProjectNavigationContent">
-
-                            <small>
-                                Previous
-                            </small>
-
-                            <strong>
-                                Project
-                            </strong>
-
-                        </span>
-
-                    </button>
-
-
-
-                    <div className="ProjectNavigationIndicator">
-
-                        <span className="CurrentProject">
-                            {String(
-                                mainIndex + 1
-                            ).padStart(2, "0")}
-                        </span>
-
-                        <span className="NavigationLine" />
-
-                        <span className="TotalProjects">
-                            {String(
-                                projects.length
-                            ).padStart(2, "0")}
-                        </span>
-
-                    </div>
-
-
-
-                    <button
-                        type="button"
-                        className="ProjectNavigationButton ProjectNavigationNext"
-                        onClick={nextMainSlide}
-                        aria-label="Next project"
-                    >
-
-                        <span className="ProjectNavigationContent">
-
-                            <small>
-                                Next
-                            </small>
-
-                            <strong>
-                                Project
-                            </strong>
-
-                        </span>
-
-                        <span className="ProjectNavigationArrow">
-                            →
-                        </span>
-
-                    </button>
-
-
-                </div>
-
-            </section>
-
-
-            <footer className="ProjectActions">
-
-
-                <div className="ProjectActionInformation">
-
-                    <span className="ProjectActionNumber">
-                        -
-                    </span>
-
-                    <div className="ProjectActionText">
-
-                        <span className="ProjectActionLabel">
-                            Source Code
-                        </span>
-
-                        <p>
-                            Explore the architecture,
-                            implementation and development
-                            process of this project.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-
-                <a
-                    className="LinkGithubCarouselProjects"
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View ${project.title} source code on GitHub`}
+            {gallery.length > 1 && (
+              <div className="GalleryControls">
+                <button
+                  type="button"
+                  className="GalleryControlButton GalleryControlPrevious"
+                  onClick={prevSecondarySlide}
+                  aria-label="Previous project image"
                 >
+                  <span className="GalleryControlArrow">←</span>
+                  <span className="GalleryControlText">Previous</span>
+                </button>
 
-                    <span className="GithubLinkText">
-                        View on GitHub
-                    </span>
+                <div className="GalleryControlDivider" />
 
-                    <span className="GithubLinkArrow">
-                        ↗
-                    </span>
+                <button
+                  type="button"
+                  className="GalleryControlButton GalleryControlNext"
+                  onClick={nextSecondarySlide}
+                  aria-label="Next project image"
+                >
+                  <span className="GalleryControlText">Next</span>
+                  <span className="GalleryControlArrow">→</span>
+                </button>
+              </div>
+            )}
+          </div>
 
-                </a>
+          {currentImage?.description && (
+            <div className="GalleryDescription">
+              <div className="GalleryDescriptionIndex">
+                <span>
+                  {String(secondaryIndex + 1).padStart(2, "0")}
+                </span>
+              </div>
 
+              <div className="GalleryDescriptionContent">
+                <span className="GalleryDescriptionLabel">
+                  Preview Description
+                </span>
+                <p className="descriptionImgCarousel">
+                  {currentImage.description}
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
 
-            </footer>
+      <section
+        className="ProjectNavigationSection"
+        aria-label="Project navigation"
+      >
+        <div className="ProjectSectionHeader">
+          <span className="ProjectSectionNumber">→</span>
+          <h2 className="ProjectSectionTitle">Explore Projects</h2>
+        </div>
 
+        <div className="ProjectNavigation">
+          <button
+            type="button"
+            className="ProjectNavigationButton ProjectNavigationPrevious"
+            onClick={prevMainSlide}
+            aria-label="Previous project"
+          >
+            <span className="ProjectNavigationArrow">←</span>
+            <span className="ProjectNavigationContent">
+              <small>Previous</small>
+              <strong>Project</strong>
+            </span>
+          </button>
 
-            <div
-                className="CarouselBottomSpacing"
-                aria-hidden="true"
-            />
+          <div className="ProjectNavigationIndicator">
+            <span className="CurrentProject">
+              {String(mainIndex + 1).padStart(2, "0")}
+            </span>
+            <span className="NavigationLine" />
+            <span className="TotalProjects">
+              {String(projects.length).padStart(2, "0")}
+            </span>
+          </div>
 
-        </section>
+          <button
+            type="button"
+            className="ProjectNavigationButton ProjectNavigationNext"
+            onClick={nextMainSlide}
+            aria-label="Next project"
+          >
+            <span className="ProjectNavigationContent">
+              <small>Next</small>
+              <strong>Project</strong>
+            </span>
+            <span className="ProjectNavigationArrow">→</span>
+          </button>
+        </div>
+      </section>
 
-    );
+      <footer className="ProjectActions">
+        <div className="ProjectActionInformation">
+          <span className="ProjectActionNumber">-</span>
+          <div className="ProjectActionText">
+            <span className="ProjectActionLabel">Source Code</span>
+            <p>
+              Explore the architecture, implementation and development process of this project.
+            </p>
+          </div>
+        </div>
+
+        <a
+          className="LinkGithubCarouselProjects"
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`View ${project.title} source code on GitHub`}
+        >
+          <span className="GithubLinkText">View on GitHub</span>
+          <span className="GithubLinkArrow">↗</span>
+        </a>
+      </footer>
+
+      <div className="CarouselBottomSpacing" aria-hidden="true" />
+    </section>
+  );
 }
-
 
 export default CarouselProjects;
