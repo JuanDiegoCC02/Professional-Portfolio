@@ -1,5 +1,4 @@
 import NTHome from "../images/imgNetworksTelecommunications/NTHome.png";
-import NTRegister from "../images/imgNetworksTelecommunications/NTRegister.png";
 import NTLogIn from "../images/imgNetworksTelecommunications/NTLogIn.png";
 import NTContactUs from "../images/imgNetworksTelecommunications/NTContactUs.png";
 import NTFormCameras from "../images/imgNetworksTelecommunications/NTFormCameras.png";
